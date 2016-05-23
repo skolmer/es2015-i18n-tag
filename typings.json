@@ -1,0 +1,6 @@
+{
+  "ambientDevDependencies": {
+    "mocha": "registry:dt/mocha#2.2.5+20160317120654",
+    "rimraf": "registry:dt/rimraf#0.0.0+20160317120654"
+  }
+}
