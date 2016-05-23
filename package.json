@@ -4,6 +4,7 @@
   "version": "0.2.0",
   "author": "Steffen Kolmer <steffen@kolmer.net>",
   "icon": "images/es2015-i18n-tag-icon.png",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/skolmer/es2015-i18n-tag.git"
