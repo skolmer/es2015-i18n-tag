@@ -37,4 +37,4 @@ i18n`Hello ${ name }, you have ${ amount }:c in your bank account.`
 
 ## Credits
 
-Thanks to @jaysoo for his initial draft of an [i18n template literal](http://jaysoo.ca/2014/03/20/i18n-with-es6-template-strings/)
+Thanks to [Jack Hsu](https://github.com/jaysoo) for his initial draft of an [i18n template literal](http://jaysoo.ca/2014/03/20/i18n-with-es6-template-strings/)
