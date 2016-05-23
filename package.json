@@ -1,17 +1,17 @@
 {
   "name": "es2015-i18n-tag",
   "description": "ES2015 template literal tag for i18n and l10n translation and localization",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Steffen Kolmer <steffen@kolmer.net>",
   "icon": "images/es2015-i18n-tag-icon.png",
   "repository": {
     "type": "git",
     "url": "git://github.com/skolmer/es2015-i18n-tag.git"
   },
-  "bugs" : "http://github.com/skolmer/es2015-i18n-tag/issues",
-  "engines" : {
-    "node" : ">= 4.0.0"
-  },  
+  "bugs": "http://github.com/skolmer/es2015-i18n-tag/issues",
+  "engines": {
+    "node": ">= 4.0.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.1.4",
     "babel-eslint": "^4.0.0",
