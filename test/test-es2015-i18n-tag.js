@@ -1,7 +1,7 @@
 import assert from 'assert';
-import i18n, { i18nConfig }  from '../dist/lib';
+import i18n, { i18nConfig }  from '../lib';
 
-describe('i18n-tag-schema', () => {
+describe('es2015-i18n-tag', () => {
     it(`should not translate`, () => {
         const name = 'Steffen'
         const amount = 1250.33
