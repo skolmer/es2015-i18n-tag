@@ -1,5 +1,3 @@
-import path from 'path';
-import fs from 'fs';
 import assert from 'assert';
 import i18n, { i18nConfig }  from '../dist/lib';
 
