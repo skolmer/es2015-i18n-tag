@@ -5,7 +5,7 @@ ES2015 template literal tag for i18n and l10n translation and localization
 
 ## Installation
 ```sh
-$ npm install es2015-i18n-tag --save-dev
+$ npm install es2015-i18n-tag --save
 ```
 
 ## Usage
