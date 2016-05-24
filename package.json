@@ -28,7 +28,7 @@
   "scripts": {
     "prepublish": "npm run clean && npm run build",
     "test": "mocha --compilers js:babel-register",
-    "clean": "rimraf dist/lib/**/*",
+    "clean": "rimraf dist/lib/**/*.js",
     "build": "browserify lib/index.js -o dist/lib/index.js -t babelify",
     "lint": "eslint lib"
   },
