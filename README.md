@@ -30,7 +30,7 @@ i18nConfig({
     }
 })
         
-i18n`Hello ${ name }, you have ${ amount }:c in your bank account.`
+console.log(i18n`Hello ${ name }, you have ${ amount }:c in your bank account.`)
 // Hallo Steffen, Sie haben € 1,250.33 auf Ihrem Bankkonto.
 ```
 
