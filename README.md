@@ -114,7 +114,7 @@ console.log(i18n`
 // </users>
 ```
 #### Note
-For easy translation of multiline template literals use one of the following json schema generators
+For easy translation of multiline template literals use one of the following [json schema generators](#json-schema)
 
 ## Tools
 
