@@ -1,7 +1,7 @@
 # es2015-i18n-tag
 ![](images/es2015-i18n-tag-icon-big.jpg)
 
-ES2015 template literal tag for i18n and l10n translation and localization
+[ES2015 template literal tag](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/template_strings#Tagged_Template_Strings) for i18n and l10n translation and localization
 
 ## Installation
 ```sh
