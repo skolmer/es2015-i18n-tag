@@ -83,6 +83,29 @@ console.log(i18n`Hello ${name}, the number is ${12345.678}:n(2).`)
 // Hello Steffen, the number is 12.345,67.
 ```
 
+### Nested templates
+```js
+let hello = [
+    { name: "Steffen", percentage: 0.2 },
+    { name: "Jack", percentage: 0.8 }
+]
+        
+console.log(i18n`
+    <users>
+    ${hello.map((item) => i18n`
+        <user name="${item.name}">${item.percentage}:p</user>
+    `).join('')}
+    </users>
+`)
+// <users>
+// 
+//     <user name="Steffen">20%</user>
+// 
+//     <user name="Jack">80%</user>
+// 
+// </users>
+```
+
 ## Tools
 
 * [babel-plugin-i18n-tag-translate](https://github.com/skolmer/babel-plugin-i18n-tag-translate): Translate your template literals at build time.

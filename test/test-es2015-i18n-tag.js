@@ -81,5 +81,36 @@ describe('es2015-i18n-tag', () => {
         let expected = "Hello Steffen, the percentage is 10%."
         assert.equal(actual, expected);
     })
+    
+    it(`should support nested templates`, () => {
+        const name = 'Steffen'
+        const percentage = 0.1;
+        
+        i18nConfig({
+            locales: 'en-US'
+        })
+        
+        let hello = [
+            { name: "Steffen", percentage: 0.2 },
+            { name: "Jack", percentage: 0.8 }
+        ]
+        
+        let actual = i18n`
+        <users>
+        ${hello.map((item) => i18n`
+            <user name="${item.name}">${item.percentage}:p</user>
+        `).join('')}
+        </users>`
+
+        let expected = `
+        <users>
+        
+            <user name="Steffen">20%</user>
+        
+            <user name="Jack">80%</user>
+        
+        </users>`
+        assert.equal(actual, expected);
+    })
 })
 
