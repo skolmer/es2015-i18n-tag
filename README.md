@@ -42,7 +42,7 @@ i18nConfig({
     }
 })
 
-console.log(i18n`Hello ${name}, the date is ${date}:t.`)
+console.log(i18n`Hello ${name}, the date is ${new Date(2012, 11, 20, 19, 0, 0)}:t.`)
 // Hello Steffen, the date is 12/20/2012, 19:00:00.
 
 /********************************************************************************/
