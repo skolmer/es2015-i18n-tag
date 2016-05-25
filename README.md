@@ -5,7 +5,7 @@
 
 ## Features
 
-* Translate and [localize](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) strings in your JavaScript project with [ES2015 standard](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals) tagged template literals
+* Translate and [internationalize](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) strings in your JavaScript project with [ES2015 standard](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals) tagged template literals
 * Translate your JavaScript library at [buildtime](#build-time-translation)
 * Generate a [schema](#json-schema) of all i18n tagged template literals in your project for easy JSON based translations
 
