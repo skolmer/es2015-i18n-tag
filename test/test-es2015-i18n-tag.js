@@ -5,6 +5,13 @@ describe('es2015-i18n-tag', () => {
     it(`should not translate`, () => {
         const name = 'Steffen'
         const amount = 1250.33
+        
+        i18nConfig({
+            locales: 'en-US',
+            number: {
+                currency: 'USD'
+            }
+        })
 
         const actual = i18n`Hello ${name}, you have ${amount}:c in your bank account.`
 
@@ -17,10 +24,12 @@ describe('es2015-i18n-tag', () => {
         const amount = 1250.33
 
         i18nConfig({
-            locale: 'de-DE',
-            currency: 'EUR',
+            locales: 'de-DE',
             translations: {
                 "Hello ${0}, you have ${1} in your bank account.": "Hallo ${0}, Sie haben ${1} auf Ihrem Bankkonto."
+            },
+            number: {
+                currency: 'EUR'
             }
         })
 
@@ -35,7 +44,10 @@ describe('es2015-i18n-tag', () => {
         const date = new Date(2012, 11, 20, 19, 0, 0);
 
         i18nConfig({
-            date: { hour12: false }
+            locales: 'de-DE',
+            date: { 
+                hour12: false 
+            }
         })
 
         let actual = i18n`Hello ${name}, the date is ${date}:t.`
@@ -44,12 +56,29 @@ describe('es2015-i18n-tag', () => {
         assert.equal(actual, expected);
         
         i18nConfig({
-            date: { hour12: true }
+            locales: 'de-DE',
+            date: { 
+                hour12: true 
+            }
         })
 
         actual = i18n`Hello ${name}, the date is ${date}:t.`
 
         expected = "Hello Steffen, the date is 2012-12-20 7:00:00 PM."
+        assert.equal(actual, expected);
+    })
+    
+    it(`should format percentage`, () => {
+        const name = 'Steffen'
+        const percentage = 0.1;
+        
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        let actual = i18n`Hello ${name}, the percentage is ${percentage}:p.`
+
+        let expected = "Hello Steffen, the percentage is 10%."
         assert.equal(actual, expected);
     })
 })

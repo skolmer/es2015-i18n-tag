@@ -17,12 +17,12 @@ const amount = 1250.33
 
 // config i18n literals
 i18nConfig({
-    locale: 'de-DE',
-    currency: 'EUR',
+    locales: 'de-DE',    
     translations: {
         "Hello ${0}, you have ${1} in your bank account.": "Hallo ${0}, Sie haben ${1} auf Ihrem Bankkonto."
     },
     number: {
+        currency: 'EUR'
     // https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString
     },
     date: {
@@ -32,6 +32,27 @@ i18nConfig({
         
 console.log(i18n`Hello ${ name }, you have ${ amount }:c in your bank account.`)
 // Hallo Steffen, Sie haben € 1,250.33 auf Ihrem Bankkonto.
+
+/********************************************************************************/
+
+i18nConfig({
+    locales: 'en-US',
+    date: { 
+        hour12: false 
+    }
+})
+
+console.log(i18n`Hello ${name}, the date is ${date}:t.`)
+// Hello Steffen, the date is 12/20/2012, 19:00:00.
+
+/********************************************************************************/
+       
+i18nConfig({
+    locales: 'en-US'
+})
+
+console.log(i18n`Hello ${name}, the percentage is ${0.01}:p.`)
+// Hello Steffen, the percentage is 1%.
 ```
 
 ## Tools
