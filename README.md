@@ -112,7 +112,10 @@ For easy translation of multiline template literals use one of the following jso
 
 ## Tools
 
+### Build time translation
 * [babel-plugin-i18n-tag-translate](https://github.com/skolmer/babel-plugin-i18n-tag-translate): Translate your template literals at build time.
+
+### JSON Schema
 * [i18n-tag-schema](https://github.com/skolmer/i18n-tag-schema): Generates a JSON schema based on all i18n tagged literals in your project.
 * [vscode-18n-tag-schema](https://github.com/skolmer/vscode-i18n-tag-schema): Visual Studio Code Extension to generate a JSON schema.
 
