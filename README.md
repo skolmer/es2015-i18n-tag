@@ -9,6 +9,8 @@ $ npm install es2015-i18n-tag --save
 ```
 
 ## Usage
+
+### currency
 ```js
 import i18n, { i18nConfig }  from 'es2015-i18n-tag'
 
@@ -32,9 +34,10 @@ i18nConfig({
         
 console.log(i18n`Hello ${ name }, you have ${ amount }:c in your bank account.`)
 // Hallo Steffen, Sie haben € 1,250.33 auf Ihrem Bankkonto.
+```
 
-/********************************************************************************/
-
+### date
+```js
 i18nConfig({
     locales: 'en-US',
     date: { 
@@ -44,15 +47,30 @@ i18nConfig({
 
 console.log(i18n`Hello ${name}, the date is ${new Date(2012, 11, 20, 19, 0, 0)}:t.`)
 // Hello Steffen, the date is 12/20/2012, 19:00:00.
+```
 
-/********************************************************************************/
-       
-i18nConfig({
-    locales: 'en-US'
-})
-
+### percentage
+```js       
 console.log(i18n`Hello ${name}, the percentage is ${0.01}:p.`)
 // Hello Steffen, the percentage is 1%.
+
+i18nConfig({
+    locales: 'de-DE'
+})
+console.log(i18n`Hello ${name}, the percentage is ${0.01}:p.`)
+// Hello Steffen, the percentage is 1 %.
+```
+
+### number
+```js   
+console.log(i18n`Hello ${name}, the number is ${12345.678}:n(2).`)
+// Hello Steffen, the number is 12,345.67.
+
+i18nConfig({
+    locales: 'de-DE'
+})
+console.log(i18n`Hello ${name}, the number is ${12345.678}:n(2).`)
+// Hello Steffen, the number is 12.345,67.
 ```
 
 ## Tools
