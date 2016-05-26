@@ -9,6 +9,10 @@
 * Translate your JavaScript library at [buildtime](#build-time-translation)
 * Generate a [schema](#json-schema) of all i18n tagged template literals in your project for easy JSON based translations
 
+## Examples
+
+https://github.com/skolmer/i18n-tag-examples  (TODO)
+
 ## Installation
 ```sh
 $ npm install es2015-i18n-tag --save
