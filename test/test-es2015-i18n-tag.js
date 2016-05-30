@@ -206,6 +206,32 @@ describe('es2015-i18n-tag', () => {
         let expected = "The date is December 20."
         assert.equal(actual, expected);
     })
+
+    it(`should support standard date format string "O", "o"`, () => {
+        const date = new Date(2012, 11, 20, 19, 0, 0);
+
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        let actual = i18n`The date is ${date}:t(o).`
+
+        let expected = "The date is 2012-12-20T18:00:00.000Z."
+        assert.equal(actual, expected);
+    })
+
+    it(`should support standard date format string "R", "r"`, () => {
+        const date = new Date(2012, 11, 20, 19, 0, 0);
+
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        let actual = i18n`The date is ${date}:t(r).`
+
+        let expected = "The date is Thu, 20 Dec 2012 18:00:00 GMT."
+        assert.equal(actual, expected);
+    })
     
     it(`should support standard date format string "t"`, () => {
         const date = new Date(2012, 11, 20, 19, 0, 0);

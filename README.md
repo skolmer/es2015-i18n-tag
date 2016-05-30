@@ -92,6 +92,8 @@ The following standard format strings can be applied to a template expression of
 | "g"              | General date/time pattern (short time). | 12/20/2012, 7:00 PM                     |
 | "G"              | General date/time pattern (long time).  | 12/20/2012, 7:00:00 PM                  |
 | "M", "m"         | Month/day pattern.                      | December 20                             |
+| "O", "o"         | ISO 8601 pattern.                       | 2012-12-20T18:00:00.000Z                |
+| "R", "r"         | RFC 1123 pattern.                       | Thu, 20 Dec 2012 18:00:00 GMT           |
 | "t"              | Short time pattern.                     | 7:00 PM                                 |
 | "T"              | Long time pattern.                      | 7:00:00 PM                              |
 | "Y", "y"         | Year month pattern.                     | December 2012                           |
