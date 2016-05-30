@@ -70,6 +70,31 @@ i18nConfig({
 console.log(i18n`Hello ${name}, the date is ${new Date(2012, 11, 20, 19, 0, 0)}:t.`)
 // Hello Steffen, the date is 12/20/2012, 19:00:00.
 ```
+#### Standard format strings
+
+```
+const date = new Date(2012, 11, 20, 19, 0, 0);
+
+i18n`The date is ${date}:t(D).`
+
+// The date is Thursday, December 20, 2012.
+```
+
+The following standard format strings can be applied to a template expression of type [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+
+
+| Format specifier | Description                             | Examples                                |
+|------------------|-----------------------------------------|-----------------------------------------|
+| "d"              | Short date pattern.                     | 12/20/2012                              |
+| "D"              | Long date pattern.                      | Thursday, December 20, 2012             |
+| "f"              | Full date/time pattern (short time).    | Thursday, December 20, 2012, 7:00 PM    |
+| "F"              | Full date/time pattern (long time).     | Thursday, December 20, 2012, 7:00:00 PM |
+| "g"              | General date/time pattern (short time). | 12/20/2012, 7:00 PM                     |
+| "G"              | General date/time pattern (long time).  | 12/20/2012, 7:00:00 PM                  |
+| "M", "m"         | Month/day pattern.                      | December 20                             |
+| "t"              | Short time pattern.                     | 7:00 PM                                 |
+| "T"              | Long time pattern.                      | 7:00:00 PM                              |
+| "Y", "y"         | Year month pattern.                     | December 2012                           |
 
 ### Percentage formatting
 ```js       

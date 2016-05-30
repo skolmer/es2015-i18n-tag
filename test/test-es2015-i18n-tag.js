@@ -5,7 +5,7 @@ describe('es2015-i18n-tag', () => {
     it(`should not translate`, () => {
         const name = 'Steffen'
         const amount = 1250.33
-        
+
         i18nConfig({
             locales: 'en-US',
             number: {
@@ -38,15 +38,15 @@ describe('es2015-i18n-tag', () => {
         const expected = "Hallo Steffen, Sie haben € 1,250.33 auf Ihrem Bankkonto."
         assert.equal(actual, expected);
     })
-    
+
     it(`should have 12H date`, () => {
         const name = 'Steffen'
         const date = new Date(2012, 11, 20, 19, 0, 0);
 
         i18nConfig({
             locales: 'de-DE',
-            date: { 
-                hour12: false 
+            date: {
+                hour12: false
             }
         })
 
@@ -54,11 +54,11 @@ describe('es2015-i18n-tag', () => {
 
         let expected = "Hello Steffen, the date is 2012-12-20 19:00:00."
         assert.equal(actual, expected);
-        
+
         i18nConfig({
             locales: 'de-DE',
-            date: { 
-                hour12: true 
+            date: {
+                hour12: true
             }
         })
 
@@ -67,11 +67,11 @@ describe('es2015-i18n-tag', () => {
         expected = "Hello Steffen, the date is 2012-12-20 7:00:00 PM."
         assert.equal(actual, expected);
     })
-    
+
     it(`should format percentage`, () => {
         const name = 'Steffen'
         const percentage = 0.1;
-        
+
         i18nConfig({
             locales: 'en-US'
         })
@@ -81,20 +81,17 @@ describe('es2015-i18n-tag', () => {
         let expected = "Hello Steffen, the percentage is 10%."
         assert.equal(actual, expected);
     })
-    
+
     it(`should support nested templates`, () => {
-        const name = 'Steffen'
-        const percentage = 0.1;
-        
         i18nConfig({
             locales: 'en-US'
         })
-        
+
         let hello = [
             { name: "Steffen", percentage: 0.2 },
             { name: "Jack", percentage: 0.8 }
         ]
-        
+
         let actual = i18n`
         <users>
         ${hello.map((item) => i18n`
@@ -110,6 +107,144 @@ describe('es2015-i18n-tag', () => {
             <user name="Jack">80%</user>
         
         </users>`
+        assert.equal(actual, expected);
+    })
+
+    it(`should support standard date format string "d"`, () => {
+        const date = new Date(2012, 11, 20, 19, 0, 0);
+
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        let actual = i18n`The date is ${date}:t(d).`
+
+        let expected = "The date is 12/20/2012."
+        assert.equal(actual, expected);
+
+    })
+
+    it(`should support standard date format string "D"`, () => {
+        const date = new Date(2012, 11, 20, 19, 0, 0);
+
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        let actual = i18n`The date is ${date}:t(D).`
+
+        let expected = "The date is Thursday, December 20, 2012."
+        assert.equal(actual, expected);
+
+    })
+
+    it(`should support standard date format string "f"`, () => {
+        const date = new Date(2012, 11, 20, 19, 0, 0);
+
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        let actual = i18n`The date is ${date}:t(f).`
+
+        let expected = "The date is Thursday, December 20, 2012, 7:00 PM."
+        assert.equal(actual, expected);
+
+    })
+
+    it(`should support standard date format string "F"`, () => {
+        const date = new Date(2012, 11, 20, 19, 0, 0);
+
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        let actual = i18n`The date is ${date}:t(F).`
+
+        let expected = "The date is Thursday, December 20, 2012, 7:00:00 PM."
+        assert.equal(actual, expected);
+
+    })
+
+    it(`should support standard date format string "g"`, () => {
+        const date = new Date(2012, 11, 20, 19, 0, 0);
+
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        let actual = i18n`The date is ${date}:t(g).`
+
+        let expected = "The date is 12/20/2012, 7:00 PM."
+        assert.equal(actual, expected);
+
+    })
+
+    it(`should support standard date format string "G"`, () => {
+        const date = new Date(2012, 11, 20, 19, 0, 0);
+
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        let actual = i18n`The date is ${date}:t(G).`
+
+        let expected = "The date is 12/20/2012, 7:00:00 PM."
+        assert.equal(actual, expected);
+
+    })
+    
+    it(`should support standard date format string "M", "m"`, () => {
+        const date = new Date(2012, 11, 20, 19, 0, 0);
+
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        let actual = i18n`The date is ${date}:t(m).`
+
+        let expected = "The date is December 20."
+        assert.equal(actual, expected);
+    })
+    
+    it(`should support standard date format string "t"`, () => {
+        const date = new Date(2012, 11, 20, 19, 0, 0);
+
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        let actual = i18n`The date is ${date}:t(t).`
+
+        let expected = "The date is 7:00 PM."
+        assert.equal(actual, expected);
+
+    })
+    
+    it(`should support standard date format string "T"`, () => {
+        const date = new Date(2012, 11, 20, 19, 0, 0);
+
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        let actual = i18n`The date is ${date}:t(T).`
+
+        let expected = "The date is 7:00:00 PM."
+        assert.equal(actual, expected);
+
+    })
+    
+    it(`should support standard date format string "Y", "y"`, () => {
+        const date = new Date(2012, 11, 20, 19, 0, 0);
+
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        let actual = i18n`The date is ${date}:t(y).`
+
+        let expected = "The date is December 2012."
         assert.equal(actual, expected);
     })
 })
