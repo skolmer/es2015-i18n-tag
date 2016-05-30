@@ -72,7 +72,7 @@ console.log(i18n`Hello ${name}, the date is ${new Date(2012, 11, 20, 19, 0, 0)}:
 ```
 #### Standard format strings
 
-```
+```js
 const date = new Date(2012, 11, 20, 19, 0, 0);
 
 i18n`The date is ${date}:t(D).`
