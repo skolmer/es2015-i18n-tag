@@ -9,6 +9,12 @@
 * Translate your JavaScript library at [buildtime](#build-time-translation)
 * Generate a [schema](#json-schema) of all i18n tagged template literals in your project for easy JSON based translations
 
+## Compatibility
+
+This library is using the ECMAScript Internationalization API. All modern browsers, except safari, have implemented this API. Safari Support can be added with Andy Earnshaw's excellent Intl.js polyfill
+* [Intl Browser Support](http://caniuse.com/#search=Intl)
+* [Intl Polyfill](https://github.com/andyearnshaw/Intl.js)
+
 ## Examples
 
 https://github.com/skolmer/i18n-tag-examples  (TODO)
