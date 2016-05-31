@@ -17,7 +17,8 @@ This library is using the ECMAScript Internationalization API. All modern browse
 
 ## Examples
 
-https://github.com/skolmer/i18n-tag-examples  (TODO)
+* [React/webpack](https://github.com/skolmer/i18n-tag-examples/tree/master/ReactJS)
+* [jQuery/gulp](https://github.com/skolmer/i18n-tag-examples/tree/master/Simple)
 
 ## Installation
 ```sh
