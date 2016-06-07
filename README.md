@@ -44,12 +44,10 @@ i18nConfig({
         "Hello ${0}, you have ${1} in your bank account.": "Hallo ${0}, Sie haben ${1} auf Ihrem Bankkonto."
     },
     number: {      
-        [...options]
-        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat#Parameters
+        [...options] // Intl NumberFormat options as described here: https://goo.gl/pDwbG2
     },
     date: {
-        [...options]
-        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat#Parameters
+        [...options] // Intl DateTimeFormat options as described here: https://goo.gl/lslekB
     }
 })
 
