@@ -17,6 +17,7 @@ This library is using the ECMAScript Internationalization API. All modern browse
 
 ## Examples
 
+* [JS Bin Playground](https://jsbin.com/rojilu/edit?js,output)
 * [React/webpack](https://github.com/skolmer/i18n-tag-examples/tree/master/ReactJS)
 * [jQuery/gulp](https://github.com/skolmer/i18n-tag-examples/tree/master/Simple)
 
