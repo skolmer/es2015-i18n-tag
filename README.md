@@ -1,3 +1,5 @@
+![](https://travis-ci.org/skolmer/es2015-i18n-tag.svg?branch=master)
+
 # es2015-i18n-tag
 ![](images/es2015-i18n-tag-icon-big.jpg)
 
