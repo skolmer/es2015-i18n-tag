@@ -1,5 +1,21 @@
 import assert from 'assert';
+import Intl from 'intl';
+import areIntlLocalesSupported from 'intl-locales-supported';
 import i18n, { i18nConfig }  from '../lib';
+
+if (global.Intl) {
+    // Determine if the built-in `Intl` has the locale data we need. 
+    if (!areIntlLocalesSupported(['en-US', 'de-DE'])) {
+        // `Intl` exists, but it doesn't have the data we need, so load the 
+        // polyfill and patch the constructors we need with the polyfill's. 
+        var IntlPolyfill    = Intl;
+        Intl.NumberFormat   = IntlPolyfill.NumberFormat;
+        Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
+    }
+} else {
+    // No `Intl`, so use and load the polyfill. 
+    global.Intl = Intl;
+}
 
 describe('es2015-i18n-tag', () => {
     it(`should not translate`, () => {
