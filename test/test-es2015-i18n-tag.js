@@ -1,21 +1,9 @@
 import assert from 'assert';
 import Intl from 'intl';
-import areIntlLocalesSupported from 'intl-locales-supported';
 import i18n, { i18nConfig }  from '../lib';
 
-if (global.Intl) {
-    // Determine if the built-in `Intl` has the locale data we need. 
-    if (!areIntlLocalesSupported(['en-US', 'de-DE'])) {
-        // `Intl` exists, but it doesn't have the data we need, so load the 
-        // polyfill and patch the constructors we need with the polyfill's. 
-        var IntlPolyfill    = Intl;
-        Intl.NumberFormat   = IntlPolyfill.NumberFormat;
-        Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
-    }
-} else {
-    // No `Intl`, so use and load the polyfill. 
-    global.Intl = Intl;
-}
+Intl.__applyLocaleSensitivePrototypes();
+global.Intl = Intl;
 
 describe('es2015-i18n-tag', () => {
     it(`should not translate`, () => {
@@ -51,38 +39,7 @@ describe('es2015-i18n-tag', () => {
 
         const actual = i18n`Hello ${name}, you have ${amount}:c in your bank account.`
 
-        const expected = "Hallo Steffen, Sie haben € 1,250.33 auf Ihrem Bankkonto."
-        assert.equal(actual, expected);
-    })
-
-    it(`should have 12H date`, () => {
-        const name = 'Steffen'
-        const date = new Date('Thu, 20 Dec 2012 18:00:00 GMT');
-
-        i18nConfig({
-            locales: 'de-DE',
-            date: {
-                hour12: false,
-                timeZone: 'GMT'
-            }
-        })
-
-        let actual = i18n`Hello ${name}, the date is ${date}:t.`
-
-        let expected = "Hello Steffen, the date is 2012-12-20 18:00:00."
-        assert.equal(actual, expected);
-
-        i18nConfig({
-            locales: 'de-DE',
-            date: {
-                hour12: true,
-                timeZone: 'GMT'
-            }
-        })
-
-        actual = i18n`Hello ${name}, the date is ${date}:t.`
-
-        expected = "Hello Steffen, the date is 2012-12-20 6:00:00 PM."
+        const expected = "Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto."
         assert.equal(actual, expected);
     })
 
@@ -129,12 +86,12 @@ describe('es2015-i18n-tag', () => {
     })
 
     it(`should support standard date format string "d"`, () => {
-        const date = new Date('Thu, 20 Dec 2012 18:00:00 GMT');
+        const date = new Date('Thu, 20 Dec 2012 18:00:00 UTC');
 
         i18nConfig({
             locales: 'en-US',
             date: {
-                timeZone: 'GMT'
+                timeZone: 'UTC'
             }
         })
 
@@ -146,12 +103,12 @@ describe('es2015-i18n-tag', () => {
     })
 
     it(`should support standard date format string "D"`, () => {
-        const date = new Date('Thu, 20 Dec 2012 18:00:00 GMT');
+        const date = new Date('Thu, 20 Dec 2012 18:00:00 UTC');
 
         i18nConfig({
             locales: 'en-US',
             date: {
-                timeZone: 'GMT'
+                timeZone: 'UTC'
             }
         })
 
@@ -163,46 +120,46 @@ describe('es2015-i18n-tag', () => {
     })
 
     it(`should support standard date format string "f"`, () => {
-        const date = new Date('Thu, 20 Dec 2012 18:00:00 GMT');
+        const date = new Date('Thu, 20 Dec 2012 18:00:00 UTC');
 
         i18nConfig({
             locales: 'en-US',
             date: {
-                timeZone: 'GMT'
+                timeZone: 'UTC'
             }
         })
 
         let actual = i18n`The date is ${date}:t(f).`
 
-        let expected = "The date is Thursday, December 20, 2012, 6:00 PM."
+        let expected = "The date is Thursday, December 20, 2012 at 6:00 PM."
         assert.equal(actual, expected);
 
     })
 
     it(`should support standard date format string "F"`, () => {
-        const date = new Date('Thu, 20 Dec 2012 18:00:00 GMT');
+        const date = new Date('Thu, 20 Dec 2012 18:00:00 UTC');
 
         i18nConfig({
             locales: 'en-US',
             date: {
-                timeZone: 'GMT'
+                timeZone: 'UTC'
             }
         })
 
         let actual = i18n`The date is ${date}:t(F).`
 
-        let expected = "The date is Thursday, December 20, 2012, 6:00:00 PM."
+        let expected = "The date is Thursday, December 20, 2012 at 6:00:00 PM."
         assert.equal(actual, expected);
 
     })
 
     it(`should support standard date format string "g"`, () => {
-        const date = new Date('Thu, 20 Dec 2012 18:00:00 GMT');
+        const date = new Date('Thu, 20 Dec 2012 18:00:00 UTC');
 
         i18nConfig({
             locales: 'en-US',
             date: {
-                timeZone: 'GMT'
+                timeZone: 'UTC'
             }
         })
 
@@ -214,12 +171,12 @@ describe('es2015-i18n-tag', () => {
     })
 
     it(`should support standard date format string "G"`, () => {
-        const date = new Date('Thu, 20 Dec 2012 18:00:00 GMT');
+        const date = new Date('Thu, 20 Dec 2012 18:00:00 UTC');
 
         i18nConfig({
             locales: 'en-US',
             date: {
-                timeZone: 'GMT'
+                timeZone: 'UTC'
             }
         })
 
@@ -231,12 +188,12 @@ describe('es2015-i18n-tag', () => {
     })
     
     it(`should support standard date format string "M", "m"`, () => {
-        const date = new Date('Thu, 20 Dec 2012 18:00:00 GMT');
+        const date = new Date('Thu, 20 Dec 2012 18:00:00 UTC');
 
         i18nConfig({
             locales: 'en-US',
             date: {
-                timeZone: 'GMT'
+                timeZone: 'UTC'
             }
         })
 
@@ -247,12 +204,12 @@ describe('es2015-i18n-tag', () => {
     })
 
     it(`should support standard date format string "O", "o"`, () => {
-        const date = new Date('Thu, 20 Dec 2012 18:00:00 GMT');
+        const date = new Date('Thu, 20 Dec 2012 18:00:00 UTC');
 
         i18nConfig({
             locales: 'en-US',
             date: {
-                timeZone: 'GMT'
+                timeZone: 'UTC'
             }
         })
 
@@ -263,12 +220,12 @@ describe('es2015-i18n-tag', () => {
     })
 
     it(`should support standard date format string "R", "r"`, () => {
-        const date = new Date('Thu, 20 Dec 2012 18:00:00 GMT');
+        const date = new Date('Thu, 20 Dec 2012 18:00:00 UTC');
 
         i18nConfig({
             locales: 'en-US',
             date: {
-                timeZone: 'GMT'
+                timeZone: 'UTC'
             }
         })
 
@@ -279,12 +236,12 @@ describe('es2015-i18n-tag', () => {
     })
     
     it(`should support standard date format string "t"`, () => {
-        const date = new Date('Thu, 20 Dec 2012 18:00:00 GMT');
+        const date = new Date('Thu, 20 Dec 2012 18:00:00 UTC');
 
         i18nConfig({
             locales: 'en-US',
             date: {
-                timeZone: 'GMT'
+                timeZone: 'UTC'
             }
         })
 
@@ -296,12 +253,12 @@ describe('es2015-i18n-tag', () => {
     })
     
     it(`should support standard date format string "T"`, () => {
-        const date = new Date('Thu, 20 Dec 2012 18:00:00 GMT');
+        const date = new Date('Thu, 20 Dec 2012 18:00:00 UTC');
 
         i18nConfig({
             locales: 'en-US',
             date: {
-                timeZone: 'GMT'
+                timeZone: 'UTC'
             }
         })
 
@@ -313,12 +270,12 @@ describe('es2015-i18n-tag', () => {
     })
     
     it(`should support standard date format string "Y", "y"`, () => {
-        const date = new Date('Thu, 20 Dec 2012 18:00:00 GMT');
+        const date = new Date('Thu, 20 Dec 2012 18:00:00 UTC');
 
         i18nConfig({
             locales: 'en-US',
             date: {
-                timeZone: 'GMT'
+                timeZone: 'UTC'
             }
         })
 
