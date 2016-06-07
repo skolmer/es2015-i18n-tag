@@ -27,6 +27,12 @@ $ npm install es2015-i18n-tag --save
 
 ## Usage
 
+This library is avaliable as CommonJS module and as UMD module that is consumable in CommonJS, AMD and with script tags.
+
+### UMD module on npmcdn.com
+
+`https://npmcdn.com/es2015-i18n-tag/dist/lib/index.umd.min.js`
+
 ### Import and Configuration
 ```js   
 import i18n, { i18nConfig }  from 'es2015-i18n-tag'
@@ -63,6 +69,9 @@ i18nConfig({
 
 console.log(i18n`Hello ${ name }, you have ${ amount }:c in your bank account.`)
 // Hallo Steffen, Sie haben € 1,250.33 auf Ihrem Bankkonto.
+
+console.log(i18n`Hello ${ name }, you have ${ amount }:c(USD) in your bank account.`)
+// Hallo Steffen, Sie haben US$ 1,250.33 auf Ihrem Bankkonto.
 ```
 
 ### Date formatting

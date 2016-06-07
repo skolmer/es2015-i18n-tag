@@ -12,5 +12,8 @@
   "parser": "babel-eslint",
   "extends": [
     "eslint:recommended"
+  ],
+  "ignore": [
+    "dist"
   ]
 }
