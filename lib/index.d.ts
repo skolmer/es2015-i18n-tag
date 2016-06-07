@@ -109,7 +109,7 @@ type Config = {
     /**
      * Optional. A string with a BCP 47 language tag, or an array of such strings. For the general form and interpretation of the locales argument, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation
      */
-    locales?: string, 
+    locales?: string | [string], 
     /**
      * Optional. An object that contains translations as key-value-pairs
      */
