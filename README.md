@@ -162,6 +162,10 @@ console.log(i18n`
 #### Note
 For easy translation of multiline template literals use one of the following [json schema generators](#json-schema)
 
+#### Pluralization
+
+You can use nested templates for pluralization as shown in this [example](https://jsbin.com/zubugedeja/edit?js,output)
+
 ## Tools
 
 ### Build time translation
