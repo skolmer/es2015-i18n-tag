@@ -137,6 +137,10 @@ console.log(i18n`Hello ${name}, the number is ${12345.678}:n(2).`)
 // Hello Steffen, the number is 12.345,67.
 ```
 
+### Pluralization
+
+You can use [nested templates](#nested-templates) for pluralization as shown in this [example](https://jsbin.com/zubugedeja/edit?js,output)
+
 ### Nested templates
 ```js
 let hello = [
@@ -161,10 +165,6 @@ console.log(i18n`
 ```
 #### Note
 For easy translation of multiline template literals use one of the following [json schema generators](#json-schema)
-
-#### Pluralization
-
-You can use nested templates for pluralization as shown in this [example](https://jsbin.com/zubugedeja/edit?js,output)
 
 ## Tools
 
