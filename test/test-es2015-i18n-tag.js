@@ -284,5 +284,21 @@ describe('es2015-i18n-tag', () => {
         let expected = "The date is December 2012."
         assert.equal(actual, expected);
     })
+
+    it('should support custom standard formatters', () => {
+        i18nConfig({
+            locales: 'de-DE',
+            standardFormatters: {
+                number: {
+                    x: (locales, numberOptions, value) => value.toLocaleString(locales, Object.assign({}, numberOptions, { style: 'percent' }))
+                }
+            }
+        })
+
+        let actual = i18n`${0.77}:n(x)`
+
+        let expected = '77 %'
+        assert.equal(actual, expected);
+    })
 })
 
