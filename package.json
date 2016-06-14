@@ -1,7 +1,7 @@
 {
   "name": "es2015-i18n-tag",
   "description": "ES2015 template literal tag for i18n and l10n translation and localization",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "author": "Steffen Kolmer <steffen@kolmer.net>",
   "icon": "images/es2015-i18n-tag-icon.png",
   "license": "MIT",
