@@ -297,7 +297,7 @@ describe('es2015-i18n-tag', () => {
 
         let actual = i18n`${0.77}:n(x)`
 
-        let expected = '77 %'
+        let expected = '77 %'
         assert.equal(actual, expected);
     })
 })
