@@ -74,14 +74,7 @@ describe('es2015-i18n-tag', () => {
         `).join('')}
         </users>`
 
-        let expected = `
-        <users>
-        
-            <user name="Steffen">20%</user>
-        
-            <user name="Jack">80%</user>
-        
-        </users>`
+        let expected = `\n        <users>\n        \n            <user name="Steffen">20%</user>\n        \n            <user name="Jack">80%</user>\n        \n        </users>`
         assert.equal(actual, expected);
     })
 
