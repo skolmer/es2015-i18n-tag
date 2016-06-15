@@ -167,6 +167,22 @@ console.log(i18n`
 #### Note
 For easy translation of multiline template literals use one of the following [json schema generators](#json-schema)
 
+### Standard format strings
+
+You can add custom standard formatters similar to the predefined DateTime formatters. Valid types are date, number and string.
+```js
+i18nConfig({
+    standardFormatters: {
+        number: {
+            x: (locales, numberOptions, value) => value.toLocaleString(locales, Object.assign({}, numberOptions, { style: 'percent' }))
+        }
+    }
+})
+
+console.log(i18n`${0.77}:n(x)`)
+// 77%
+```
+
 ## Tools
 
 ### Build time translation
