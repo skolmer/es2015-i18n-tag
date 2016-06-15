@@ -109,7 +109,7 @@ type Config = {
     /**
      * Optional. A string with a BCP 47 language tag, or an array of such strings. For the general form and interpretation of the locales argument, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation
      */
-    locales?: string | [string], 
+    locales?: string | string[], 
     /**
      * Optional. An object that contains translations as key-value-pairs
      */
@@ -121,7 +121,22 @@ type Config = {
     /**
      * Optional. For more information about DateTimeFormat options, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat
      */
-    date?: DateConfig}
+    date?: DateConfig,
+    /**
+     * Optional. Can be used to define custom standard formatters for date, number and string suffix functions. `${ new Date() }:t([formatter])`
+     */
+    standardFormatters: {
+        date: {
+            [x : string] : (locales : string | string[], numberOptions : NumberConfig, value : Date) => string
+        }
+        number: {
+            [x : string] : (locales : string | string[], numberOptions : NumberConfig, value : number) => string
+        }
+        string: {
+            [x : string] : (locales : string | string[], numberOptions : NumberConfig, value : string) => string
+        }
+    }
+}
 
 /**
  * Handles i18n tagged template literals configuration
