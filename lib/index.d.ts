@@ -115,6 +115,10 @@ type Config = {
      */
     translations?: { }, 
     /**
+     * Optional. The current translation group
+     */
+    group?: string,
+    /**
      * Optional. For more information about NumberFormat options, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat
      */
     number?: NumberConfig, 
