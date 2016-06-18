@@ -2,14 +2,41 @@
   "name": "es2015-i18n-tag",
   "description": "ES2015 template literal tag for i18n and l10n translation and localization",
   "version": "0.8.2",
-  "author": "Steffen Kolmer <steffen@kolmer.net>",
+  "author": {
+    "email": "steffen@kolmer.net",
+    "name": "Steffen Kolmer",
+    "url": "http://kolmer.net"
+  },
+  "keywords": [
+    "javascript",
+    "JS",
+    "ES6",
+    "ES2015",
+    "Intl",
+    "l10n",
+    "i18n",
+    "translation",
+    "localization",
+    "internationalization",
+    "template literal",
+    "tagged template",
+    "template tag",
+    "es2015-i18n-tag",
+    "i18n-tag-schema",
+    "vscode-i18n-tag-schema",
+    "babel-plugin-i18n-tag-translate"
+  ],
   "icon": "images/es2015-i18n-tag-icon.png",
   "license": "MIT",
+  "homepage": "https://github.com/skolmer/es2015-i18n-tag",
   "repository": {
     "type": "git",
     "url": "git://github.com/skolmer/es2015-i18n-tag.git"
   },
-  "bugs": "http://github.com/skolmer/es2015-i18n-tag/issues",
+  "bugs": {
+    "url": "https://github.com/skolmer/es2015-i18n-tag/issues",
+    "email": "steffen@kolmer.net"
+  },
   "engines": {
     "node": ">= 4.0.0"
   },
