@@ -150,6 +150,14 @@ type Config = {
 export function i18nConfig(config: Config) : void
 
 /**
+ * i18n translation group class decorator
+ * 
+ * @param {group} the name of the translation group.
+ * @param {target} the target class
+ */
+export function i18nGroup(group: string): (target: any): any 
+
+/**
  * Transforms i18n tagged template literals
  * Use as template literal tag: i18n\`my ${index} translation\`
  * 
