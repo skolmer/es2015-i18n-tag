@@ -226,6 +226,22 @@ You can use [babel-plugin-i18n-tag-translate](https://github.com/skolmer/babel-p
 i18n(__translationGroup)`Welcome` // Select translation from module group e.g. "components/App.js"
 i18n('components/Clock.js')`Time` // Select translation from a custom group
 ```
+###### translation group class decorator
+```js
+import { i18nGroup } from 'es2015-i18n-tag'
+
+/* class decorator syntax */
+@i18nGroup(__translationGroup)
+class Clock extends Component {
+    tick() {
+        return this.i18n`Time: ${new Date()}:t(T)`
+    }
+}
+export default Clock
+
+/* default syntax */
+export default i18nGroup(__translationGroup)(Clock)
+```
 
 ## Tools
 
