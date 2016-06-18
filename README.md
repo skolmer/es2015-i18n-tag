@@ -182,6 +182,50 @@ i18nConfig({
 console.log(i18n`${0.77}:n(x)`)
 // 77%
 ```
+### Translation Groups
+
+Translation groups can be very useful to group translations by context. It can also be useful to avoid key duplicates in larger projects.
+You can use [babel-plugin-i18n-tag-translate](https://github.com/skolmer/babel-plugin-i18n-tag-translate) to inject the relative path of your module as group name. Babel will inject `const __translationGroup = 'relative/path/to/module.ext'` into each module
+
+#### Babel generated file module groups
+
+[Example](https://github.com/skolmer/i18n-tag-examples/tree/master/ReactJS)
+
+##### .babelrc
+```json
+{
+  "plugins": [
+    ["i18n-tag-translate", {
+      "groupDir": "./src"
+    }]
+  ]
+}
+```
+##### Project Structure
+```
+.
+├── src
+|   └── components
+|       ├── App.js
+|       └── Clock.js
+├── .babelrc
+```
+##### translations.de.json
+```json
+{
+    "components/App.js": {
+        "Welcome": "Willkommen"
+    },
+    "components/Clock.js": {
+        "Time": "Zeit"
+    }
+}
+```
+##### App.js
+```js
+i18n(__translationGroup)`Welcome` // Select translation from module group e.g. "components/App.js"
+i18n('components/Clock.js')`Time` // Select translation from a custom group
+```
 
 ## Tools
 
