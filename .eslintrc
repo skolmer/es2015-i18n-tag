@@ -1,19 +1,25 @@
 {
-  "parserOptions": {
-    "sourceType": "module",
-    "ecmaVersion": 6
-  },
-  "env": {
-    "es6": true,
-    "browser": true,
-    "node": true,
-    "mocha": true
-  },
-  "parser": "babel-eslint",
-  "extends": [
-    "eslint:recommended"
-  ],
-  "ignore": [
-    "dist"
-  ]
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 6
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true,
+        "mocha": true
+    },
+    "parser": "babel-eslint",
+    "extends": [
+        "eslint:recommended"
+    ],
+    "ignore": [
+        "dist"
+    ],
+    "rules": {
+        "semi": [
+            2,
+            "never"
+        ]
+    }
 }
