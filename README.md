@@ -248,8 +248,6 @@ class Clock {
 export default Clock
 ```
 
-> **NOTE:** Experimental ES2016 syntax is currently not supported by i18n-tag-schema JSON Schema Generator
-
 ## Tools
 
 ### Build time translation
