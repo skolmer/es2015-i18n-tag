@@ -51,9 +51,9 @@ describe('es2015-i18n-tag', () => {
             locales: 'en-US'
         })
 
-        let actual = i18n`Hello ${name}, the percentage is ${percentage}:p.`
+        const actual = i18n`Hello ${name}, the percentage is ${percentage}:p.`
 
-        let expected = "Hello Steffen, the percentage is 10%."
+        const expected = "Hello Steffen, the percentage is 10%."
         assert.equal(actual, expected)
     })
 
@@ -62,19 +62,19 @@ describe('es2015-i18n-tag', () => {
             locales: 'en-US'
         })
 
-        let hello = [
+        const hello = [
             { name: "Steffen", percentage: 0.2 },
             { name: "Jack", percentage: 0.8 }
         ]
 
-        let actual = i18n`
+        const actual = i18n`
         <users>
         ${hello.map((item) => i18n`
             <user name="${item.name}">${item.percentage}:p</user>
         `).join('')}
         </users>`
 
-        let expected = `\n        <users>\n        \n            <user name="Steffen">20%</user>\n        \n            <user name="Jack">80%</user>\n        \n        </users>`
+        const expected = `\n        <users>\n        \n            <user name="Steffen">20%</user>\n        \n            <user name="Jack">80%</user>\n        \n        </users>`
         assert.equal(actual, expected)
     })
 
@@ -88,9 +88,9 @@ describe('es2015-i18n-tag', () => {
             }
         })
 
-        let actual = i18n`The date is ${date}:t(d).`
+        const actual = i18n`The date is ${date}:t(d).`
 
-        let expected = "The date is 12/20/2012."
+        const expected = "The date is 12/20/2012."
         assert.equal(actual, expected)
 
     })
@@ -105,9 +105,9 @@ describe('es2015-i18n-tag', () => {
             }
         })
 
-        let actual = i18n`The date is ${date}:t(D).`
+        const actual = i18n`The date is ${date}:t(D).`
 
-        let expected = "The date is Thursday, December 20, 2012."
+        const expected = "The date is Thursday, December 20, 2012."
         assert.equal(actual, expected)
 
     })
@@ -122,9 +122,9 @@ describe('es2015-i18n-tag', () => {
             }
         })
 
-        let actual = i18n`The date is ${date}:t(f).`
+        const actual = i18n`The date is ${date}:t(f).`
 
-        let expected = "The date is Thursday, December 20, 2012 at 6:00 PM."
+        const expected = "The date is Thursday, December 20, 2012 at 6:00 PM."
         assert.equal(actual, expected)
 
     })
@@ -139,9 +139,9 @@ describe('es2015-i18n-tag', () => {
             }
         })
 
-        let actual = i18n`The date is ${date}:t(F).`
+        const actual = i18n`The date is ${date}:t(F).`
 
-        let expected = "The date is Thursday, December 20, 2012 at 6:00:00 PM."
+        const expected = "The date is Thursday, December 20, 2012 at 6:00:00 PM."
         assert.equal(actual, expected)
 
     })
@@ -156,9 +156,9 @@ describe('es2015-i18n-tag', () => {
             }
         })
 
-        let actual = i18n`The date is ${date}:t(g).`
+        const actual = i18n`The date is ${date}:t(g).`
 
-        let expected = "The date is 12/20/2012, 6:00 PM."
+        const expected = "The date is 12/20/2012, 6:00 PM."
         assert.equal(actual, expected)
 
     })
@@ -173,9 +173,9 @@ describe('es2015-i18n-tag', () => {
             }
         })
 
-        let actual = i18n`The date is ${date}:t(G).`
+        const actual = i18n`The date is ${date}:t(G).`
 
-        let expected = "The date is 12/20/2012, 6:00:00 PM."
+        const expected = "The date is 12/20/2012, 6:00:00 PM."
         assert.equal(actual, expected)
 
     })
@@ -190,9 +190,9 @@ describe('es2015-i18n-tag', () => {
             }
         })
 
-        let actual = i18n`The date is ${date}:t(m).`
+        const actual = i18n`The date is ${date}:t(m).`
 
-        let expected = "The date is December 20."
+        const expected = "The date is December 20."
         assert.equal(actual, expected)
     })
 
@@ -206,9 +206,9 @@ describe('es2015-i18n-tag', () => {
             }
         })
 
-        let actual = i18n`The date is ${date}:t(o).`
+        const actual = i18n`The date is ${date}:t(o).`
 
-        let expected = "The date is 2012-12-20T18:00:00.000Z."
+        const expected = "The date is 2012-12-20T18:00:00.000Z."
         assert.equal(actual, expected)
     })
 
@@ -222,9 +222,9 @@ describe('es2015-i18n-tag', () => {
             }
         })
 
-        let actual = i18n`The date is ${date}:t(r).`
+        const actual = i18n`The date is ${date}:t(r).`
 
-        let expected = "The date is Thu, 20 Dec 2012 18:00:00 GMT."
+        const expected = "The date is Thu, 20 Dec 2012 18:00:00 GMT."
         assert.equal(actual, expected)
     })
     
@@ -238,9 +238,9 @@ describe('es2015-i18n-tag', () => {
             }
         })
 
-        let actual = i18n`The date is ${date}:t(t).`
+        const actual = i18n`The date is ${date}:t(t).`
 
-        let expected = "The date is 6:00 PM."
+        const expected = "The date is 6:00 PM."
         assert.equal(actual, expected)
 
     })
@@ -255,9 +255,9 @@ describe('es2015-i18n-tag', () => {
             }
         })
 
-        let actual = i18n`The date is ${date}:t(T).`
+        const actual = i18n`The date is ${date}:t(T).`
 
-        let expected = "The date is 6:00:00 PM."
+        const expected = "The date is 6:00:00 PM."
         assert.equal(actual, expected)
 
     })
@@ -272,9 +272,9 @@ describe('es2015-i18n-tag', () => {
             }
         })
 
-        let actual = i18n`The date is ${date}:t(y).`
+        const actual = i18n`The date is ${date}:t(y).`
 
-        let expected = "The date is December 2012."
+        const expected = "The date is December 2012."
         assert.equal(actual, expected)
     })
 
@@ -296,9 +296,9 @@ describe('es2015-i18n-tag', () => {
             }
         })
 
-        let actual = i18n`${0.77}:n(x) ${date}:t(x) ${'test123'}:s(z)`
+        const actual = i18n`${0.77}:n(x) ${date}:t(x) ${'test123'}:s(z)`
 
-        let expected = '77 % test test321'
+        const expected = '77 % test test321'
         assert.equal(actual, expected)
     })
 })
