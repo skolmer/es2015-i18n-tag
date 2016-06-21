@@ -11,7 +11,9 @@
     },
     "parser": "babel-eslint",
     "extends": [
-        "eslint:recommended"
+        "eslint:recommended",        
+        "plugin:import/errors",
+        "plugin:import/warnings"
     ],
     "ignore": [
         "dist"
@@ -21,8 +23,26 @@
             2,
             "never"
         ],
+        "no-const-assign": 2,
+        "quotes": [
+            2,
+            "single"
+        ],
+        "strict": [
+            2,
+            "never"
+        ],
         "no-var": 2,
+        "prefer-spread": 2,
         "prefer-const": 2,
-        "no-const-assign": 2
-    }
+        "prefer-template": 2,
+        "babel/generator-star-spacing": 1,
+        "babel/new-cap": 1,
+        "babel/object-shorthand": 1,
+        "babel/arrow-parens": 1
+    },
+    "plugins": [
+        "babel",
+        "import"
+    ]
 }
