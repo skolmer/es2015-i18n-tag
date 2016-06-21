@@ -1,5 +1,5 @@
 # i18n Tagged Template Literals [![Build Status](https://img.shields.io/travis/skolmer/es2015-i18n-tag/master.svg?style=flat)](https://travis-ci.org/skolmer/es2015-i18n-tag) [![npm version](https://img.shields.io/npm/v/es2015-i18n-tag.svg?style=flat)](https://www.npmjs.com/package/es2015-i18n-tag)
-![](images/es2015-i18n-tag-icon-big.jpg)
+![i18n Tagged Template Literals](images/es2015-i18n-tag-icon-big.jpg)
 
 [ES2015 template literal tag](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals) for i18n and l10n translation and localization using [Intl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)
 
