@@ -301,5 +301,57 @@ describe('es2015-i18n-tag', () => {
         const expected = '77 % test test321'
         assert.equal(actual, expected)
     })
+
+    it(`should support translation groups`, () => {
+        const name = 'Steffen'
+        const amount = 1250.33
+
+        i18nConfig({
+            locales: 'de-DE',
+            translations: {
+                testgroup: {
+                    "Hello ${0}, you have ${1} in your bank account.": "Hallo ${0}, Sie haben ${1} auf Ihrem Bankkonto."
+                }    
+            },
+            number: {
+                currency: 'EUR'
+            }
+        })
+
+        const actual = i18n('testgroup')`Hello ${name}, you have ${amount}:c in your bank account.`
+
+        const expected = "Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto."
+        assert.equal(actual, expected)
+    })
+
+    it(`should support translation group config`, () => {
+        const name = 'Steffen'
+        const amount = 1250.33
+
+        i18nConfig({
+            locales: 'de-DE',
+            group: 'dafaultgroup',
+            translations: {
+                testgroup: {
+                    "Hello ${0}, you have ${1} in your bank account.": "Hallo ${0}, Sie haben ${1} auf Ihrem Bankkonto."
+                },
+                dafaultgroup: {
+                    "Hello ${0}, you have ${1} in your bank account.": "Hallo ${0}"
+                }     
+            },
+            number: {
+                currency: 'EUR'
+            }
+        })
+
+        const actual = i18n('testgroup')`Hello ${name}, you have ${amount}:c in your bank account.`
+
+        const expected = "Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto."
+        assert.equal(actual, expected)
+
+        const actualDefault = i18n`Hello ${name}, you have ${amount}:c in your bank account.`
+        const expectedDefault = "Hallo Steffen"
+        assert.equal(actualDefault, expectedDefault)
+    })
 })
 
