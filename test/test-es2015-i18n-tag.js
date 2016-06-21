@@ -1,6 +1,6 @@
 import assert from 'assert';
 import Intl from 'intl';
-import i18n, { i18nConfig, i18nGroup }  from '../lib';
+import i18n, { i18nConfig }  from '../lib';
 
 Intl.__applyLocaleSensitivePrototypes();
 global.Intl = Intl;
