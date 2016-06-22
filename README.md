@@ -1,5 +1,5 @@
 # i18n Tagged Template Literals [![Build Status](https://img.shields.io/travis/skolmer/es2015-i18n-tag/master.svg?style=flat)](https://travis-ci.org/skolmer/es2015-i18n-tag) [![npm version](https://img.shields.io/npm/v/es2015-i18n-tag.svg?style=flat)](https://www.npmjs.com/package/es2015-i18n-tag)
-[![NPM](https://nodei.co/npm/es2015-i18n-tag.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/es2015-i18n-tag/)
+[![NPM](https://nodei.co/npm/es2015-i18n-tag.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/es2015-i18n-tag/)
 
 ![i18n Tagged Template Literals](images/es2015-i18n-tag-icon-big.jpg)
 
