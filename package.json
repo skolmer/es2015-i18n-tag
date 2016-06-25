@@ -28,7 +28,7 @@
   ],
   "icon": "images/es2015-i18n-tag-icon.png",
   "license": "MIT",
-  "homepage": "https://github.com/skolmer/es2015-i18n-tag",
+  "homepage": "http://i18n-tag.kolmer.net",
   "repository": {
     "type": "git",
     "url": "git://github.com/skolmer/es2015-i18n-tag.git"
