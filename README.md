@@ -5,7 +5,7 @@
 
 ## Overview
 
-This template literal tag adds support for i18n and l10n translation and localization to your JavaSript project.
+This template literal tag adds support for i18n and l10n translation and localization to your JavaScript project.
 
 * Very small footprint ![Common JS Module](https://badges.herokuapp.com/size/npm/es2015-i18n-tag/dist/lib/index.js?label=common%20js%20module) ![Minified + gzip](https://badges.herokuapp.com/size/npm/es2015-i18n-tag/dist/lib/index.umd.min.js?label=minified%20%2B%20gzip&gzip=true)
 * Powerful [ES2015 standard template literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals) syntax
