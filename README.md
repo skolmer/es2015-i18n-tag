@@ -20,7 +20,7 @@ It provides the following benefits:
 
 ## Compatibility
 
-This library is using the ECMAScript Internationalization API. All modern browsers, [except safari](https://www.safari-is-the-new-ie.com), have implemented this API. Safari Support can be added with Andy Earnshaw's excellent Intl.js polyfill.
+This library is using the ECMAScript Internationalization API. All modern browsers, [except safari](https://www.safari-is-the-new-ie.com), have implemented this API. Safari support can be added with Andy Earnshaw's excellent Intl.js polyfill.
 * [Intl Browser Support](http://caniuse.com/#search=Intl)
 * [Intl Polyfill](https://github.com/andyearnshaw/Intl.js)
 
