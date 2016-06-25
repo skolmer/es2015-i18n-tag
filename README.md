@@ -1,13 +1,19 @@
-# i18n Tagged Template Literals [![Build Status](https://img.shields.io/travis/skolmer/es2015-i18n-tag/master.svg?style=flat)](https://travis-ci.org/skolmer/es2015-i18n-tag) [![npm version](https://img.shields.io/npm/v/es2015-i18n-tag.svg?style=flat)](https://www.npmjs.com/package/es2015-i18n-tag) ![Common JS Module Size](https://badges.herokuapp.com/size/npm/es2015-i18n-tag/dist/lib/index.js)
+# i18n Tagged Template Literals [![Build Status](https://img.shields.io/travis/skolmer/es2015-i18n-tag/master.svg?style=flat)](https://travis-ci.org/skolmer/es2015-i18n-tag) [![npm version](https://img.shields.io/npm/v/es2015-i18n-tag.svg?style=flat)](https://www.npmjs.com/package/es2015-i18n-tag)
 [![NPM](https://nodei.co/npm/es2015-i18n-tag.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/es2015-i18n-tag/)
 
 ![i18n Tagged Template Literals](images/es2015-i18n-tag-icon-big.jpg)
 
-[ES2015 template literal tag](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals) for i18n and l10n translation and localization using [Intl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)
+## Overview
+
+This template literal tag adds support for i18n and l10n translation and localization to your JavaSript project.
+
+* Very small footprint ![Common JS Module](https://badges.herokuapp.com/size/npm/es2015-i18n-tag/dist/lib/index.js?label=common%20js%20module) ![Minified + gzip](https://badges.herokuapp.com/size/npm/es2015-i18n-tag/dist/lib/index.umd.min.js?label=minified%20%2B%20gzip&gzip=true)
+* Powerful [ES2015 standard template literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals) syntax
+* Internationalization based on [ECMA-402](http://www.ecma-international.org/ecma-402/2.0/) standard [Intl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) browser API
 
 ## Features
 
-* Translate and [internationalize](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) strings in your JavaScript project with [ES2015 standard](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals) tagged template literals
+* Translate and internationalize your JavaScript project
 * Translate your JavaScript library at [buildtime](#build-time-translation)
 * Generate a [schema](#json-schema) of all i18n tagged template literals in your project for easy JSON based translations
 
@@ -31,7 +37,7 @@ $ npm install es2015-i18n-tag --save
 ## Usage
 
 This library is avaliable as CommonJS module and as UMD module that is consumable in CommonJS, AMD and with script tags. 
-The UMD module is primarily for [online JS playgrounds](https://jsbin.com/rojilu/edit?html,js,output). It is highly recommenden to use es2015-i18n-tag as CommonJS module with babel and [webpack](https://github.com/skolmer/i18n-tag-examples/tree/master/ReactJS) or [browserify](https://github.com/skolmer/i18n-tag-examples/tree/master/Simple) or in a [Node app with Intl Polyfill](https://github.com/andyearnshaw/Intl.js#intljs-and-node).
+The UMD module is primarily for [online JS playgrounds](https://jsbin.com/rojilu/edit?html,js,output). It is highly recommended to use es2015-i18n-tag as CommonJS module with babel and [webpack](https://github.com/skolmer/i18n-tag-examples/tree/master/ReactJS) or [browserify](https://github.com/skolmer/i18n-tag-examples/tree/master/Simple) or in a [Node app with Intl Polyfill](https://github.com/andyearnshaw/Intl.js#intljs-and-node).
 
 ### UMD module on npmcdn.com
 
@@ -262,3 +268,10 @@ export default Clock
 ## Credits
 
 Thanks to [Jack Hsu](https://github.com/jaysoo) for his initial draft of an [i18n template literal](http://jaysoo.ca/2014/03/20/i18n-with-es6-template-strings/)
+
+## License
+
+Copyright (c) 2016 Steffen Kolmer
+
+This software is licensed under the MIT license.  See the `LICENSE` file
+accompanying this software for terms of use.
