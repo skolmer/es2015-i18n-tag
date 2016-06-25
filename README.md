@@ -6,6 +6,7 @@
 ## Overview
 
 This template literal tag adds support for i18n and l10n translation and localization to your JavaScript project.
+It provides the following benefits:
 
 * Very small footprint ![Common JS Module](https://badges.herokuapp.com/size/npm/es2015-i18n-tag/dist/lib/index.js?label=common%20js%20module) ![Minified + gzip](https://badges.herokuapp.com/size/npm/es2015-i18n-tag/dist/lib/index.umd.min.js?label=minified%20%2B%20gzip&gzip=true)
 * Powerful [ES2015 standard template literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals) syntax
@@ -19,7 +20,7 @@ This template literal tag adds support for i18n and l10n translation and localiz
 
 ## Compatibility
 
-This library is using the ECMAScript Internationalization API. All modern browsers, [except safari](https://www.safari-is-the-new-ie.com), have implemented this API. Safari Support can be added with Andy Earnshaw's excellent Intl.js polyfill
+This library is using the ECMAScript Internationalization API. All modern browsers, [except safari](https://www.safari-is-the-new-ie.com), have implemented this API. Safari Support can be added with Andy Earnshaw's excellent Intl.js polyfill.
 * [Intl Browser Support](http://caniuse.com/#search=Intl)
 * [Intl Polyfill](https://github.com/andyearnshaw/Intl.js)
 
@@ -104,23 +105,23 @@ i18n`The date is ${date}:t(D).`
 // The date is Thursday, December 20, 2012.
 ```
 
-The following standard format strings can be applied to a template expression of type [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+The following standard format strings can be applied to a template expression of type [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date):
 
 
 | Format specifier | Description                             | Examples                                |
 |------------------|-----------------------------------------|-----------------------------------------|
-| "d"              | Short date pattern.                     | 12/20/2012                              |
-| "D"              | Long date pattern.                      | Thursday, December 20, 2012             |
-| "f"              | Full date/time pattern (short time).    | Thursday, December 20, 2012, 7:00 PM    |
-| "F"              | Full date/time pattern (long time).     | Thursday, December 20, 2012, 7:00:00 PM |
-| "g"              | General date/time pattern (short time). | 12/20/2012, 7:00 PM                     |
-| "G"              | General date/time pattern (long time).  | 12/20/2012, 7:00:00 PM                  |
-| "M", "m"         | Month/day pattern.                      | December 20                             |
-| "O", "o"         | ISO 8601 pattern.                       | 2012-12-20T18:00:00.000Z                |
-| "R", "r"         | RFC 1123 pattern.                       | Thu, 20 Dec 2012 18:00:00 GMT           |
-| "t"              | Short time pattern.                     | 7:00 PM                                 |
-| "T"              | Long time pattern.                      | 7:00:00 PM                              |
-| "Y", "y"         | Year month pattern.                     | December 2012                           |
+| "d"              | Short date pattern                      | 12/20/2012                              |
+| "D"              | Long date pattern                       | Thursday, December 20, 2012             |
+| "f"              | Full date/time pattern (short time)     | Thursday, December 20, 2012, 7:00 PM    |
+| "F"              | Full date/time pattern (long time)      | Thursday, December 20, 2012, 7:00:00 PM |
+| "g"              | General date/time pattern (short time)  | 12/20/2012, 7:00 PM                     |
+| "G"              | General date/time pattern (long time)   | 12/20/2012, 7:00:00 PM                  |
+| "M", "m"         | Month/day pattern                       | December 20                             |
+| "O", "o"         | ISO 8601 pattern                        | 2012-12-20T18:00:00.000Z                |
+| "R", "r"         | RFC 1123 pattern                        | Thu, 20 Dec 2012 18:00:00 GMT           |
+| "t"              | Short time pattern                      | 7:00 PM                                 |
+| "T"              | Long time pattern                       | 7:00:00 PM                              |
+| "Y", "y"         | Year month pattern                      | December 2012                           |
 
 ### Percentage formatting
 ```js       
@@ -148,7 +149,7 @@ console.log(i18n`Hello ${name}, the number is ${12345.678}:n(2).`)
 
 ### Pluralization
 
-You can use [nested templates](#nested-templates) for pluralization as shown in this [example](https://jsbin.com/zubugedeja/edit?js,output)
+You can use [nested templates](#nested-templates) for pluralization as shown in this [example](https://jsbin.com/zubugedeja/edit?js,output).
 
 ### Nested templates
 ```js
@@ -176,7 +177,7 @@ console.log(i18n`
 
 ### Standard format strings
 
-You can add custom standard formatters similar to the predefined DateTime formatters. Valid types are date, number and string.
+You can add custom standard formatters similar to the predefined DateTime formatters. Valid types are `date`, `number` and `string`.
 ```js
 i18nConfig({
     standardFormatters: {
@@ -192,7 +193,7 @@ console.log(i18n`${0.77}:n(x)`)
 ### Translation Groups
 
 Translation groups can be very useful to group translations by context. It can also be useful to avoid key duplicates in larger projects.
-You can use [babel-plugin-i18n-tag-translate](https://github.com/skolmer/babel-plugin-i18n-tag-translate) to inject the relative path of your module as group name. Babel will inject `const __translationGroup = 'relative/path/to/module.ext'` into each module
+You can use [babel-plugin-i18n-tag-translate](https://github.com/skolmer/babel-plugin-i18n-tag-translate) to inject the relative path of your module as group name. Babel will inject `const __translationGroup = 'relative/path/to/module.ext'` into each module.
 
 #### Babel generated file module groups
 
@@ -267,7 +268,7 @@ export default Clock
 
 ## Credits
 
-Thanks to [Jack Hsu](https://github.com/jaysoo) for his initial draft of an [i18n template literal](http://jaysoo.ca/2014/03/20/i18n-with-es6-template-strings/)
+Thanks to [Jack Hsu](https://github.com/jaysoo) for his initial draft of an [i18n template literal](http://jaysoo.ca/2014/03/20/i18n-with-es6-template-strings/).
 
 ## License
 
