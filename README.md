@@ -37,7 +37,7 @@ $ npm install es2015-i18n-tag --save
 
 ## Usage
 
-This library is avaliable as CommonJS module and as UMD module that is consumable in CommonJS, AMD and with script tags. 
+This library is available as CommonJS module and as UMD module that is consumable in CommonJS, AMD and with script tags. 
 The UMD module can be used in [environments that don't support CommonJS modules](https://jsbin.com/rojilu/edit?html,js,output). It is highly recommended to use es2015-i18n-tag as CommonJS module with babel and [webpack](https://github.com/skolmer/i18n-tag-examples/tree/master/ReactJS) or [browserify](https://github.com/skolmer/i18n-tag-examples/tree/master/Simple). In a Node.js environment you have to use the [Intl Polyfill](https://github.com/andyearnshaw/Intl.js#intljs-and-node) to add support for additional locales.
 
 ### UMD module on npmcdn.com
