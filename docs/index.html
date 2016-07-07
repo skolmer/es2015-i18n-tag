@@ -1,0 +1,459 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>es2015-i18n-tag</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script src="assets/js/modernizr.js"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">es2015-i18n-tag</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> es2015-i18n-tag</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 id="i18n-tagged-template-literals-build-status-https-img-shields-io-travis-skolmer-es2015-i18n-tag-master-svg-style-flat-https-travis-ci-org-skolmer-es2015-i18n-tag-npm-version-https-img-shields-io-npm-v-es2015-i18n-tag-svg-style-flat-https-www-npmjs-com-package-es2015-i18n-tag-">i18n Tagged Template Literals <a href="https://travis-ci.org/skolmer/es2015-i18n-tag"><img src="https://img.shields.io/travis/skolmer/es2015-i18n-tag/master.svg?style=flat" alt="Build Status"></a> <a href="https://www.npmjs.com/package/es2015-i18n-tag"><img src="https://img.shields.io/npm/v/es2015-i18n-tag.svg?style=flat" alt="npm version"></a></h1>
+				<p><a href="https://www.npmjs.com/package/es2015-i18n-tag/"><img src="https://nodei.co/npm/es2015-i18n-tag.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt="NPM"></a></p>
+				<p><a href="http://i18n-tag.kolmer.net/"><img src="images/es2015-i18n-tag-icon-big.jpg" alt="i18n Tagged Template Literals"></a></p>
+				<h2 id="overview">Overview</h2>
+				<p>This template literal tag adds support for i18n and l10n (translation and internationalization) to your JavaScript project.
+				It provides the following benefits:</p>
+				<ul>
+					<li>Very small footprint <img src="https://badges.herokuapp.com/size/npm/es2015-i18n-tag/dist/lib/index.js?label=common%20js%20module" alt="Common JS Module"> <img src="https://badges.herokuapp.com/size/npm/es2015-i18n-tag/dist/lib/index.umd.min.js?label=minified%20%2B%20gzip&amp;gzip=true" alt="Minified + gzip"></li>
+					<li>Powerful <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals">ES2015 standard template literal</a> syntax</li>
+					<li>Internationalization based on <a href="http://www.ecma-international.org/ecma-402/2.0/">ECMA-402</a> standard <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl">Intl</a> browser API</li>
+				</ul>
+				<h2 id="features">Features</h2>
+				<ul>
+					<li>Translate and internationalize your JavaScript project</li>
+					<li>Translate your JavaScript library at <a href="#build-time-translation">buildtime</a></li>
+					<li>Generate a <a href="#json-schema">schema</a> of all i18n tagged template literals in your project for easy JSON based translations</li>
+				</ul>
+				<h2 id="compatibility">Compatibility</h2>
+				<p>This library is using the ECMAScript Internationalization API. ES Internationalization API is implemented in all modern Browsers. For Safari Versions older than <a href="https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html#//apple_ref/doc/uid/TP40014305-CH11-DontLinkElementID_7">10.0</a> you can use Andy Earnshaw&#39;s excellent Intl.js polyfill:</p>
+				<ul>
+					<li><a href="http://caniuse.com/#search=Intl">Intl Browser Support</a></li>
+					<li><a href="https://github.com/andyearnshaw/Intl.js">Intl Polyfill</a></li>
+				</ul>
+				<h2 id="examples">Examples</h2>
+				<ul>
+					<li><a href="https://jsbin.com/rojilu/edit?js,output">JS Bin Playground</a></li>
+					<li><a href="https://github.com/skolmer/i18n-tag-examples/tree/master/ReactJS">React/webpack</a></li>
+					<li><a href="https://github.com/skolmer/i18n-tag-examples/tree/master/Simple">jQuery/gulp</a></li>
+				</ul>
+				<h2 id="installation">Installation</h2>
+				<pre><code class="lang-sh">$ npm install es2015-i18n-tag --save
+</code></pre>
+				<h2 id="usage">Usage</h2>
+				<p>This library is available as CommonJS module and as UMD module that is consumable in CommonJS, AMD and with script tags.
+				The UMD module can be used in <a href="https://jsbin.com/rojilu/edit?html,js,output">environments that don&#39;t support CommonJS modules</a>. It is highly recommended to use es2015-i18n-tag as CommonJS module with babel and <a href="https://github.com/skolmer/i18n-tag-examples/tree/master/ReactJS">webpack</a> or <a href="https://github.com/skolmer/i18n-tag-examples/tree/master/Simple">browserify</a>. In a Node.js environment you have to use the <a href="https://github.com/andyearnshaw/Intl.js#intljs-and-node">Intl Polyfill</a> to add support for additional locales.</p>
+				<h3 id="umd-module-on-npmcdn-com">UMD module on npmcdn.com</h3>
+				<p><code>https://npmcdn.com/es2015-i18n-tag/dist/lib/index.umd.min.js</code></p>
+				<h3 id="import-and-configuration">Import and Configuration</h3>
+				<pre><code class="lang-js"><span class="hljs-keyword">import</span> i18n, { i18nConfig }  <span class="hljs-keyword">from</span> <span class="hljs-string">'es2015-i18n-tag'</span>
+
+i18nConfig({
+    locales: <span class="hljs-string">'de-DE'</span>,    
+    translations: {
+        <span class="hljs-string">"Hello ${0}, you have ${1} in your bank account."</span>: <span class="hljs-string">"Hallo ${0}, Sie haben ${1} auf Ihrem Bankkonto."</span>
+    },
+    number: {      
+        [...options] <span class="hljs-comment">// Intl NumberFormat options as described here: https://goo.gl/pDwbG2</span>
+    },
+    date: {
+        [...options] <span class="hljs-comment">// Intl DateTimeFormat options as described here: https://goo.gl/lslekB</span>
+    }
+})
+
+<span class="hljs-keyword">const</span> name = <span class="hljs-string">'Steffen'</span>
+<span class="hljs-keyword">const</span> amount = <span class="hljs-number">1250.33</span>
+
+<span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`Hello <span class="hljs-subst">${ name }</span>, you have <span class="hljs-subst">${ amount }</span>:c in your bank account.`</span>)
+<span class="hljs-comment">// Hallo Steffen, Sie haben US$ 1,250.33 auf Ihrem Bankkonto.</span>
+</code></pre>
+				<h3 id="currency-formatting">Currency formatting</h3>
+				<pre><code class="lang-js">i18nConfig({
+    number: { 
+        currency: <span class="hljs-string">'EUR'</span>
+    }
+})
+
+<span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`Hello <span class="hljs-subst">${ name }</span>, you have <span class="hljs-subst">${ amount }</span>:c in your bank account.`</span>)
+<span class="hljs-comment">// Hallo Steffen, Sie haben € 1,250.33 auf Ihrem Bankkonto.</span>
+
+<span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`Hello <span class="hljs-subst">${ name }</span>, you have <span class="hljs-subst">${ amount }</span>:c(USD) in your bank account.`</span>)
+<span class="hljs-comment">// Hallo Steffen, Sie haben US$ 1,250.33 auf Ihrem Bankkonto.</span>
+</code></pre>
+				<h3 id="date-formatting">Date formatting</h3>
+				<pre><code class="lang-js">i18nConfig({
+    locales: <span class="hljs-string">'en-US'</span>,
+    date: { 
+        hour12: <span class="hljs-literal">false</span> 
+    }
+})
+
+<span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, the date is <span class="hljs-subst">${new Date(2012, 11, 20, 19, 0, 0)}</span>:t.`</span>)
+<span class="hljs-comment">// Hello Steffen, the date is 12/20/2012, 19:00:00.</span>
+</code></pre>
+				<h4 id="standard-format-strings">Standard format strings</h4>
+				<pre><code class="lang-js"><span class="hljs-keyword">const</span> date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2012</span>, <span class="hljs-number">11</span>, <span class="hljs-number">20</span>, <span class="hljs-number">19</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+
+i18n<span class="hljs-string">`The date is <span class="hljs-subst">${date}</span>:t(D).`</span>
+
+<span class="hljs-comment">// The date is Thursday, December 20, 2012.</span>
+</code></pre>
+				<p>The following standard format strings can be applied to a template expression of type <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>:</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Format specifier</th>
+							<th>Description</th>
+							<th>Examples</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>&quot;d&quot;</td>
+							<td>Short date pattern</td>
+							<td>12/20/2012</td>
+						</tr>
+						<tr>
+							<td>&quot;D&quot;</td>
+							<td>Long date pattern</td>
+							<td>Thursday, December 20, 2012</td>
+						</tr>
+						<tr>
+							<td>&quot;f&quot;</td>
+							<td>Full date/time pattern (short time)</td>
+							<td>Thursday, December 20, 2012, 7:00 PM</td>
+						</tr>
+						<tr>
+							<td>&quot;F&quot;</td>
+							<td>Full date/time pattern (long time)</td>
+							<td>Thursday, December 20, 2012, 7:00:00 PM</td>
+						</tr>
+						<tr>
+							<td>&quot;g&quot;</td>
+							<td>General date/time pattern (short time)</td>
+							<td>12/20/2012, 7:00 PM</td>
+						</tr>
+						<tr>
+							<td>&quot;G&quot;</td>
+							<td>General date/time pattern (long time)</td>
+							<td>12/20/2012, 7:00:00 PM</td>
+						</tr>
+						<tr>
+							<td>&quot;M&quot;, &quot;m&quot;</td>
+							<td>Month/day pattern</td>
+							<td>December 20</td>
+						</tr>
+						<tr>
+							<td>&quot;O&quot;, &quot;o&quot;</td>
+							<td>ISO 8601 pattern</td>
+							<td>2012-12-20T18:00:00.000Z</td>
+						</tr>
+						<tr>
+							<td>&quot;R&quot;, &quot;r&quot;</td>
+							<td>RFC 1123 pattern</td>
+							<td>Thu, 20 Dec 2012 18:00:00 GMT</td>
+						</tr>
+						<tr>
+							<td>&quot;t&quot;</td>
+							<td>Short time pattern</td>
+							<td>7:00 PM</td>
+						</tr>
+						<tr>
+							<td>&quot;T&quot;</td>
+							<td>Long time pattern</td>
+							<td>7:00:00 PM</td>
+						</tr>
+						<tr>
+							<td>&quot;Y&quot;, &quot;y&quot;</td>
+							<td>Year month pattern</td>
+							<td>December 2012</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3 id="percentage-formatting">Percentage formatting</h3>
+				<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, the percentage is <span class="hljs-subst">${0.01}</span>:p.`</span>)
+<span class="hljs-comment">// Hello Steffen, the percentage is 1%.</span>
+
+i18nConfig({
+    locales: <span class="hljs-string">'de-DE'</span>
+})
+<span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, the percentage is <span class="hljs-subst">${0.01}</span>:p.`</span>)
+<span class="hljs-comment">// Hello Steffen, the percentage is 1 %.</span>
+</code></pre>
+				<h3 id="number-formatting">Number formatting</h3>
+				<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, the number is <span class="hljs-subst">${12345.678}</span>:n(2).`</span>)
+<span class="hljs-comment">// Hello Steffen, the number is 12,345.67.</span>
+
+i18nConfig({
+    locales: <span class="hljs-string">'de-DE'</span>
+})
+<span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, the number is <span class="hljs-subst">${12345.678}</span>:n(2).`</span>)
+<span class="hljs-comment">// Hello Steffen, the number is 12.345,67.</span>
+</code></pre>
+				<h3 id="pluralization">Pluralization</h3>
+				<p>You can use <a href="#nested-templates">nested templates</a> for pluralization as shown in this <a href="https://jsbin.com/zubugedeja/edit?js,output">example</a>.</p>
+				<h3 id="nested-templates">Nested templates</h3>
+				<pre><code class="lang-js">let hello = [
+    { name: "Steffen", percentage: 0.2 },
+    { name: "Jack", percentage: 0.8 }
+]
+
+console.log(i18n`
+    &lt;users&gt;
+    ${hello.map((item) =&gt; i18n`
+        &lt;user name="${item.name}"&gt;${item.percentage}:p&lt;/user&gt;
+    `).join('')}
+    &lt;/users&gt;
+`)
+// &lt;users&gt;
+// 
+//     &lt;user name="Steffen"&gt;20%&lt;/user&gt;
+// 
+//     &lt;user name="Jack"&gt;80%&lt;/user&gt;
+// 
+// &lt;/users&gt;
+</code></pre>
+				<blockquote>
+					<p><strong>NOTE:</strong> For easy translation of multiline template literals use one of the following <a href="#json-schema">json schema generators</a>.</p>
+				</blockquote>
+				<h3 id="standard-format-strings">Standard format strings</h3>
+				<p>You can add custom standard formatters similar to the predefined DateTime formatters. Valid types are <code>date</code>, <code>number</code> and <code>string</code>.</p>
+				<pre><code class="lang-js">i18nConfig({
+    standardFormatters: {
+        number: {
+            x: (locales, numberOptions, value) =&gt; value.toLocaleString(locales, <span class="hljs-built_in">Object</span>.assign({}, numberOptions, { style: <span class="hljs-string">'percent'</span> }))
+        }
+    }
+})
+
+<span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`<span class="hljs-subst">${0.77}</span>:n(x)`</span>)
+<span class="hljs-comment">// 77%</span>
+</code></pre>
+				<h3 id="translation-groups">Translation Groups</h3>
+				<p>Translation groups can be very useful to group translations by context. It can also be useful to avoid key duplicates in larger projects.
+				You can use <a href="https://github.com/skolmer/babel-plugin-i18n-tag-translate">babel-plugin-i18n-tag-translate</a> to inject the relative path of your module as group name. Babel will inject <code>const __translationGroup = &#39;relative/path/to/module.ext&#39;</code> into each module.</p>
+				<h4 id="babel-generated-file-module-groups">Babel generated file module groups</h4>
+				<p><a href="https://github.com/skolmer/i18n-tag-examples/tree/master/ReactJS">Example</a></p>
+				<h5 id="-babelrc">.babelrc</h5>
+				<pre><code class="lang-json">{
+  <span class="hljs-attr">"plugins"</span>: [
+    [<span class="hljs-string">"i18n-tag-translate"</span>, {
+      <span class="hljs-attr">"groupDir"</span>: <span class="hljs-string">"./src"</span>
+    }]
+  ]
+}
+</code></pre>
+				<h5 id="project-structure">Project Structure</h5>
+				<pre><code>.
+├── src
+<span class="hljs-string">|   └── components</span>
+<span class="hljs-string">|       ├── App.js</span>
+<span class="hljs-string">|       └── Clock.js</span>
+├── .babelrc
+</code></pre><h5 id="translations-de-json">translations.de.json</h5>
+				<pre><code class="lang-json">{
+    <span class="hljs-attr">"components/App.js"</span>: {
+        <span class="hljs-attr">"Welcome"</span>: <span class="hljs-string">"Willkommen"</span>
+    },
+    <span class="hljs-attr">"components/Clock.js"</span>: {
+        <span class="hljs-attr">"Time"</span>: <span class="hljs-string">"Zeit"</span>
+    }
+}
+</code></pre>
+				<h5 id="app-js">App.js</h5>
+				<pre><code class="lang-js">i18n(__translationGroup)<span class="hljs-string">`Welcome`</span> <span class="hljs-comment">// Select translation from module group e.g. "components/App.js"</span>
+i18n(<span class="hljs-string">'components/Clock.js'</span>)<span class="hljs-string">`Time`</span> <span class="hljs-comment">// Select translation from a custom group</span>
+</code></pre>
+				<h6 id="translation-group-class-decorator">translation group class decorator</h6>
+				<pre><code class="lang-js"><span class="hljs-keyword">import</span> { i18nGroup } <span class="hljs-keyword">from</span> <span class="hljs-string">'es2015-i18n-tag'</span>
+
+<span class="hljs-comment">/* default syntax */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clock</span> </span>{
+    tick() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.i18n<span class="hljs-string">`Time: <span class="hljs-subst">${new Date()}</span>:t(T)`</span>
+    }
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> i18nGroup(__translationGroup)(Clock)
+
+
+<span class="hljs-comment">/* experimental class decorator syntax */</span>
+@i18nGroup(__translationGroup)
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clock</span> </span>{
+    tick() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.i18n<span class="hljs-string">`Time: <span class="hljs-subst">${new Date()}</span>:t(T)`</span>
+    }
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> Clock
+</code></pre>
+				<h2 id="tools">Tools</h2>
+				<h3 id="build-time-translation">Build time translation</h3>
+				<ul>
+					<li><a href="https://github.com/skolmer/babel-plugin-i18n-tag-translate">babel-plugin-i18n-tag-translate</a>: Translate your template literals at build time <a href="https://www.npmjs.com/package/babel-plugin-i18n-tag-translate"><img src="https://img.shields.io/npm/v/babel-plugin-i18n-tag-translate.svg?style=flat" alt="npm version"></a></li>
+				</ul>
+				<h3 id="json-schema">JSON Schema</h3>
+				<ul>
+					<li><a href="https://github.com/skolmer/i18n-tag-schema">i18n-tag-schema</a>: Generates a JSON schema based on all i18n tagged literals in your project <a href="https://www.npmjs.com/package/i18n-tag-schema"><img src="https://img.shields.io/npm/v/i18n-tag-schema.svg?style=flat" alt="npm version"></a></li>
+					<li><a href="https://github.com/skolmer/vscode-i18n-tag-schema">vscode-18n-tag-schema</a>: Visual Studio Code Extension to generate a JSON schema <a href="https://marketplace.visualstudio.com/items?itemName=skolmer.vscode-i18n-tag-schema"><img src="https://vsmarketplacebadge.apphb.com/version-short/skolmer.vscode-i18n-tag-schema.svg" alt="Marketplace Version"></a></li>
+				</ul>
+				<h2 id="credits">Credits</h2>
+				<p>Thanks to <a href="https://github.com/jaysoo">Jack Hsu</a> for his initial draft of an <a href="http://jaysoo.ca/2014/03/20/i18n-with-es6-template-strings/">i18n template literal</a>.</p>
+				<h2 id="license">License</h2>
+				<p>Copyright (c) 2016 Steffen Kolmer</p>
+				<p>This software is licensed under the MIT license.  See the <code>LICENSE</code> file
+				accompanying this software for terms of use.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="globals.html#config" class="tsd-kind-icon">Config</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="globals.html#dateconfig" class="tsd-kind-icon">Date<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="globals.html#numberconfig" class="tsd-kind-icon">Number<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#i18n" class="tsd-kind-icon">i18n</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#i18nconfig" class="tsd-kind-icon">i18n<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#i18ngroup" class="tsd-kind-icon">i18n<wbr>Group</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
