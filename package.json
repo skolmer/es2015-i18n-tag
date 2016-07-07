@@ -1,7 +1,7 @@
 {
   "name": "es2015-i18n-tag",
   "description": "ES2015 template literal tag for i18n and l10n translation and localization",
-  "version": "1.0.0",
+  "version": "0.9.0",
   "author": {
     "email": "steffen@kolmer.net",
     "name": "Steffen Kolmer",
@@ -44,7 +44,6 @@
     "babel-cli": "^6.9.0",
     "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-stage-0": "^6.5.0",
     "eslint": "^2.11.1",
@@ -54,6 +53,7 @@
     "mocha": "^2.5.3",
     "npm-run-all": "^2.1.1",
     "rimraf": "^2.5.2",
+    "typedoc": "^0.4.4",
     "webpack": "^1.13.1"
   },
   "scripts": {
@@ -64,7 +64,9 @@
     "build:main": "babel lib -d dist/lib --source-maps --copy-files",
     "build:umd": "webpack --output-filename index.umd.js",
     "build:umd.min": "webpack --output-filename index.umd.min.js -p",
-    "lint": "eslint lib"
+    "lint": "eslint lib",
+    "pushdocs": "git add pages && git commit -m \"Updated pages\" && git subtree push --prefix pages origin gh-pages",
+    "docs": "typedoc --out ./pages/docs/ ./lib/index.d.ts --module commonjs --readme ./README.md --target ES6 --includeDeclarations --hideGenerator --name es2015-i18n-tag --mode file --force"
   },
   "main": "./dist/lib"
 }

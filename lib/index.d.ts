@@ -109,7 +109,7 @@ type Config = {
     /**
      * Optional. A string with a BCP 47 language tag, or an array of such strings. For the general form and interpretation of the locales argument, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation
      */
-    locales?: string | string[], 
+    locales?: string | Array<string>, 
     /**
      * Optional. An object that contains translations as key-value-pairs
      */
@@ -131,13 +131,13 @@ type Config = {
      */
     standardFormatters: {
         date: {
-            [x : string] : (locales : string | string[], numberOptions : NumberConfig, value : Date) => string
+            [name : string] : (locales : string | Array<string>, dateOptions : DateConfig, value : Date) => string
         }
         number: {
-            [x : string] : (locales : string | string[], numberOptions : NumberConfig, value : number) => string
+            [name : string] : (locales : string | Array<string>, numberOptions : NumberConfig, value : number) => string
         }
         string: {
-            [x : string] : (locales : string | string[], numberOptions : NumberConfig, value : string) => string
+            [name : string] : (locales : string | Array<string>, stringOptions : {}, value : string) => string
         }
     }
 }
@@ -155,7 +155,7 @@ export function i18nConfig(config: Config) : void
  * @param {group} the name of the translation group.
  * @param {target} the target class
  */
-export function i18nGroup(group: string): (target: any): any 
+export function i18nGroup(group: string): (target: any) => any 
 
 /**
  * Transforms i18n tagged template literals
@@ -164,4 +164,4 @@ export function i18nGroup(group: string): (target: any): any
  * @param literals Template literals.
  * @param values Template values.
  */
-export default function i18n(literals, ...values) : void
+export default function i18n(literals : Array<string>, ...values : Array<string>) : void
