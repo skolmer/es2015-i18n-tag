@@ -164,4 +164,4 @@ export function i18nGroup(group: string): (target: any) => any
  * @param literals Template literals.
  * @param values Template values.
  */
-export default function i18n(literals : Array<string>, ...values : Array<string>) : void
+export default function (literals : Array<string>, ...values : Array<string>) : void
