@@ -11,6 +11,8 @@ It provides the following benefits:
 * Very small footprint ![Common JS Module](https://badges.herokuapp.com/size/npm/es2015-i18n-tag/dist/lib/index.js?label=common%20js%20module) ![Minified + gzip](https://badges.herokuapp.com/size/npm/es2015-i18n-tag/dist/lib/index.umd.min.js?label=minified%20%2B%20gzip&gzip=true)
 * Powerful [ES2015 standard template literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals) syntax
 * Internationalization based on [ECMA-402](http://www.ecma-international.org/ecma-402/2.0/) standard [Intl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) browser API
+* [JSON Schema](http://json-schema.org/documentation.html) powered translations
+* [Tools](#tools) that can be integrated into your build pipeline and [IDE](https://github.com/skolmer/i18n-tag-schema#ide-integration)
 
 ## Features
 
