@@ -236,7 +236,7 @@ You can use [babel-plugin-i18n-tag-translate](https://github.com/skolmer/babel-p
 i18n(__translationGroup)`Welcome` // Select translation from module group e.g. "components/App.js"
 i18n('components/Clock.js')`Time` // Select translation from a custom group
 ```
-###### translation group class decorator
+##### Translation Group Class Decorator
 ```js
 import { i18nGroup } from 'es2015-i18n-tag'
 
@@ -257,6 +257,31 @@ class Clock {
     }
 }
 export default Clock
+```
+
+## Translations as CommonJS Modules
+
+If you are working on a multilingual library it might be useful to export i18n settings and translations as CommonJS modules. This can be easily accomplished with webpack and [json-loader](https://github.com/webpack/json-loader) as shown in this example:
+
+### ./my-lib/de/index.js
+```js
+import { i18nConfig }  from 'es2015-i18n-tag'
+import translations from 'json!../translations/translation.de.json'
+
+i18nConfig({
+    locales: 'de-DE',
+    number: { 
+        currency: 'EUR'
+    },
+    translations
+}) // set internationalization settings and add imported translations
+```
+
+### Import library with german translations into an app
+
+```js
+import 'my-lib/de' // import german i18n configuration and translation
+import my-lib from 'my-lib'
 ```
 
 ## Tools
