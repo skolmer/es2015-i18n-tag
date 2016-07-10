@@ -52,6 +52,7 @@ import i18n, { i18nConfig }  from 'es2015-i18n-tag'
 
 i18nConfig({
     locales: 'de-DE',    
+    group: 'my-lib', // Optional, can be used to avoid configuration overrides. This is recommended for libraries!
     translations: {
         "Hello ${0}, you have ${1} in your bank account.": "Hallo ${0}, Sie haben ${1} auf Ihrem Bankkonto."
     },
@@ -192,6 +193,7 @@ i18nConfig({
 console.log(i18n`${0.77}:n(x)`)
 // 77%
 ```
+
 ### Translation Groups
 
 Translation groups can be very useful to group translations by context. It can also be useful to avoid key duplicates in larger projects.
@@ -236,7 +238,7 @@ You can use [babel-plugin-i18n-tag-translate](https://github.com/skolmer/babel-p
 i18n(__translationGroup)`Welcome` // Select translation from module group e.g. "components/App.js"
 i18n('components/Clock.js')`Time` // Select translation from a custom group
 ```
-##### Translation Group Class Decorator
+##### i18nGroup Class Decorator
 ```js
 import { i18nGroup } from 'es2015-i18n-tag'
 
@@ -259,23 +261,81 @@ class Clock {
 export default Clock
 ```
 
+### Configuration Groups
+
+Configuration groups should be used by libraries to avoid configuration overrides. Configuration groups are like namespaces and only applied if the group name is set via i18n tag or i18nGroup decorator.
+
+##### i18n Option
+```js
+i18n(__translationGroup, 'my-lib')`Welcome` // Select translation from module group e.g. "components/App.js"
+i18n('components/Clock.js', 'my-lib')`Time` // Select translation from a custom group
+```
+##### i18nGroup Class Decorator
+```js
+import { i18nGroup, i18nConfig } from 'es2015-i18n-tag'
+
+i18nConfig({
+    locales: 'de-DE',
+    group: 'my-lib' // set translation and i18n config for 'my-lib'
+    translations: {
+        "components/App.js": {
+            "Welcome": "Willkommen"
+        },
+        "components/Clock.js": {
+            "Time": "Zeit"
+        }
+    }
+})
+
+/* default syntax */
+class Clock {
+    tick() {
+        return this.i18n`Time: ${new Date()}:t(T)`
+    }
+}
+export default i18nGroup(__translationGroup, 'my-lib')(Clock)
+
+
+/* experimental class decorator syntax */
+@i18nGroup(__translationGroup, 'my-lib')
+class Clock {
+    tick() {
+        return this.i18n`Time: ${new Date()}:t(T)`
+    }
+}
+export default Clock
+```
+
 ## Translations as CommonJS Modules
 
 If you are working on a multilingual library it might be useful to export i18n settings and translations as CommonJS modules. This can be easily accomplished with webpack and [json-loader](https://github.com/webpack/json-loader) as shown in this example:
 
+[Example](https://github.com/skolmer/i18n-tag-examples/tree/master/MultilingualLibrary)
+
 ### ./my-lib/de/index.js
 
-[Example](https://github.com/skolmer/i18n-tag-examples/tree/master/MultilingualLibrary)
 ```js
 import translations from 'json!../../translations/translation.de.json'
 
 i18nConfig({
     locales: 'de-DE',
+    group: 'my-lib' // set translation and i18n config for 'my-lib'
     number: { 
         currency: 'EUR'
     },
     translations
 }) // set internationalization settings and add imported translations
+
+```
+
+### ./my-lib/index.js
+```js
+@i18nGroup('', 'my-lib')
+class Clock {
+    tick() {
+        return this.i18n`Time: ${new Date()}:t(T)`
+    }
+}
 ```
 
 ### Import library with german translations into an app
