@@ -105,7 +105,7 @@
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> date<span class="tsd-signature-symbol">?: </span><a href="globals.html#dateconfig" class="tsd-signature-type">DateConfig</a></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
-										<p>Optional. For more information about DateTimeFormat options, see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat</a></p>
+										<p>For more information about DateTimeFormat options, see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat</a></p>
 									</div>
 								</div>
 							</li>
@@ -113,7 +113,8 @@
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> group<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
-										<p>Optional. The current translation group</p>
+										<p>The name of the current configuration group. This option is recommended for libaries.
+										To avoid configuration override, set a group that is unique to your library.</p>
 									</div>
 								</div>
 							</li>
@@ -121,7 +122,7 @@
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> locales<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
-										<p>Optional. A string with a BCP 47 language tag, or an array of such strings. For the general form and interpretation of the locales argument, see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation</a></p>
+										<p>A string with a BCP 47 language tag, or an array of such strings. For the general form and interpretation of the locales argument, see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation</a></p>
 									</div>
 								</div>
 							</li>
@@ -129,7 +130,7 @@
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> number<span class="tsd-signature-symbol">?: </span><a href="globals.html#numberconfig" class="tsd-signature-type">NumberConfig</a></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
-										<p>Optional. For more information about NumberFormat options, see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat</a></p>
+										<p>For more information about NumberFormat options, see <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat</a></p>
 									</div>
 								</div>
 							</li>
@@ -137,7 +138,7 @@
 								<h5>standard<wbr>Formatters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
-										<p>Optional. Can be used to define custom standard formatters for date, number and string suffix functions. <code>${ new Date() }:t([formatter])</code></p>
+										<p>Can be used to define custom standard formatters for date, number and string suffix functions. <code>${ new Date() }:t([formatter])</code></p>
 									</div>
 								</div>
 								<ul class="tsd-parameters">
@@ -245,7 +246,7 @@
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> translations<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
-										<p>Optional. An object that contains translations as key-value-pairs</p>
+										<p>An object that contains translations as key-value-pairs</p>
 									</div>
 								</div>
 								<ul class="tsd-parameters">
@@ -481,13 +482,13 @@
 					<a name="default" class="tsd-anchor"></a>
 					<h3>default</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">default<span class="tsd-signature-symbol">(</span>literals<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, <span class="tsd-signature-symbol">...</span>values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">default<span class="tsd-signature-symbol">(</span>group<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, config<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.d.ts:158</li>
+									<li>Defined in index.d.ts:160</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -499,19 +500,40 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>literals: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Template literals.</p>
-									</div>
+									<h5>group: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>values: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Template values.</p>
-									</div>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> config: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-siganture">
+									<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>literals<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>, <span class="tsd-signature-symbol">...</span>values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>literals: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>Template literals.</p>
+													</div>
+												</li>
+												<li>
+													<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>values: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>Template values.</p>
+													</div>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -525,7 +547,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.d.ts:150</li>
+									<li>Defined in index.d.ts:151</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -550,13 +572,13 @@
 					<a name="i18ngroup" class="tsd-anchor"></a>
 					<h3>i18n<wbr>Group</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">i18n<wbr>Group<span class="tsd-signature-symbol">(</span>group<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+						<li class="tsd-signature tsd-kind-icon">i18n<wbr>Group<span class="tsd-signature-symbol">(</span>group<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, config<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.d.ts:158</li>
+									<li>Defined in index.d.ts:160</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -568,6 +590,9 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>group: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> config: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
