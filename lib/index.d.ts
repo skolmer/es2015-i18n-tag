@@ -144,26 +144,78 @@ type Config = {
 }
 
 /**
- * Handles i18n tagged template literals configuration
+ * Sets i18n tagged template literals configuration.
  * 
- * @param {Config} config Configuration object.
+ * @param config Configuration object.
+ * 
+ * @example <caption>sample configuration:</caption>  
+ * 
+ *     i18nConfig({
+ *         locales: 'de-DE',    
+ *         group: 'my-lib', // Optional, can be used to avoid configuration overrides. This is recommended for libraries!
+ *         translations: {
+ *             "Hello ${0}, you have ${1} in your bank account.": "Hallo ${0}, Sie haben ${1} auf Ihrem Bankkonto."
+ *         },
+ *         number: {      
+ *             [...options] // Intl NumberFormat options as described here: https://goo.gl/pDwbG2
+ *         },
+ *         date: {
+ *             [...options] // Intl DateTimeFormat options as described here: https://goo.gl/lslekB
+ *         }
+ *     })
  */
 export function i18nConfig(config: Config) : void
 
 /**
- * i18n translation group class decorator
+ * i18n translation and configuration group class decorator.
  * 
- * @param {group} the name of the translation group.
- * @param {group} the name of the configuration group. This option is recommended for libaries. To avoid configuration override, set a group that is unique to your library.
- * @param {target} the target class
+ * @param group the name of the translation group.
+ * @param config the name of the configuration group. This option is recommended for libaries. To avoid configuration override, set a group that is unique to your library.
+ * @param target the target class
+ * 
+ * @example <caption>default syntax:</caption>  
+ * 
+ *     class Clock {
+ *         tick() {
+ *             return this.i18n`Time: ${new Date()}:t(T)`
+ *         }
+ *     }
+ *     export default i18nGroup(__translationGroup, 'my-lib')(Clock)
+ * 
+ * @example <caption>experimental class decorator syntax:</caption>  
+ *     
+ *     @i18nGroup(__translationGroup, 'my-lib')
+ *     class Clock {
+ *         tick() {
+ *             return this.i18n`Time: ${new Date()}:t(T)`
+ *         }
+ *     }
+ *     export default Clock
  */
 export function i18nGroup(group: string, config?: string): (target: any) => any 
 
 /**
- * Transforms i18n tagged template literals
- * Use as template literal tag: i18n\`my ${index} translation\`
+ * Transforms i18n tagged template literals.
  * 
+ * @param group the name of the translation group.
+ * @param config the name of the configuration group. This option is recommended for libaries. To avoid configuration override, set a group that is unique to your library.
  * @param literals Template literals.
  * @param values Template values.
+ * 
+ * @example <caption>common syntax:</caption>  
+ *    
+ *     i18n`The date is ${date}:t(D).`;
+ * 
+ * @example <caption>with i18nGroup decorator:</caption>   
+ * 
+ *     this.i18n`Time: ${new Date()}:t(T)`;
+ * 
+ * @example <caption>with custom translation group:</caption> 
+ * 
+ *     i18n('components/Clock.js')`Time`;
+ * 
+ * @example <caption>with file module group and configuration group:</caption> 
+ * 
+ *     i18n(__translationGroup, 'my-lib')`Welcome`;
  */
 export default function (group: string, config?: string) : (literals : Array<string>, ...values : Array<string>) => void
