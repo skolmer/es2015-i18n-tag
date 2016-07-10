@@ -264,9 +264,10 @@ export default Clock
 If you are working on a multilingual library it might be useful to export i18n settings and translations as CommonJS modules. This can be easily accomplished with webpack and [json-loader](https://github.com/webpack/json-loader) as shown in this example:
 
 ### ./my-lib/de/index.js
+
+[Example](https://github.com/skolmer/i18n-tag-examples/tree/master/MultilingualLibrary)
 ```js
-import { i18nConfig }  from 'es2015-i18n-tag'
-import translations from 'json!../translations/translation.de.json'
+import translations from 'json!../../translations/translation.de.json'
 
 i18nConfig({
     locales: 'de-DE',
@@ -280,8 +281,8 @@ i18nConfig({
 ### Import library with german translations into an app
 
 ```js
-import 'my-lib/de' // import german i18n configuration and translation
 import my-lib from 'my-lib'
+import 'my-lib/de' // import german i18n configuration and translation
 ```
 
 ## Tools
