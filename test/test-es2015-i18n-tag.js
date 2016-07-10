@@ -334,12 +334,23 @@ describe('es2015-i18n-tag', () => {
 
         i18nConfig({
             locales: 'de-DE',
-            group: 'dafaultgroup',
+            group: 'my-lib',
             translations: {
                 testgroup: {
                     'Hello ${0}, you have ${1} in your bank account.': 'Hallo ${0}, Sie haben ${1} auf Ihrem Bankkonto.'
                 },
-                dafaultgroup: {
+                'Hello ${0}, you have ${1} in your bank account.': 'Hallo ${0}'
+            },
+            number: {
+                currency: 'EUR'
+            }
+        })
+
+        i18nConfig({
+            locales: 'de-DE',
+            translations: {
+                'Hello ${0}, you have ${1} in your bank account.': 'Hallo ${0}, Sie haben ${1} auf Ihrem Bankkonto.',
+                testgroup: {
                     'Hello ${0}, you have ${1} in your bank account.': 'Hallo ${0}'
                 }
             },
@@ -348,14 +359,21 @@ describe('es2015-i18n-tag', () => {
             }
         })
 
-        const actual = i18n('testgroup') `Hello ${name}, you have ${amount}:c in your bank account.`
-
+        const actual = i18n('testgroup', 'my-lib') `Hello ${name}, you have ${amount}:c in your bank account.`
         const expected = 'Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto.'
         assert.equal(actual, expected)
 
-        const actualDefault = i18n`Hello ${name}, you have ${amount}:c in your bank account.`
+        const actualDefault = i18n('', 'my-lib')`Hello ${name}, you have ${amount}:c in your bank account.`
         const expectedDefault = 'Hallo Steffen'
         assert.equal(actualDefault, expectedDefault)
+
+        const actual2 = i18n('testgroup') `Hello ${name}, you have ${amount}:c in your bank account.`
+        const expected2 = 'Hallo Steffen'
+        assert.equal(actual2, expected2)
+
+        const actual2Default = i18n`Hello ${name}, you have ${amount}:c in your bank account.`
+        const expected2Default = 'Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto.'
+        assert.equal(actual2Default, expected2Default)
     })
 
     it('should support ES2016 style group class decorator', () => {

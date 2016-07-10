@@ -107,27 +107,28 @@ type DateConfig = {
 
 type Config = {
     /**
-     * Optional. A string with a BCP 47 language tag, or an array of such strings. For the general form and interpretation of the locales argument, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation
+     * A string with a BCP 47 language tag, or an array of such strings. For the general form and interpretation of the locales argument, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation
      */
     locales?: string | Array<string>, 
     /**
-     * Optional. An object that contains translations as key-value-pairs
+     * An object that contains translations as key-value-pairs
      */
     translations?: { }, 
     /**
-     * Optional. The current translation group
+     * The name of the current configuration group. This option is recommended for libaries. 
+     * To avoid configuration override, set a group that is unique to your library.
      */
     group?: string,
     /**
-     * Optional. For more information about NumberFormat options, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat
+     * For more information about NumberFormat options, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat
      */
     number?: NumberConfig, 
     /**
-     * Optional. For more information about DateTimeFormat options, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat
+     * For more information about DateTimeFormat options, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat
      */
     date?: DateConfig,
     /**
-     * Optional. Can be used to define custom standard formatters for date, number and string suffix functions. `${ new Date() }:t([formatter])`
+     * Can be used to define custom standard formatters for date, number and string suffix functions. `${ new Date() }:t([formatter])`
      */
     standardFormatters: {
         date: {
@@ -153,9 +154,10 @@ export function i18nConfig(config: Config) : void
  * i18n translation group class decorator
  * 
  * @param {group} the name of the translation group.
+ * @param {group} the name of the configuration group. This option is recommended for libaries. To avoid configuration override, set a group that is unique to your library.
  * @param {target} the target class
  */
-export function i18nGroup(group: string): (target: any) => any 
+export function i18nGroup(group: string, config?: string): (target: any) => any 
 
 /**
  * Transforms i18n tagged template literals
@@ -164,4 +166,4 @@ export function i18nGroup(group: string): (target: any) => any
  * @param literals Template literals.
  * @param values Template values.
  */
-export default function (literals : Array<string>, ...values : Array<string>) : void
+export default function (group: string, config?: string) : (literals : Array<string>, ...values : Array<string>) => void
