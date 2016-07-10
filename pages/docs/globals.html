@@ -488,22 +488,45 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.d.ts:160</li>
+									<li>Defined in index.d.ts:195</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Transforms i18n tagged template literals
-									Use as template literal tag: i18n`my ${index} translation`</p>
+									<p>Transforms i18n tagged template literals.</p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><caption>common syntax:</caption>
+										<pre><code>i18n`The <span class="hljs-built_in">date</span> <span class="hljs-keyword">is</span> ${<span class="hljs-built_in">date</span>}:t(D).`;
+</code></pre></dd>
+									<dt>example</dt>
+									<dd><caption>with i18nGroup decorator:</caption>
+										<pre><code><span class="hljs-keyword">this</span>.i18n`<span class="javascript">Time: ${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()}:t(T)</span>`;
+</code></pre></dd>
+									<dt>example</dt>
+									<dd><caption>with custom translation group:</caption>
+										<pre><code>i18n(<span class="hljs-symbol">'components</span>/<span class="hljs-type">Clock</span>.js')<span class="hljs-type">`Time</span>`;
+</code></pre></dd>
+									<dt>example</dt>
+									<dd><caption>with file module group and configuration group:</caption>
+										<pre><code>i18n(__translationGroup, <span class="hljs-symbol">'my</span>-lib')<span class="hljs-type">`Welcome</span>`;
+</code></pre></dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>group: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the name of the translation group.</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> config: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the name of the configuration group. This option is recommended for libaries. To avoid configuration override, set a group that is unique to your library.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
@@ -547,13 +570,31 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.d.ts:151</li>
+									<li>Defined in index.d.ts:167</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Handles i18n tagged template literals configuration</p>
+									<p>Sets i18n tagged template literals configuration.</p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><caption>sample configuration:</caption>
+										<pre><code>i18nConfig({
+    locale<span class="hljs-variable">s:</span> <span class="hljs-string">'de-DE'</span>,
+    group: <span class="hljs-string">'my-lib'</span>, // Optional, can <span class="hljs-keyword">be</span> used <span class="hljs-keyword">to</span> avoid configuration overrides. This <span class="hljs-keyword">is</span> recommended <span class="hljs-keyword">for</span> libraries!
+    translation<span class="hljs-variable">s:</span> {
+        <span class="hljs-string">"Hello ${0}, you have ${1} in your bank account."</span>: <span class="hljs-string">"Hallo ${0}, Sie haben ${1} auf Ihrem Bankkonto."</span>
+    },
+    <span class="hljs-keyword">number</span>: {
+        [...<span class="hljs-keyword">options</span>] // Intl NumberFormat <span class="hljs-keyword">options</span> <span class="hljs-keyword">as</span> described here: http<span class="hljs-variable">s:</span>//goo.gl/pDwbG2
+    },
+    date: {
+        [...<span class="hljs-keyword">options</span>] // Intl DateTimeFormat <span class="hljs-keyword">options</span> <span class="hljs-keyword">as</span> described here: http<span class="hljs-variable">s:</span>//goo.gl/lslekB
+    }
+})
+</code></pre></dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -578,21 +619,48 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in index.d.ts:160</li>
+									<li>Defined in index.d.ts:195</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>i18n translation group class decorator</p>
+									<p>i18n translation and configuration group class decorator.</p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><caption>default syntax:</caption>
+										<pre><code><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clock</span> </span>{
+    tick() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.i18n<span class="hljs-string">`Time: <span class="hljs-subst">${new Date()}</span>:t(T)`</span>
+    }
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> i18nGroup(__translationGroup, <span class="hljs-string">'my-lib'</span>)(Clock)
+</code></pre></dd>
+									<dt>example</dt>
+									<dd><caption>experimental class decorator syntax:</caption>
+										<pre><code><span class="hljs-meta">@i18nGroup(__translationGroup, <span class="hljs-meta-string">'my-lib'</span>)</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clock</span> </span>{
+    tick() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.i18n`Time: ${new Date()}:t(T)`
+    }
+}
+export <span class="hljs-keyword">default</span> Clock
+</code></pre></dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>group: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the name of the translation group.</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> config: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the name of the configuration group. This option is recommended for libaries. To avoid configuration override, set a group that is unique to your library.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
@@ -607,6 +675,9 @@
 											<ul class="tsd-parameters">
 												<li>
 													<h5>target: <span class="tsd-signature-type">any</span></h5>
+													<div class="tsd-comment tsd-typography">
+														<p>the target class</p>
+													</div>
 												</li>
 											</ul>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
