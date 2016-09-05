@@ -19,6 +19,8 @@ It provides the following benefits:
 * Translate and internationalize your JavaScript project
 * Translate your JavaScript library at [buildtime](#build-time-translation)
 * Generate a [schema](#json-schema) of all i18n tagged template literals in your project for easy JSON based translations
+* Export translations [as CommonJS modules](https://github.com/skolmer/es2015-i18n-tag#translations-as-commonjs-modules)
+* [Validate translations](https://github.com/skolmer/i18n-tag-schema#validate-translation-file) and track translation coverage of your project
 
 ## Compatibility
 
