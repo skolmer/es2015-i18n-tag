@@ -1,7 +1,7 @@
 {
   "name": "es2015-i18n-tag",
   "description": "ES2015 template literal tag for i18n and l10n translation and localization",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": {
     "email": "steffen@kolmer.net",
     "name": "Steffen Kolmer",
