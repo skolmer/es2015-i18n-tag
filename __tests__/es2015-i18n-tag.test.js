@@ -1,7 +1,6 @@
-import assert from 'assert'
 import Intl from 'intl'
 import i18n, { i18nConfig }  from '../lib'
-import groupedClass, { groupedClass2 } from './groupedClass'
+import groupedClass, { groupedClass2 } from './data/groupedClass'
 
 const decorated = new groupedClass()
 const decorated2 = new groupedClass2()
@@ -10,6 +9,14 @@ Intl.__applyLocaleSensitivePrototypes()
 global.Intl = Intl
 
 describe('es2015-i18n-tag', () => {
+    it('should fallback to default config', () => {
+        const name = 'Steffen'
+        const amount = 1250.33
+
+        const actual = i18n('unknown', 'unknown')`Hello ${name}, you have ${amount}:c in your bank account.`
+        expect(actual).toMatchSnapshot()
+    })
+
     it('should not translate', () => {
         const name = 'Steffen'
         const amount = 1250.33
@@ -22,9 +29,25 @@ describe('es2015-i18n-tag', () => {
         })
 
         const actual = i18n`Hello ${name}, you have ${amount}:c in your bank account.`
+        expect(actual).toMatchSnapshot()
+    })
 
-        const expected = 'Hello Steffen, you have $1,250.33 in your bank account.'
-        assert.equal(actual, expected)
+    it('should fail on unknown types', () => {
+        const name = 'Steffen'
+        const amount = 1250.33
+
+        i18nConfig({
+            locales: 'en-US',
+            number: {
+                currency: 'USD'
+            }
+        })
+
+        try {
+            i18n`Hello ${name}, you have ${amount}:q in your bank account.`
+        } catch(err) {
+            expect(err).toMatchSnapshot()
+        }        
     })
 
     it('should translate to german', () => {
@@ -42,9 +65,43 @@ describe('es2015-i18n-tag', () => {
         })
 
         const actual = i18n`Hello ${name}, you have ${amount}:c in your bank account.`
+        expect(actual).toMatchSnapshot()
+    })
 
-        const expected = 'Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto.'
-        assert.equal(actual, expected)
+    it('should format fractionals', () => {
+        const name = 'Steffen'
+        const number = 0.1365
+
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        const actual = i18n`Hello ${name}, the number is ${number}:n(2).`
+        expect(actual).toMatchSnapshot()
+    }) 
+
+    it('should ignore unknown custom number formatters', () => {
+        const name = 'Steffen'
+        const number = 0.1365
+
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        const actual = i18n`Hello ${name}, the number is ${number}:n(x).`
+        expect(actual).toMatchSnapshot()
+    })
+
+    it('should format decimals', () => {
+        const name = 'Steffen'
+        const number = 0.1365
+
+        i18nConfig({
+            locales: 'de-DE'
+        })
+
+        const actual = i18n`Hello ${name}, the number is ${number}:n.`
+        expect(actual).toMatchSnapshot()
     })
 
     it('should format percentage', () => {
@@ -56,9 +113,19 @@ describe('es2015-i18n-tag', () => {
         })
 
         const actual = i18n`Hello ${name}, the percentage is ${percentage}:p.`
+        expect(actual).toMatchSnapshot()
+    })
 
-        const expected = 'Hello Steffen, the percentage is 10%.'
-        assert.equal(actual, expected)
+    it('should format currency', () => {
+        const name = 'Steffen'
+        const amount = 0.1
+
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        const actual = i18n`Hello ${name}, the amount is ${amount}:c(EUR).`
+        expect(actual).toMatchSnapshot()
     })
 
     it('should support nested templates', () => {
@@ -78,8 +145,22 @@ describe('es2015-i18n-tag', () => {
         `).join('')}
         </users>`
 
-        const expected = `\n        <users>\n        \n            <user name="Steffen">20%</user>\n        \n            <user name="Jack">80%</user>\n        \n        </users>`
-        assert.equal(actual, expected)
+        expect(actual).toMatchSnapshot()
+    })
+
+    it('should support date format', () => {
+        const date = new Date('Thu, 20 Dec 2012 18:00:00 UTC')
+
+        i18nConfig({
+            locales: 'de-DE',
+            date: {
+                timeZone: 'UTC'
+            }
+        })
+
+        const actual = i18n`The date is ${date}:t.`
+        expect(actual).toMatchSnapshot()
+
     })
 
     it('should support standard date format string "d"', () => {
@@ -93,9 +174,7 @@ describe('es2015-i18n-tag', () => {
         })
 
         const actual = i18n`The date is ${date}:t(d).`
-
-        const expected = 'The date is 12/20/2012.'
-        assert.equal(actual, expected)
+        expect(actual).toMatchSnapshot()
 
     })
 
@@ -110,9 +189,7 @@ describe('es2015-i18n-tag', () => {
         })
 
         const actual = i18n`The date is ${date}:t(D).`
-
-        const expected = 'The date is Thursday, December 20, 2012.'
-        assert.equal(actual, expected)
+        expect(actual).toMatchSnapshot()
 
     })
 
@@ -127,9 +204,7 @@ describe('es2015-i18n-tag', () => {
         })
 
         const actual = i18n`The date is ${date}:t(f).`
-
-        const expected = 'The date is Thursday, December 20, 2012 at 6:00 PM.'
-        assert.equal(actual, expected)
+        expect(actual).toMatchSnapshot()
 
     })
 
@@ -144,9 +219,7 @@ describe('es2015-i18n-tag', () => {
         })
 
         const actual = i18n`The date is ${date}:t(F).`
-
-        const expected = 'The date is Thursday, December 20, 2012 at 6:00:00 PM.'
-        assert.equal(actual, expected)
+        expect(actual).toMatchSnapshot()
 
     })
 
@@ -161,9 +234,7 @@ describe('es2015-i18n-tag', () => {
         })
 
         const actual = i18n`The date is ${date}:t(g).`
-
-        const expected = 'The date is 12/20/2012, 6:00 PM.'
-        assert.equal(actual, expected)
+        expect(actual).toMatchSnapshot()
 
     })
 
@@ -178,9 +249,7 @@ describe('es2015-i18n-tag', () => {
         })
 
         const actual = i18n`The date is ${date}:t(G).`
-
-        const expected = 'The date is 12/20/2012, 6:00:00 PM.'
-        assert.equal(actual, expected)
+        expect(actual).toMatchSnapshot()
 
     })
 
@@ -195,9 +264,7 @@ describe('es2015-i18n-tag', () => {
         })
 
         const actual = i18n`The date is ${date}:t(m).`
-
-        const expected = 'The date is December 20.'
-        assert.equal(actual, expected)
+        expect(actual).toMatchSnapshot()
     })
 
     it('should support standard date format string "O", "o"', () => {
@@ -211,9 +278,7 @@ describe('es2015-i18n-tag', () => {
         })
 
         const actual = i18n`The date is ${date}:t(o).`
-
-        const expected = 'The date is 2012-12-20T18:00:00.000Z.'
-        assert.equal(actual, expected)
+        expect(actual).toMatchSnapshot()
     })
 
     it('should support standard date format string "R", "r"', () => {
@@ -227,9 +292,7 @@ describe('es2015-i18n-tag', () => {
         })
 
         const actual = i18n`The date is ${date}:t(r).`
-
-        const expected = 'The date is Thu, 20 Dec 2012 18:00:00 GMT.'
-        assert.equal(actual, expected)
+        expect(actual).toMatchSnapshot()
     })
 
     it('should support standard date format string "t"', () => {
@@ -243,9 +306,7 @@ describe('es2015-i18n-tag', () => {
         })
 
         const actual = i18n`The date is ${date}:t(t).`
-
-        const expected = 'The date is 6:00 PM.'
-        assert.equal(actual, expected)
+        expect(actual).toMatchSnapshot()
 
     })
 
@@ -260,9 +321,7 @@ describe('es2015-i18n-tag', () => {
         })
 
         const actual = i18n`The date is ${date}:t(T).`
-
-        const expected = 'The date is 6:00:00 PM.'
-        assert.equal(actual, expected)
+        expect(actual).toMatchSnapshot()
 
     })
 
@@ -277,10 +336,24 @@ describe('es2015-i18n-tag', () => {
         })
 
         const actual = i18n`The date is ${date}:t(y).`
-
-        const expected = 'The date is December 2012.'
-        assert.equal(actual, expected)
+        expect(actual).toMatchSnapshot()
     })
+
+    it('should ignore missing standard formatters', () => {
+        const date = new Date('Thu, 20 Dec 2012 18:00:00 UTC')
+
+        i18nConfig({
+            locales: 'de-DE',
+            standardFormatters: { 
+                date: {
+                    y: () => 'test'
+                } 
+            }
+        })
+
+        const actual = i18n`The date is ${date}:t(w) ${'test123'}:s(z).`
+        expect(actual).toMatchSnapshot()
+    })    
 
     it('should support custom standard formatters', () => {
         const date = new Date('Thu, 20 Dec 2012 18:00:00 UTC')
@@ -301,17 +374,14 @@ describe('es2015-i18n-tag', () => {
         })
 
         const actual = i18n`${0.77}:n(x) ${date}:t(x) ${'test123'}:s(z)`
-
-        const expected = '77 % test test321'
-        assert.equal(actual, expected)
-    })
+        expect(actual).toMatchSnapshot()
+    })    
 
     it('should support translation groups', () => {
         const name = 'Steffen'
         const amount = 1250.33
 
         i18nConfig({
-            locales: 'de-DE',
             translations: {
                 testgroup: {
                     'Hello ${0}, you have ${1} in your bank account.': 'Hallo ${0}, Sie haben ${1} auf Ihrem Bankkonto.'
@@ -323,9 +393,7 @@ describe('es2015-i18n-tag', () => {
         })
 
         const actual = i18n('testgroup') `Hello ${name}, you have ${amount}:c in your bank account.`
-
-        const expected = 'Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto.'
-        assert.equal(actual, expected)
+        expect(actual).toMatchSnapshot()
     })
 
     it('should support translation group config', () => {
@@ -347,7 +415,6 @@ describe('es2015-i18n-tag', () => {
         })
 
         i18nConfig({
-            locales: 'de-DE',
             translations: {
                 'Hello ${0}, you have ${1} in your bank account.': 'Hallo ${0}, Sie haben ${1} auf Ihrem Bankkonto.',
                 testgroup: {
@@ -360,20 +427,16 @@ describe('es2015-i18n-tag', () => {
         })
 
         const actual = i18n('testgroup', 'my-lib') `Hello ${name}, you have ${amount}:c in your bank account.`
-        const expected = 'Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto.'
-        assert.equal(actual, expected)
+        expect(actual).toMatchSnapshot()
 
         const actualDefault = i18n('', 'my-lib')`Hello ${name}, you have ${amount}:c in your bank account.`
-        const expectedDefault = 'Hallo Steffen'
-        assert.equal(actualDefault, expectedDefault)
+        expect(actualDefault).toMatchSnapshot()
 
         const actual2 = i18n('testgroup') `Hello ${name}, you have ${amount}:c in your bank account.`
-        const expected2 = 'Hallo Steffen'
-        assert.equal(actual2, expected2)
+        expect(actual2).toMatchSnapshot()
 
         const actual2Default = i18n`Hello ${name}, you have ${amount}:c in your bank account.`
-        const expected2Default = 'Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto.'
-        assert.equal(actual2Default, expected2Default)
+        expect(actual2Default).toMatchSnapshot()
     })
 
     it('should support ES2016 style group class decorator', () => {
@@ -392,8 +455,7 @@ describe('es2015-i18n-tag', () => {
             }
         })
         const actual = decorated.getText()
-        const expected = 'Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto.'
-        assert.equal(actual, expected)
+        expect(actual).toMatchSnapshot()
     })
 
     it('should support inline override of ES2016 decorator', () => {
@@ -411,9 +473,8 @@ describe('es2015-i18n-tag', () => {
                 currency: 'EUR'
             }
         })
-        const actualCommon = decorated.getCommonText()
-        const expectedCommon = 'Hey Steffen'
-        assert.equal(actualCommon, expectedCommon)
+        const actual = decorated.getCommonText()
+        expect(actual).toMatchSnapshot()
     })
 
     it('should support ES2015 style group class decorator', () => {
@@ -431,9 +492,8 @@ describe('es2015-i18n-tag', () => {
                 currency: 'EUR'
             }
         })
-        const actual2 = decorated2.getText()
-        const expected2 = 'Hallo Steffen'
-        assert.equal(actual2, expected2)
+        const actual = decorated2.getText()
+        expect(actual).toMatchSnapshot()
     })
 
     it('should support inline override of ES2015 decorator', () => {
@@ -451,9 +511,8 @@ describe('es2015-i18n-tag', () => {
                 currency: 'EUR'
             }
         })
-        const actualCommon2 = decorated2.getCommonText()
-        const expectedCommon2 = 'Hey Ho Steffen'
-        assert.equal(actualCommon2, expectedCommon2)
+        const actual = decorated2.getCommonText()
+        expect(actual).toMatchSnapshot()
     })
 })
 

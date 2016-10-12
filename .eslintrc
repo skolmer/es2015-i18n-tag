@@ -7,7 +7,7 @@
         "es6": true,
         "browser": true,
         "node": true,
-        "mocha": true
+        "jest": true
     },
     "parser": "babel-eslint",
     "extends": [
@@ -16,7 +16,8 @@
         "plugin:import/warnings"
     ],
     "ignore": [
-        "dist"
+        "dist",
+        "__tests__"
     ],
     "rules": {
         "semi": [

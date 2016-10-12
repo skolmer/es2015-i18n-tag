@@ -1,6 +1,6 @@
 {
   "globalDevDependencies": {
-    "mocha": "registry:dt/mocha#2.2.5+20160317120654",
+    "jest": "registry:dt/jest#15.1.1+20160919141445",
     "rimraf": "registry:dt/rimraf#0.0.0+20160317120654",
     "webpack": "registry:dt/webpack#1.12.9+20160523035535"
   }

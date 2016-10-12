@@ -1,4 +1,4 @@
-import i18n, { i18nGroup } from '../lib/index'
+import i18n, { i18nGroup } from '../../lib/index'
 
 const name = 'Steffen'
 const amount = 1250.33
