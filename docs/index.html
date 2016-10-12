@@ -65,8 +65,8 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="i18n-tagged-template-literals-build-status-https-img-shields-io-travis-skolmer-es2015-i18n-tag-master-svg-style-flat-https-travis-ci-org-skolmer-es2015-i18n-tag-npm-version-https-img-shields-io-npm-v-es2015-i18n-tag-svg-style-flat-https-www-npmjs-com-package-es2015-i18n-tag-">i18n Tagged Template Literals <a href="https://travis-ci.org/skolmer/es2015-i18n-tag"><img src="https://img.shields.io/travis/skolmer/es2015-i18n-tag/master.svg?style=flat" alt="Build Status"></a> <a href="https://www.npmjs.com/package/es2015-i18n-tag"><img src="https://img.shields.io/npm/v/es2015-i18n-tag.svg?style=flat" alt="npm version"></a></h1>
-				<p><a href="https://www.npmjs.com/package/es2015-i18n-tag/"><img src="https://nodei.co/npm/es2015-i18n-tag.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt="NPM"></a></p>
+				<h1 id="i18n-tagged-template-literals-build-status-https-img-shields-io-travis-skolmer-es2015-i18n-tag-master-svg-style-flat-https-travis-ci-org-skolmer-es2015-i18n-tag-coverage-status-https-coveralls-io-repos-github-skolmer-es2015-i18n-tag-badge-svg-branch-master-https-coveralls-io-github-skolmer-es2015-i18n-tag-branch-master-npm-version-https-img-shields-io-npm-v-es2015-i18n-tag-svg-style-flat-https-www-npmjs-com-package-es2015-i18n-tag-">i18n Tagged Template Literals <a href="https://travis-ci.org/skolmer/es2015-i18n-tag"><img src="https://img.shields.io/travis/skolmer/es2015-i18n-tag/master.svg?style=flat" alt="Build Status"></a> <a href="https://coveralls.io/github/skolmer/es2015-i18n-tag?branch=master"><img src="https://coveralls.io/repos/github/skolmer/es2015-i18n-tag/badge.svg?branch=master" alt="Coverage Status"></a> <a href="https://www.npmjs.com/package/es2015-i18n-tag"><img src="https://img.shields.io/npm/v/es2015-i18n-tag.svg?style=flat" alt="npm version"></a></h1>
+				<p><a href="https://www.npmjs.com/package/es2015-i18n-tag/"><img src="https://nodei.co/npm/es2015-i18n-tag.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt="NPM"></a> </p>
 				<p><a href="http://i18n-tag.kolmer.net/"><img src="images/es2015-i18n-tag-icon-big.jpg" alt="i18n Tagged Template Literals"></a></p>
 				<h2 id="overview">Overview</h2>
 				<p>This template literal tag adds support for i18n and l10n (translation and internationalization) to your JavaScript project.
@@ -83,9 +83,11 @@
 					<li>Translate and internationalize your JavaScript project</li>
 					<li>Translate your JavaScript library at <a href="#build-time-translation">buildtime</a></li>
 					<li>Generate a <a href="#json-schema">schema</a> of all i18n tagged template literals in your project for easy JSON based translations</li>
+					<li>Export translations <a href="#translations-as-commonjs-modules">as CommonJS modules</a></li>
+					<li><a href="https://github.com/skolmer/i18n-tag-schema#validate-translation-file">Validate translations</a> and track translation coverage of your project</li>
 				</ul>
 				<h2 id="compatibility">Compatibility</h2>
-				<p>This library is using the ECMAScript Internationalization API. ES Internationalization API is implemented in all modern Browsers. For Safari Versions older than <a href="https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html#//apple_ref/doc/uid/TP40014305-CH11-DontLinkElementID_7">10.0</a> you can use Andy Earnshaw&#39;s excellent Intl.js polyfill:</p>
+				<p>This library is using the ECMAScript Internationalization API. ES Internationalization API is implemented in all modern Browsers. For node.js projects you can use Andy Earnshaw&#39;s excellent Intl.js polyfill:</p>
 				<ul>
 					<li><a href="http://caniuse.com/#search=Intl">Intl Browser Support</a></li>
 					<li><a href="https://github.com/andyearnshaw/Intl.js">Intl Polyfill</a></li>
