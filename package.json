@@ -1,7 +1,7 @@
 {
   "name": "es2015-i18n-tag",
   "description": "ES2015 template literal tag for i18n and l10n translation and localization",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "author": {
     "email": "steffen@kolmer.net",
     "name": "Steffen Kolmer",
@@ -76,7 +76,7 @@
     "docs": "typedoc --out ./pages/docs/ ./lib/index.d.ts --module commonjs --readme ./README.md --target ES6 --includeDeclarations --hideGenerator --name es2015-i18n-tag --mode file --media ./images"
   },
   "main": "./dist/lib",
-  "typings":"./dist/lib/index.d.ts",
+  "typings": "./dist/lib/index.d.ts",
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
