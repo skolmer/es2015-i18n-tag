@@ -110,15 +110,15 @@
 				<pre><code class="lang-js"><span class="hljs-keyword">import</span> i18n, { i18nConfig }  <span class="hljs-keyword">from</span> <span class="hljs-string">'es2015-i18n-tag'</span>
 
 i18nConfig({
-    locales: <span class="hljs-string">'de-DE'</span>,    
-    group: <span class="hljs-string">'my-lib'</span>, <span class="hljs-comment">// Optional, can be used to avoid configuration overrides. This is recommended for libraries!</span>
+    <span class="hljs-attr">locales</span>: <span class="hljs-string">'de-DE'</span>,    
+    <span class="hljs-attr">group</span>: <span class="hljs-string">'my-lib'</span>, <span class="hljs-comment">// Optional, can be used to avoid configuration overrides. This is recommended for libraries!</span>
     translations: {
         <span class="hljs-string">"Hello ${0}, you have ${1} in your bank account."</span>: <span class="hljs-string">"Hallo ${0}, Sie haben ${1} auf Ihrem Bankkonto."</span>
     },
-    number: {      
+    <span class="hljs-attr">number</span>: {      
         [...options] <span class="hljs-comment">// Intl NumberFormat options as described here: https://goo.gl/pDwbG2</span>
     },
-    date: {
+    <span class="hljs-attr">date</span>: {
         [...options] <span class="hljs-comment">// Intl DateTimeFormat options as described here: https://goo.gl/lslekB</span>
     }
 })
@@ -131,8 +131,8 @@ i18nConfig({
 </code></pre>
 				<h3 id="currency-formatting">Currency formatting</h3>
 				<pre><code class="lang-js">i18nConfig({
-    number: { 
-        currency: <span class="hljs-string">'EUR'</span>
+    <span class="hljs-attr">number</span>: { 
+        <span class="hljs-attr">currency</span>: <span class="hljs-string">'EUR'</span>
     }
 })
 
@@ -144,13 +144,13 @@ i18nConfig({
 </code></pre>
 				<h3 id="date-formatting">Date formatting</h3>
 				<pre><code class="lang-js">i18nConfig({
-    locales: <span class="hljs-string">'en-US'</span>,
-    date: { 
-        hour12: <span class="hljs-literal">false</span> 
+    <span class="hljs-attr">locales</span>: <span class="hljs-string">'en-US'</span>,
+    <span class="hljs-attr">date</span>: { 
+        <span class="hljs-attr">hour12</span>: <span class="hljs-literal">false</span> 
     }
 })
 
-<span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, the date is <span class="hljs-subst">${new Date(2012, 11, 20, 19, 0, 0)}</span>:t.`</span>)
+<span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, the date is <span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2012</span>, <span class="hljs-number">11</span>, <span class="hljs-number">20</span>, <span class="hljs-number">19</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)}</span>:t.`</span>)
 <span class="hljs-comment">// Hello Steffen, the date is 12/20/2012, 19:00:00.</span>
 </code></pre>
 				<h4 id="standard-format-strings">Standard format strings</h4>
@@ -233,47 +233,47 @@ i18n<span class="hljs-string">`The date is <span class="hljs-subst">${date}</spa
 					</tbody>
 				</table>
 				<h3 id="percentage-formatting">Percentage formatting</h3>
-				<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, the percentage is <span class="hljs-subst">${0.01}</span>:p.`</span>)
+				<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, the percentage is <span class="hljs-subst">${<span class="hljs-number">0.01</span>}</span>:p.`</span>)
 <span class="hljs-comment">// Hello Steffen, the percentage is 1%.</span>
 
 i18nConfig({
-    locales: <span class="hljs-string">'de-DE'</span>
+    <span class="hljs-attr">locales</span>: <span class="hljs-string">'de-DE'</span>
 })
-<span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, the percentage is <span class="hljs-subst">${0.01}</span>:p.`</span>)
+<span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, the percentage is <span class="hljs-subst">${<span class="hljs-number">0.01</span>}</span>:p.`</span>)
 <span class="hljs-comment">// Hello Steffen, the percentage is 1 %.</span>
 </code></pre>
 				<h3 id="number-formatting">Number formatting</h3>
-				<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, the number is <span class="hljs-subst">${12345.678}</span>:n(2).`</span>)
+				<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, the number is <span class="hljs-subst">${<span class="hljs-number">12345.678</span>}</span>:n(2).`</span>)
 <span class="hljs-comment">// Hello Steffen, the number is 12,345.67.</span>
 
 i18nConfig({
-    locales: <span class="hljs-string">'de-DE'</span>
+    <span class="hljs-attr">locales</span>: <span class="hljs-string">'de-DE'</span>
 })
-<span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, the number is <span class="hljs-subst">${12345.678}</span>:n(2).`</span>)
+<span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`Hello <span class="hljs-subst">${name}</span>, the number is <span class="hljs-subst">${<span class="hljs-number">12345.678</span>}</span>:n(2).`</span>)
 <span class="hljs-comment">// Hello Steffen, the number is 12.345,67.</span>
 </code></pre>
 				<h3 id="pluralization">Pluralization</h3>
 				<p>You can use <a href="#nested-templates">nested templates</a> for pluralization as shown in this <a href="https://jsbin.com/zubugedeja/edit?js,output">example</a>.</p>
 				<h3 id="nested-templates">Nested templates</h3>
-				<pre><code class="lang-js">let hello = [
-    { name: "Steffen", percentage: 0.2 },
-    { name: "Jack", percentage: 0.8 }
+				<pre><code class="lang-js"><span class="hljs-keyword">let</span> hello = [
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">"Steffen"</span>, <span class="hljs-attr">percentage</span>: <span class="hljs-number">0.2</span> },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">"Jack"</span>, <span class="hljs-attr">percentage</span>: <span class="hljs-number">0.8</span> }
 ]
 
-console.log(i18n`
+<span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`
     &lt;users&gt;
-    ${hello.map((item) =&gt; i18n`
-        &lt;user name="${item.name}"&gt;${item.percentage}:p&lt;/user&gt;
-    `).join('')}
+    <span class="hljs-subst">${hello.map((item) =&gt; i18n<span class="hljs-string">`
+        &lt;user name="<span class="hljs-subst">${item.name}</span>"&gt;<span class="hljs-subst">${item.percentage}</span>:p&lt;/user&gt;
+    `</span>).join(<span class="hljs-string">''</span>)}</span>
     &lt;/users&gt;
-`)
-// &lt;users&gt;
-// 
-//     &lt;user name="Steffen"&gt;20%&lt;/user&gt;
-// 
-//     &lt;user name="Jack"&gt;80%&lt;/user&gt;
-// 
-// &lt;/users&gt;
+`</span>)
+<span class="hljs-comment">// &lt;users&gt;</span>
+<span class="hljs-comment">// </span>
+<span class="hljs-comment">//     &lt;user name="Steffen"&gt;20%&lt;/user&gt;</span>
+<span class="hljs-comment">// </span>
+<span class="hljs-comment">//     &lt;user name="Jack"&gt;80%&lt;/user&gt;</span>
+<span class="hljs-comment">// </span>
+<span class="hljs-comment">// &lt;/users&gt;</span>
 </code></pre>
 				<blockquote>
 					<p><strong>NOTE:</strong> For easy translation of multiline template literals use one of the following <a href="#json-schema">json schema generators</a>.</p>
@@ -281,14 +281,14 @@ console.log(i18n`
 				<h3 id="standard-format-strings">Standard format strings</h3>
 				<p>You can add custom standard formatters similar to the predefined DateTime formatters. Valid types are <code>date</code>, <code>number</code> and <code>string</code>.</p>
 				<pre><code class="lang-js">i18nConfig({
-    standardFormatters: {
-        number: {
-            x: (locales, numberOptions, value) =&gt; value.toLocaleString(locales, <span class="hljs-built_in">Object</span>.assign({}, numberOptions, { style: <span class="hljs-string">'percent'</span> }))
+    <span class="hljs-attr">standardFormatters</span>: {
+        <span class="hljs-attr">number</span>: {
+            <span class="hljs-attr">x</span>: <span class="hljs-function">(<span class="hljs-params">locales, numberOptions, value</span>) =&gt;</span> value.toLocaleString(locales, <span class="hljs-built_in">Object</span>.assign({}, numberOptions, { <span class="hljs-attr">style</span>: <span class="hljs-string">'percent'</span> }))
         }
     }
 })
 
-<span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`<span class="hljs-subst">${0.77}</span>:n(x)`</span>)
+<span class="hljs-built_in">console</span>.log(i18n<span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-number">0.77</span>}</span>:n(x)`</span>)
 <span class="hljs-comment">// 77%</span>
 </code></pre>
 				<h3 id="translation-groups">Translation Groups</h3>
@@ -332,7 +332,7 @@ i18n(<span class="hljs-string">'components/Clock.js'</span>)<span class="hljs-st
 <span class="hljs-comment">/* default syntax */</span>
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clock</span> </span>{
     tick() {
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.i18n<span class="hljs-string">`Time: <span class="hljs-subst">${new Date()}</span>:t(T)`</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.i18n<span class="hljs-string">`Time: <span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()}</span>:t(T)`</span>
     }
 }
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> i18nGroup(__translationGroup)(Clock)
@@ -342,7 +342,7 @@ i18n(<span class="hljs-string">'components/Clock.js'</span>)<span class="hljs-st
 @i18nGroup(__translationGroup)
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clock</span> </span>{
     tick() {
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.i18n<span class="hljs-string">`Time: <span class="hljs-subst">${new Date()}</span>:t(T)`</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.i18n<span class="hljs-string">`Time: <span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()}</span>:t(T)`</span>
     }
 }
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> Clock
@@ -357,8 +357,8 @@ i18n(<span class="hljs-string">'components/Clock.js'</span>, <span class="hljs-s
 				<pre><code class="lang-js"><span class="hljs-keyword">import</span> { i18nGroup, i18nConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">'es2015-i18n-tag'</span>
 
 i18nConfig({
-    locales: <span class="hljs-string">'de-DE'</span>,
-    group: <span class="hljs-string">'my-lib'</span> <span class="hljs-comment">// set translation and i18n config for 'my-lib'</span>
+    <span class="hljs-attr">locales</span>: <span class="hljs-string">'de-DE'</span>,
+    <span class="hljs-attr">group</span>: <span class="hljs-string">'my-lib'</span> <span class="hljs-comment">// set translation and i18n config for 'my-lib'</span>
     translations: {
         <span class="hljs-string">"components/App.js"</span>: {
             <span class="hljs-string">"Welcome"</span>: <span class="hljs-string">"Willkommen"</span>
@@ -372,7 +372,7 @@ i18nConfig({
 <span class="hljs-comment">/* default syntax */</span>
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clock</span> </span>{
     tick() {
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.i18n<span class="hljs-string">`Time: <span class="hljs-subst">${new Date()}</span>:t(T)`</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.i18n<span class="hljs-string">`Time: <span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()}</span>:t(T)`</span>
     }
 }
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> i18nGroup(__translationGroup, <span class="hljs-string">'my-lib'</span>)(Clock)
@@ -382,7 +382,7 @@ i18nConfig({
 @i18nGroup(__translationGroup, <span class="hljs-string">'my-lib'</span>)
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clock</span> </span>{
     tick() {
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.i18n<span class="hljs-string">`Time: <span class="hljs-subst">${new Date()}</span>:t(T)`</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.i18n<span class="hljs-string">`Time: <span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()}</span>:t(T)`</span>
     }
 }
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> Clock
@@ -394,10 +394,10 @@ i18nConfig({
 				<pre><code class="lang-js"><span class="hljs-keyword">import</span> translations <span class="hljs-keyword">from</span> <span class="hljs-string">'json!../../translations/translation.de.json'</span>
 
 i18nConfig({
-    locales: <span class="hljs-string">'de-DE'</span>,
-    group: <span class="hljs-string">'my-lib'</span> <span class="hljs-comment">// set translation and i18n config for 'my-lib'</span>
+    <span class="hljs-attr">locales</span>: <span class="hljs-string">'de-DE'</span>,
+    <span class="hljs-attr">group</span>: <span class="hljs-string">'my-lib'</span> <span class="hljs-comment">// set translation and i18n config for 'my-lib'</span>
     number: { 
-        currency: <span class="hljs-string">'EUR'</span>
+        <span class="hljs-attr">currency</span>: <span class="hljs-string">'EUR'</span>
     },
     translations
 }) <span class="hljs-comment">// set internationalization settings and add imported translations</span>
@@ -406,7 +406,7 @@ i18nConfig({
 				<pre><code class="lang-js">@i18nGroup(<span class="hljs-string">''</span>, <span class="hljs-string">'my-lib'</span>)
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clock</span> </span>{
     tick() {
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.i18n<span class="hljs-string">`Time: <span class="hljs-subst">${new Date()}</span>:t(T)`</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.i18n<span class="hljs-string">`Time: <span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()}</span>:t(T)`</span>
     }
 }
 </code></pre>
@@ -452,7 +452,7 @@ i18nConfig({
 						<a href="globals.html#numberconfig" class="tsd-kind-icon">Number<wbr>Config</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#default" class="tsd-kind-icon">default</a>
+						<a href="globals.html#i18n" class="tsd-kind-icon">i18n</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#i18nconfig" class="tsd-kind-icon">i18n<wbr>Config</a>
