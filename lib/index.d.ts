@@ -46,7 +46,7 @@ type NumberConfig = {
      * The maximum number of significant digits to use. Possible values are from 1 to 21; the default is minimumSignificantDigits.
      */
     maximumSignificantDigits?: number
-}
+};
 
 
 type DateConfig = {
@@ -103,7 +103,7 @@ type DateConfig = {
      * The representation of the time zone name. 
      */
     timeZoneName?: "short" | "long",
-}
+};
 
 type Config = {
     /**
@@ -130,7 +130,7 @@ type Config = {
     /**
      * Can be used to define custom standard formatters for date, number and string suffix functions. `${ new Date() }:t([formatter])`
      */
-    standardFormatters: {
+    standardFormatters?: {
         date?: {
             [name : string] : (locales : string | Array<string>, dateOptions : DateConfig, value : Date) => string
         }
@@ -141,7 +141,7 @@ type Config = {
             [name : string] : (locales : string | Array<string>, stringOptions : {}, value : string) => string
         }
     }
-}
+};
 
 /**
  * Sets i18n tagged template literals configuration.
@@ -164,7 +164,7 @@ type Config = {
  *         }
  *     })
  */
-export function i18nConfig(config: Config) : void
+export function i18nConfig(config: Config) : void;
 
 /**
  * i18n translation and configuration group class decorator.
@@ -192,7 +192,7 @@ export function i18nConfig(config: Config) : void
  *     }
  *     export default Clock
  */
-export function i18nGroup(group: string, config?: string): (target: any) => any 
+export function i18nGroup(group: string, config?: string): (target: any) => any;
 
 /**
  * Transforms i18n tagged template literals.
@@ -209,6 +209,16 @@ export function i18nGroup(group: string, config?: string): (target: any) => any
  * @example <caption>with i18nGroup decorator:</caption>   
  * 
  *     this.i18n`Time: ${new Date()}:t(T)`;
+ */
+export default function i18n(literals: TemplateStringsArray, ...values: Array<any>) : string;
+
+/**
+ * Transforms i18n tagged template literals.
+ * 
+ * @param group the name of the translation group.
+ * @param config the name of the configuration group. This option is recommended for libaries. To avoid configuration override, set a group that is unique to your library.
+ * @param literals Template literals.
+ * @param values Template values.
  * 
  * @example <caption>with custom translation group:</caption> 
  * 
@@ -218,5 +228,4 @@ export function i18nGroup(group: string, config?: string): (target: any) => any
  * 
  *     i18n(__translationGroup, 'my-lib')`Welcome`;
  */
-export default function i18n(literals: TemplateStringsArray, ...values: Array<any>) : string
-export default function i18n(group: string, config?: string) : (literals : TemplateStringsArray, ...values : Array<any>) => string
+export default function i18n(group: string, config?: string) : (literals : TemplateStringsArray, ...values : Array<any>) => string;
