@@ -35,6 +35,8 @@ lib-cov
 html-report
 xunit.xml
 pages
+__tests__
+images
 
 .project
 .idea
