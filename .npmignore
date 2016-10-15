@@ -38,12 +38,21 @@ pages
 __tests__
 images
 
+.vscode
 .project
 .idea
 .settings
 .iml
 *.sublime-workspace
 *.sublime-project
+typings.json
+jsconfig.json
+.travis.yml
+.babelrc
+.eslintrc
+webpack.config.babel.js
+.npmignore
+.coveralls.yml
 
 ehthumbs.db
 Icon?
