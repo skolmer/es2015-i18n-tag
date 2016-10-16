@@ -65,8 +65,9 @@
   },
   "scripts": {
     "prepublish": "npm run lint && npm run clean && npm run build",
-    "test": "npm run lint && jest && npm run report-coverage",
+    "test": "npm run test:local && npm run report-coverage",
     "report-coverage": "shx cat ./coverage/lcov.info | coveralls",
+    "test:local": "npm run lint && jest",
     "test:watch": "jest --watch",
     "clean": "rimraf dist/lib/**/*",
     "build": "npm-run-all --parallel build:*",
@@ -111,6 +112,9 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "pre-commit": "npm run test:local"
     }
   }
 }
