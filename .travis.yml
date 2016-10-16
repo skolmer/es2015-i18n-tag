@@ -1,15 +1,20 @@
+sudo: false
 language: node_js
-node_js:
-- stable
+cache:
+  directories:
+    - node_modules
 notifications:
+  email: false
   slack:
     secure: TSHkvcyQDftaLVfV1tfcPEUcNNmQyYlMiuopuZWskAW7iItdgVPNuhuBZURx2HdeK3uCJInZgFjdhgSwrUgwjChG0rQj6719njO+gR+90jIoma295fKoKMCAkw5/QwpQ/37kGua+FBWqKA5u6vIhHa+lBrOFY0bOsW/tadm8/iol1c98YLqAWFBXbXYwSxoLDnHqufT5p28JoUUZ1UfaMkh5WLodBsNbv4BfJC2RDc0hY+BrfA3onLDc7fKG4XtW6KfGWbHVv0X+Ny65PjoUEcFVawfbVhaxuzYtY6+tXTszJIvws9aTqf4GAPjczYtvYyBPUxHUPdsUf96wS59yQd70bu3sC+moaUzbZIdAWe70xAYGcslrxmPkekgHfEzkZu9ANOSAv2KqAyPRaxVGTofjh0+TajnVR6eP5lSJz9EPxVBdwg4PsHQdaEWdYB5oD4CPLx/8MV3TAaX/5N+Yo53lytm7jF9IgVMMs+aAtchG2YjSC1plNgUKgsU7k3ZJDhcfmVYy1EL0+zmP2UmRl8ZiyjmjoqaPikbryXFx9ATlytiI5RLw1CzMLnuU+kuaVZohmX1vV3r66/ufDwqLp9xq+OZlRi9RnY26430fg5prCUUsGTZTks9JiOouCPaVETfYMgPSva3dCmPPntEh+RShyqlrygQ6Ik8SfTghLvA=
-deploy:
-  skip_cleanup: true
-  provider: npm
-  email: steffen@kolmer.net
-  api_key:
-    secure: WScNBXM/SkuKNLxUq7j5ymplC6SzqKqRC+dTt+13GckkrCiIEUxSLY2G5KaQlX54qLubeB7sngl4RufGRng2p0VHDumsPT2BFb1QIzuEouqI+sq/2621Y0bxKFkdjMLMa7n5qklRMP051/DOVOsuvT3Thx+qwH381W7BwSVZol30dcbbCovAFD4tYaacAn/TAhtBmqi1RLZQuoF+/tl2xyEtCrD/50Q+GShu+9WgYJHU3m/sDq4OgxYd2kbY2FUtHv3U1TTHf4ywzq6O+YoCTDNgpm6En/hmQACVhIvVTmOWOh8qNF307SpsT7W05zH+P2iNYJl8pIv/WNYKYdZ4Qvo2L6hNkzYceC1tNQxWTJyWP14TaFmzEmGRqIUqOlVSxB1g56lE582QDnoohUy5AjuY9mGxUQMk/3XrhrixoRWl9beG9+pr8UmZBkpvIUa2SHKyCM+D80TXjhAnNOAEL3PoLyD2Bbcsp3DRhB1u+oc7d3ZJ+YYy8RtKzqFnnSfga9ImT780YfYZAd+dx+O3w1azvWMubcb7d9jProS1CGsoAYGEbs1mCgsLHo2rhSj3kzap39Q6+AgWfh6zeAq8Gy5qXevMV3v3GBFnsm+54KRikn1zqNqHwAB7E9KXbjOHzKE0zSZHvFcBhzbP3eobMbuHfkLgvonM65vf3DZ1Rvo=
-  on:
-    tags: true
-    repo: skolmer/es2015-i18n-tag
+node_js:
+  - '4'
+before_install:
+  - npm i -g npm@^2.0.0
+before_script:
+  - npm prune
+after_success:
+  - npm run semantic-release
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/

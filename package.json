@@ -1,7 +1,6 @@
 {
   "name": "es2015-i18n-tag",
   "description": "ES2015 template literal tag for i18n and l10n translation and localization",
-  "version": "1.1.3",
   "author": {
     "email": "steffen@kolmer.net",
     "name": "Steffen Kolmer",
@@ -31,7 +30,7 @@
   "homepage": "http://i18n-tag.kolmer.net",
   "repository": {
     "type": "git",
-    "url": "git://github.com/skolmer/es2015-i18n-tag.git"
+    "url": "https://github.com/skolmer/es2015-i18n-tag.git"
   },
   "bugs": {
     "url": "https://github.com/skolmer/es2015-i18n-tag/issues",
@@ -54,13 +53,15 @@
     "eslint": "^3.8.0",
     "eslint-plugin-babel": "^3.2.0",
     "eslint-plugin-import": "^2.0.1",
+    "ghooks": "^1.3.2",
     "intl": "^1.2.5",
     "jest": "^16.0.1",
     "npm-run-all": "^3.1.1",
     "rimraf": "^2.5.2",
     "shx": "^0.1.4",
     "typedoc": "^0.5.0",
-    "webpack": "^1.13.1"
+    "webpack": "^1.13.1",
+    "semantic-release": "^4.3.5"
   },
   "scripts": {
     "prepublish": "npm run lint && npm run clean && npm run build",
@@ -75,7 +76,8 @@
     "lint": "eslint lib",
     "pushdocs": "git add pages && git commit -m \"docs(pages): Updated pages\" && git subtree push --prefix pages origin gh-pages",
     "docs": "typedoc --out ./pages/docs/ ./lib/index.d.ts --module commonjs --readme ./README.md --target ES6 --includeDeclarations --hideGenerator --name es2015-i18n-tag --mode file --media ./images",
-    "commit": "git add . && git cz"
+    "commit": "git add . && git cz",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "main": "./dist/lib",
   "typings": "./dist/lib/index.d.ts",
