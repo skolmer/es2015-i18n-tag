@@ -63,7 +63,7 @@
   },
   "scripts": {
     "prepublish": "npm run lint && npm run clean && npm run build",
-    "test": "jest && npm run report-coverage",
+    "test": "npm run lint && jest && npm run report-coverage",
     "report-coverage": "shx cat ./coverage/lcov.info | coveralls",
     "test:watch": "jest --watch",
     "clean": "rimraf dist/lib/**/*",
