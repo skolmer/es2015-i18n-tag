@@ -18,7 +18,7 @@ exports[`es2015-i18n-tag should not translate 1`] = `"Hello Steffen, you have $1
 
 exports[`es2015-i18n-tag should support ES2015 style group class decorator 1`] = `"Hallo Steffen"`;
 
-exports[`es2015-i18n-tag should support ES2016 style group class decorator 1`] = `"Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto."`;
+exports[`es2015-i18n-tag should support ES2016 style group class decorator 1`] = `"Hello Steffen, you have 1.250,33 € in your bank account. 1 2"`;
 
 exports[`es2015-i18n-tag should support custom standard formatters 1`] = `"77 % test test321"`;
 

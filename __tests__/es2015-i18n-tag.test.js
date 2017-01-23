@@ -2,7 +2,7 @@ import Intl from 'intl'
 import i18n, { i18nConfig }  from '../lib'
 import groupedClass, { groupedClass2 } from './data/groupedClass'
 
-const decorated = new groupedClass()
+const decorated = new groupedClass('1', '2')
 const decorated2 = new groupedClass2()
 
 Intl.__applyLocaleSensitivePrototypes()
@@ -47,7 +47,7 @@ describe('es2015-i18n-tag', () => {
             i18n`Hello ${name}, you have ${amount}:q in your bank account.`
         } catch(err) {
             expect(err).toMatchSnapshot()
-        }        
+        }
     })
 
     it('should translate to german', () => {
@@ -78,7 +78,7 @@ describe('es2015-i18n-tag', () => {
 
         const actual = i18n`Hello ${name}, the number is ${number}:n(2).`
         expect(actual).toMatchSnapshot()
-    }) 
+    })
 
     it('should ignore unknown custom number formatters', () => {
         const name = 'Steffen'
@@ -344,16 +344,16 @@ describe('es2015-i18n-tag', () => {
 
         i18nConfig({
             locales: 'de-DE',
-            standardFormatters: { 
+            standardFormatters: {
                 date: {
                     y: () => 'test'
-                } 
+                }
             }
         })
 
         const actual = i18n`The date is ${date}:t(w) ${'test123'}:s(z).`
         expect(actual).toMatchSnapshot()
-    })    
+    })
 
     it('should support custom standard formatters', () => {
         const date = new Date('Thu, 20 Dec 2012 18:00:00 UTC')
@@ -375,7 +375,7 @@ describe('es2015-i18n-tag', () => {
 
         const actual = i18n`${0.77}:n(x) ${date}:t(x) ${'test123'}:s(z)`
         expect(actual).toMatchSnapshot()
-    })    
+    })
 
     it('should support translation groups', () => {
         const name = 'Steffen'

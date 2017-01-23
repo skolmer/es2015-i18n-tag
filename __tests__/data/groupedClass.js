@@ -5,8 +5,14 @@ const amount = 1250.33
 
 @i18nGroup('custom group')
 export default class GroupedClass {
+    constructor(param1, param2) {
+        this.param1 = param1
+        this.param2 = param2
+    }
+
+
     getText() {
-        return this.i18n`Hello ${name}, you have ${amount}:c in your bank account.`
+        return this.i18n`Hello ${name}, you have ${amount}:c in your bank account. ${this.param1} ${this.param2}`
     }
 
     getCommonText() {
