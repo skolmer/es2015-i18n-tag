@@ -73,4 +73,6 @@ exports[`es2015-i18n-tag should support translation group config 4`] = `"Hallo S
 
 exports[`es2015-i18n-tag should support translation groups 1`] = `"Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto."`;
 
+exports[`es2015-i18n-tag should translate if formatter is followed by parenthesis 1`] = `"New item ($1,250.33)"`;
+
 exports[`es2015-i18n-tag should translate to german 1`] = `"Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto."`;

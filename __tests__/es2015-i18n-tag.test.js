@@ -32,6 +32,20 @@ describe('es2015-i18n-tag', () => {
         expect(actual).toMatchSnapshot()
     })
 
+    it('should translate if formatter is followed by parenthesis', () => {
+        const amount = 1250.33
+
+        i18nConfig({
+            locales: 'en-US',
+            number: {
+                currency: 'EUR'
+            }
+        })
+
+        const actual = i18n`New item (${amount}:c(USD))`
+        expect(actual).toMatchSnapshot()
+    })
+
     it('should fail on unknown types', () => {
         const name = 'Steffen'
         const amount = 1250.33
