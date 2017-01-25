@@ -6,6 +6,44 @@
 
 [![i18n Tagged Template Literals](images/es2015-i18n-tag-icon-big.jpg)](http://i18n-tag.kolmer.net/)
 
+## Table of Contents
+
+* [Overview](#overview)
+* [Features](#features)
+* [Compatibility](#compatibility)
+* [Examples](#examples)
+* [Installation](#installation)
+* [Usage](#usage)
+  * [UMD module on unpkg.com](#umd-module-on-unpkgcom) 
+  * [Import and Configuration](#import-and-configuration)
+  * [Currency formatting](#currency-formatting)
+  * [Date formatting](#date-formatting)
+    * [Standard format strings](#standard-format-strings)
+  * [Percentage formatting](#percentage-formatting) 
+  * [Number formatting](#number-formatting)
+  * [Pluralization](#pluralization)
+  * [Nested templates](#nested-templates)
+  * [Standard format strings](#standard-format-strings)
+  * [Translation Groups](#translation-groups)
+    * [Babel generated file module groups](#babel-generated-file-module-groups)
+      * [.babelrc](#babelrc) 
+      * [Project Structure](#project-structure)
+      * [translations.de.json](#translationsdejson)
+      * [App.js](#appjs)
+      * [i18nGroup Class Decorator](#i18ngroup-class-decorator)
+  * [Configuration Groups](#configuration-groups)
+    * [i18n Option](#i18n-option)
+    * [i18nGroup Class Decorator](#i18ngroup-class-decorator)
+* [Translations as CommonJS Modules](#translations-as-commonjs-modules)
+  * [./my-lib/de/index.js](#my-libdeindexjs)
+  * [./my-lib/index.js](#my-libindexjs)
+  * [Import library with german translations into an app](#import-library-with-german-translations-into-an-app)
+* [Tools](#tools)
+  * [Build time translation](#build-time-translation)
+  * [JSON Schema](#json-schema)
+* [Credits](#credits)
+* [License](#license)
+
 ## Overview
 
 This template literal tag adds support for i18n and l10n (translation and internationalization) to your JavaScript project.
@@ -250,7 +288,7 @@ import { i18nGroup } from 'es2015-i18n-tag'
 /* default syntax */
 class Clock {
     tick() {
-        return this.i18n`Time: ${new Date()}:t(T)`
+        return this.i18n`Time: ${new Date()}:t(T)` // you have to use the class instance of i18n to get the grouped translation
     }
 }
 export default i18nGroup(__translationGroup)(Clock)
@@ -260,7 +298,7 @@ export default i18nGroup(__translationGroup)(Clock)
 @i18nGroup(__translationGroup)
 class Clock {
     tick() {
-        return this.i18n`Time: ${new Date()}:t(T)`
+        return this.i18n`Time: ${new Date()}:t(T)` // you have to use the class instance of i18n to get the grouped translation
     }
 }
 export default Clock
