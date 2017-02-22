@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`es2015-i18n-tag should fail on unknown types 1`] = `[Error: Type 'q' is not supported. Supported types are: s,n,t,c,p]`;
 
 exports[`es2015-i18n-tag should fallback to default config 1`] = `"Hello Steffen, you have $1,250.33 in your bank account."`;
@@ -32,9 +34,9 @@ exports[`es2015-i18n-tag should support nested templates 1`] = `
 "
         <users>
         
-            <user name=\"Steffen\">20%</user>
+            <user name=\\"Steffen\\">20%</user>
         
-            <user name=\"Jack\">80%</user>
+            <user name=\\"Jack\\">80%</user>
         
         </users>"
 `;
