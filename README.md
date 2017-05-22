@@ -65,7 +65,7 @@ It provides the following benefits:
 
 ## Compatibility
 
-This library is using the ECMAScript Internationalization API. ES Internationalization API is implemented in all modern Browsers. For node.js projects you can use Andy Earnshaw's excellent Intl.js polyfill:
+This library is using the ECMAScript Internationalization API. ES Internationalization API is implemented in all modern Browsers. For node.js projects you can use Andy Earnshaw's excellent Intl.js polyfill [[#34](https://github.com/skolmer/es2015-i18n-tag/issues/34#issuecomment-303114372)]:
 * [Intl Browser Support](http://caniuse.com/#search=Intl)
 * [Intl Polyfill](https://github.com/andyearnshaw/Intl.js)
 
@@ -83,7 +83,7 @@ $ npm install es2015-i18n-tag --save
 ## Usage
 
 This library is available as CommonJS module and as UMD module that is consumable in CommonJS, AMD and with script tags. 
-The UMD module can be used in [environments that don't support CommonJS modules](https://jsbin.com/rojilu/edit?html,js,output). It is highly recommended to use es2015-i18n-tag as CommonJS module with babel and [webpack](https://github.com/skolmer/i18n-tag-examples/tree/master/ReactJS) or [browserify](https://github.com/skolmer/i18n-tag-examples/tree/master/Simple). In a Node.js environment you have to use the [Intl Polyfill](https://github.com/andyearnshaw/Intl.js#intljs-and-node) to add support for additional locales.
+The UMD module can be used in [environments that don't support CommonJS modules](https://jsbin.com/rojilu/edit?html,js,output). It is highly recommended to use es2015-i18n-tag as CommonJS module with babel and [webpack](https://github.com/skolmer/i18n-tag-examples/tree/master/ReactJS) or [browserify](https://github.com/skolmer/i18n-tag-examples/tree/master/Simple). In a Node.js environment you have to use the [Intl Polyfill](https://github.com/andyearnshaw/Intl.js#intljs-and-node) to add support for additional locales [[#34](https://github.com/skolmer/es2015-i18n-tag/issues/34#issuecomment-303114372)].
 
 ### UMD module on unpkg.com
 
