@@ -811,6 +811,22 @@ describe('es2015-i18n-tag-translate', () => {
         const actual2Default = i18n.translate('Hello ${0}, you have ${1} in your bank account.', name, { value: amount, formatter: 'c' })
         expect(actual2Default).toMatchSnapshot()
     })
+
+    it('should support ES2016 style group class decorator', () => {
+        i18nConfig({
+            locales: 'de-DE',
+            translations: {
+                'custom group': {
+                    'Hello ${0}, you have ${1} in your bank account.': 'Hallo ${0}, Sie haben ${1} auf Ihrem Bankkonto.'
+                }
+            },
+            number: {
+                currency: 'EUR'
+            }
+        })
+        const actual = decorated.getText2()
+        expect(actual).toMatchSnapshot()
+    })
 })
 
 

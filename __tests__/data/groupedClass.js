@@ -18,6 +18,10 @@ export default class GroupedClass {
     getCommonText() {
         return i18n('common')`Hello ${name}, you have ${amount}:c in your bank account.`
     }
+
+    getText2() {
+        return this.i18n.translate('Hello ${0}, you have ${1} in your bank account.', name, { value: amount, formatter: 'c' })
+    }
 }
 
 class GroupedClass2 {

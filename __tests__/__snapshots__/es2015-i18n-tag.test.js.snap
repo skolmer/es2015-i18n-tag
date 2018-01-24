@@ -99,6 +99,8 @@ exports[`es2015-i18n-tag-translate should ignore unknown custom number formatter
 
 exports[`es2015-i18n-tag-translate should not translate 1`] = `"Hello Steffen, you have $1,250.33 in your bank account."`;
 
+exports[`es2015-i18n-tag-translate should support ES2016 style group class decorator 1`] = `"Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto."`;
+
 exports[`es2015-i18n-tag-translate should support custom standard formatters 1`] = `"77 % test test321"`;
 
 exports[`es2015-i18n-tag-translate should support date format 1`] = `"The date is 20.12.2012, 18:00:00."`;
