@@ -34,7 +34,7 @@
   * [Configuration Groups](#configuration-groups)
     * [i18n Option](#i18n-option)
     * [i18nGroup Class Decorator](#i18ngroup-class-decorator)
-  * [Translating without template literals](#Translating-without-template-literals)
+  * [Translating without template literals](#translating-without-template-literals)
     * [Simple string translation](#simple-string-translation)
     * [Using formatters](#using-formatters)
     * [Using config and translation groups](#using-config-and-translation-groups)
