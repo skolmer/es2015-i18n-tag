@@ -78,3 +78,43 @@ exports[`es2015-i18n-tag should support translation groups 1`] = `"Hallo Steffen
 exports[`es2015-i18n-tag should translate if formatter is followed by parenthesis 1`] = `"New item ($1,250.33)"`;
 
 exports[`es2015-i18n-tag should translate to german 1`] = `"Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto."`;
+
+exports[`es2015-i18n-tag-translate should fail on unknown types 1`] = `[Error: Type 'q' is not supported. Supported types are: s,n,t,c,p]`;
+
+exports[`es2015-i18n-tag-translate should fallback to default config 1`] = `"Hello Steffen, you have $1,250.33 in your bank account."`;
+
+exports[`es2015-i18n-tag-translate should format currency 1`] = `"Hello Steffen, the amount is €0.10."`;
+
+exports[`es2015-i18n-tag-translate should format decimals 1`] = `"Hello Steffen, the number is 0,137."`;
+
+exports[`es2015-i18n-tag-translate should format fractionals 1`] = `"Hello Steffen, the number is 0.14."`;
+
+exports[`es2015-i18n-tag-translate should format percentage 1`] = `"Hello Steffen, the percentage is 10%."`;
+
+exports[`es2015-i18n-tag-translate should ignore invalid formatting options 1`] = `"Hello Steffen, you have  in your bank account."`;
+
+exports[`es2015-i18n-tag-translate should ignore missing standard formatters 1`] = `"The date is 20.12.2012, 18:00:00 test123."`;
+
+exports[`es2015-i18n-tag-translate should ignore unknown custom number formatters 1`] = `"Hello Steffen, the number is 14%."`;
+
+exports[`es2015-i18n-tag-translate should not translate 1`] = `"Hello Steffen, you have $1,250.33 in your bank account."`;
+
+exports[`es2015-i18n-tag-translate should support custom standard formatters 1`] = `"77 % test test321"`;
+
+exports[`es2015-i18n-tag-translate should support date format 1`] = `"The date is 20.12.2012, 18:00:00."`;
+
+exports[`es2015-i18n-tag-translate should support standard date format string "d" 1`] = `"The date is 12/20/2012."`;
+
+exports[`es2015-i18n-tag-translate should support translation group config 1`] = `"Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto."`;
+
+exports[`es2015-i18n-tag-translate should support translation group config 2`] = `"Hallo Steffen"`;
+
+exports[`es2015-i18n-tag-translate should support translation group config 3`] = `"Hallo Steffen"`;
+
+exports[`es2015-i18n-tag-translate should support translation group config 4`] = `"Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto."`;
+
+exports[`es2015-i18n-tag-translate should support translation groups 1`] = `"Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto."`;
+
+exports[`es2015-i18n-tag-translate should translate if formatter is followed by parenthesis 1`] = `"New item ($1,250.33)"`;
+
+exports[`es2015-i18n-tag-translate should translate to german 1`] = `"Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto."`;

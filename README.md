@@ -34,6 +34,10 @@
   * [Configuration Groups](#configuration-groups)
     * [i18n Option](#i18n-option)
     * [i18nGroup Class Decorator](#i18ngroup-class-decorator)
+  * [Translating without template literals](#Translating-without-template-literals)
+    * [Simple string translation](#simple-string-translation)
+    * [Using formatters](#using-formatters)
+    * [Using config and translation groups](#using-config-and-translation-groups)
 * [Translations as CommonJS Modules](#translations-as-commonjs-modules)
   * [./my-lib/de/index.js](#my-libdeindexjs)
   * [./my-lib/index.js](#my-libindexjs)
@@ -348,6 +352,38 @@ class Clock {
 }
 export default Clock
 ```
+
+### Translating without template literals
+
+If you have to translate variables that cannot be put into a template literal, you can use the `translate()' helper function.
+
+#### Simple string translation
+
+```js
+i18n.translate('Welcome')
+
+var somVar = 'translationkey'
+i18n.translate(somVar) 
+```
+
+#### Using formatters
+
+```js
+const name = 'Steffen'
+const amount = 1250.33
+      
+i18n.translate(`Hello ${0}, you have ${1} in your bank account.`, name, { value: amount, formatter: 'c'})
+
+i18n.translate(`Total: ${0}`, { value: amount, formatter: 'd', format: 2})
+```
+
+#### Using config and translation groups
+
+```js
+i18n(__translationGroup, 'my-lib').translate('Welcome') // Select translation from module group e.g. "components/App.js"
+i18n('components/Clock.js', 'my-lib').translate('Time') // Select translation from a custom group
+```
+
 
 ## Translations as CommonJS Modules
 
