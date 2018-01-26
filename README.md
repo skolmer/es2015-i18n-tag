@@ -355,7 +355,7 @@ export default Clock
 
 ### Translating without template literals
 
-If you have to translate variables that cannot be put into a template literal, you can use the `translate()' helper function.
+If you have to translate variables that cannot be put into a template literal, you can use the `i18n.translate()` helper function.
 
 #### Simple string translation
 
@@ -372,9 +372,9 @@ i18n.translate(somVar)
 const name = 'Steffen'
 const amount = 1250.33
       
-i18n.translate(`Hello ${0}, you have ${1} in your bank account.`, name, { value: amount, formatter: 'c'})
+i18n.translate('Hello ${0}, you have ${1} in your bank account.', name, { value: amount, formatter: 'c'})
 
-i18n.translate(`Total: ${0}`, { value: amount, formatter: 'd', format: 2})
+i18n.translate('Total: ${0}', { value: amount, formatter: 'd', format: 2})
 ```
 
 #### Using config and translation groups
