@@ -7,7 +7,6 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
-	<script src="assets/js/modernizr.js"></script>
 </head>
 <body>
 <header>
@@ -39,8 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -66,7 +63,7 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<h1 id="i18n-tagged-template-literals">i18n Tagged Template Literals</h1>
-				<p><a href="https://travis-ci.org/skolmer/es2015-i18n-tag"><img src="https://img.shields.io/travis/skolmer/es2015-i18n-tag/master.svg?style=flat" alt="Build Status"></a> <a href="https://coveralls.io/github/skolmer/es2015-i18n-tag?branch=master"><img src="https://coveralls.io/repos/github/skolmer/es2015-i18n-tag/badge.svg?branch=master" alt="Coverage Status"></a> <a href="https://www.npmjs.com/package/es2015-i18n-tag"><img src="https://img.shields.io/npm/v/es2015-i18n-tag.svg?style=flat" alt="npm version"></a> <a href="https://github.com/semantic-release/semantic-release"><img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="semantic-release"></a>
+				<p><a href="https://travis-ci.org/skolmer/es2015-i18n-tag"><img src="https://img.shields.io/travis/skolmer/es2015-i18n-tag/master.svg?style=flat" alt="Build Status"></a> <a href="https://coveralls.io/github/skolmer/es2015-i18n-tag?branch=master"><img src="https://coveralls.io/repos/github/skolmer/es2015-i18n-tag/badge.svg?branch=master" alt="Coverage Status"></a> <a href="https://www.npmjs.com/package/es2015-i18n-tag"><img src="https://img.shields.io/npm/v/es2015-i18n-tag.svg?style=flat" alt="npm version"></a> <a href="https://www.npmjs.com/package/es2015-i18n-tag/"><img src="https://img.shields.io/npm/dw/es2015-i18n-tag.svg" alt="npm"></a> <a href="https://github.com/semantic-release/semantic-release"><img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="semantic-release"></a>
 				<a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" alt="Commitizen friendly"></a> <a href="http://opensource.org/licenses/MIT"><img src="https://img.shields.io/npm/l/ghooks.svg" alt="MIT License"></a></p>
 				<p><a href="https://www.npmjs.com/package/es2015-i18n-tag/"><img src="https://nodei.co/npm/es2015-i18n-tag.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt="NPM"></a> </p>
 				<p><a href="http://i18n-tag.kolmer.net/"><img src="images/es2015-i18n-tag-icon-big.jpg" alt="i18n Tagged Template Literals"></a></p>
@@ -106,7 +103,7 @@
 									<li><a href="#i18ngroup-class-decorator">i18nGroup Class Decorator</a></li>
 								</ul>
 							</li>
-							<li><a href="#Translating-without-template-literals">Translating without template literals</a><ul>
+							<li><a href="#translating-without-template-literals">Translating without template literals</a><ul>
 									<li><a href="#simple-string-translation">Simple string translation</a></li>
 									<li><a href="#using-formatters">Using formatters</a></li>
 									<li><a href="#using-config-and-translation-groups">Using config and translation groups</a></li>
@@ -448,7 +445,7 @@ i18nConfig({
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> Clock
 </code></pre>
 				<h3 id="translating-without-template-literals">Translating without template literals</h3>
-				<p>If you have to translate variables that cannot be put into a template literal, you can use the `translate()&#39; helper function.</p>
+				<p>If you have to translate variables that cannot be put into a template literal, you can use the <code>i18n.translate()</code> helper function.</p>
 				<h4 id="simple-string-translation">Simple string translation</h4>
 				<pre><code class="lang-js">i18n.translate(<span class="hljs-string">'Welcome'</span>)
 
@@ -459,13 +456,20 @@ i18n.translate(somVar)
 				<pre><code class="lang-js"><span class="hljs-keyword">const</span> name = <span class="hljs-string">'Steffen'</span>
 <span class="hljs-keyword">const</span> amount = <span class="hljs-number">1250.33</span>
 
-i18n.translate(<span class="hljs-string">`Hello <span class="hljs-subst">${<span class="hljs-number">0</span>}</span>, you have <span class="hljs-subst">${<span class="hljs-number">1</span>}</span> in your bank account.`</span>, name, { <span class="hljs-attr">value</span>: amount, <span class="hljs-attr">formatter</span>: <span class="hljs-string">'c'</span>})
+i18n.translate(<span class="hljs-string">'Hello ${0}, you have ${1} in your bank account.'</span>, name, { <span class="hljs-attr">value</span>: amount, <span class="hljs-attr">formatter</span>: <span class="hljs-string">'c'</span>})
 
-i18n.translate(<span class="hljs-string">`Total: <span class="hljs-subst">${<span class="hljs-number">0</span>}</span>`</span>, { <span class="hljs-attr">value</span>: amount, <span class="hljs-attr">formatter</span>: <span class="hljs-string">'d'</span>, <span class="hljs-attr">format</span>: <span class="hljs-number">2</span>})
+i18n.translate(<span class="hljs-string">'Total: ${0}'</span>, { <span class="hljs-attr">value</span>: amount, <span class="hljs-attr">formatter</span>: <span class="hljs-string">'d'</span>, <span class="hljs-attr">format</span>: <span class="hljs-number">2</span>})
 </code></pre>
 				<h4 id="using-config-and-translation-groups">Using config and translation groups</h4>
 				<pre><code class="lang-js">i18n(__translationGroup, <span class="hljs-string">'my-lib'</span>).translate(<span class="hljs-string">'Welcome'</span>) <span class="hljs-comment">// Select translation from module group e.g. "components/App.js"</span>
 i18n(<span class="hljs-string">'components/Clock.js'</span>, <span class="hljs-string">'my-lib'</span>).translate(<span class="hljs-string">'Time'</span>) <span class="hljs-comment">// Select translation from a custom group</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Clock</span> </span>{
+    tick() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.i18n.translate(<span class="hljs-string">'Time: ${0}'</span>, { <span class="hljs-attr">value</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(), <span class="hljs-attr">formatter</span>: <span class="hljs-string">'t'</span>, <span class="hljs-attr">format</span>: <span class="hljs-string">'T'</span> })
+    }
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> i18nGroup(__translationGroup, <span class="hljs-string">'my-lib'</span>)(Clock)
 </code></pre>
 				<h2 id="translations-as-commonjs-modules">Translations as CommonJS Modules</h2>
 				<p>If you are working on a multilingual library it might be useful to export i18n settings and translations as CommonJS modules. This can be easily accomplished with webpack and <a href="https://github.com/webpack/json-loader">json-loader</a> as shown in this example:</p>
