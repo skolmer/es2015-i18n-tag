@@ -81,6 +81,7 @@
     "pushdocs": "git add pages && git commit -m \"docs(pages): Updated pages\" && git subtree push --prefix pages origin gh-pages",
     "docs": "typedoc --out ./pages/docs/ ./lib/index.d.ts --excludeExternals --module commonjs --readme ./README.md --target ES6 --includeDeclarations --hideGenerator --name es2015-i18n-tag --mode file --media ./images",
     "commit": "git add . && git cz",
+    "commit-staged": "git cz",
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once",
     "pre-commit": "npm run test:local",

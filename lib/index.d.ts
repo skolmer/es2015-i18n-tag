@@ -27,31 +27,31 @@ declare module 'es2015-i18n-tag' {
          * How to display the currency in currency formatting. 
          * Possible values are "symbol" to use a localized currency symbol such as €, "code" to use the ISO currency code, "name" to use a localized currency name such as "dollar"; the default is "symbol".
          */
-        currencyDisplay?: string,
+        currencyDisplay?: "symbol" | "code" | "name",
         /**
          * Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators. The default is true.
          */
-        useGrouping?: boolean,
+        useGrouping?: boolean = true,
         /**
          * The minimum number of integer digits to use. Possible values are from 1 to 21; the default is 1.
          */
-        minimumIntegerDigits?: number,
+        minimumIntegerDigits?: 1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21,
         /**
          * The minimum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number and percent formatting is 0; the default for currency formatting is the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information).
          */
-        minimumFractionDigits?: number,
+        minimumFractionDigits?: 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|20,
         /**
          * The maximum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number formatting is the larger of minimumFractionDigits and 3; the default for currency formatting is the larger of minimumFractionDigits and the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information); the default for percent formatting is the larger of minimumFractionDigits and 0.
          */
-        maximumFractionDigits?: number,
+        maximumFractionDigits?: 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|20,
         /**
          * The minimum number of significant digits to use. Possible values are from 1 to 21; the default is 1.
          */
-        minimumSignificantDigits?: number,
+        minimumSignificantDigits?: 1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21,
         /**
          * The maximum number of significant digits to use. Possible values are from 1 to 21; the default is minimumSignificantDigits.
          */
-        maximumSignificantDigits?: number
+        maximumSignificantDigits?: 1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21,
     };
 
 
@@ -123,16 +123,16 @@ declare module 'es2015-i18n-tag' {
             [key: string]: string | { [key: string]: string }
         }, 
         /**
-         * The name of the current configuration group. This option is recommended for libaries. 
+         * The name of the current configuration group. This option is recommended for libraries. 
          * To avoid configuration override, set a group that is unique to your library.
          */
         group?: string,
         /**
-         * For more information about NumberFormat options, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat
+         * For more information about NumberFormat options, see https://goo.gl/pDwbG2
          */
         number?: NumberConfig, 
         /**
-         * For more information about DateTimeFormat options, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat
+         * For more information about DateTimeFormat options, see https://goo.gl/lslekB
          */
         date?: DateConfig,
         /**
@@ -146,7 +146,7 @@ declare module 'es2015-i18n-tag' {
                 [name : string] : (locales : string | Array<string>, numberOptions : NumberConfig, value : number) => string
             }
             string?: {
-                [name : string] : (locales : string | Array<string>, stringOptions : {}, value : string) => string
+                [name : string] : (locales : string | Array<string>, stringOptions : { [key: string]: any }, value : string) => string
             }
         }
     };
@@ -183,12 +183,18 @@ declare module 'es2015-i18n-tag' {
          * @example 
          * 
          *     // common syntax: 
+         *     i18n.translate('number: ${0}; text: ${1}', 24, 'test');
          *     i18n.translate('The date is ${0}', { value: new Date(), formatter: 't', format: 'D' });
          * 
          * @example 
          * 
-         *     // with i18nGroup decorator: 
+         *     // with group settings: 
          *     i18n('test-group', 'test-config').translate('Time: ${0}', { value: new Date(), formatter: 't', format: 'D' });
+         * 
+         * @example 
+         * 
+         *     // with i18nGroup decorator: 
+         *     this.i18n.translate('Time: ${0}', { value: new Date(), formatter: 't', format: 'D' });
          */
         translate(key: string, ...values: Array<any>): string;
     }       
@@ -198,7 +204,7 @@ declare module 'es2015-i18n-tag' {
          * Returns the i18n template tag for a translation or config group.
          * 
          * @param group the name of the translation group.
-         * @param config the name of the configuration group. This option is recommended for libaries. To avoid configuration override, set a group that is unique to your library.
+         * @param config the name of the configuration group. This option is recommended for libraries. To avoid configuration override, set a group that is unique to your library.
          * 
          * @example 
          * 
@@ -249,8 +255,7 @@ declare module 'es2015-i18n-tag' {
      * i18n translation and configuration group class decorator.
      * 
      * @param group the name of the translation group.
-     * @param config the name of the configuration group. This option is recommended for libaries. To avoid configuration override, set a group that is unique to your library.
-     * @param target the target class
+     * @param config the name of the configuration group. This option is recommended for libraries. To avoid configuration override, set a group that is unique to your library.
      * 
      * @example 
      * 
@@ -273,5 +278,17 @@ declare module 'es2015-i18n-tag' {
      *     }
      *     export default Clock
      */
-    export function i18nGroup(group: string, config?: string): (target: any) => any;
+    export function i18nGroup(group: string, config?: string): <TFunction extends Function>(target: TFunction) => TFunction & Group;
+
+    type GroupClass = {
+        /**
+         * i18n Template Literal Tag
+         */
+        i18n: i18nTemplateTag
+    }
+
+    interface Group {
+        new (...args): GroupClass;
+        prototype: GroupClass;
+    }
 }
