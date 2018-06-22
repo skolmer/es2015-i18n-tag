@@ -31,7 +31,7 @@ declare module 'es2015-i18n-tag' {
         /**
          * Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators. The default is true.
          */
-        useGrouping?: boolean = true,
+        useGrouping?: boolean,
         /**
          * The minimum number of integer digits to use. Possible values are from 1 to 21; the default is 1.
          */
@@ -172,7 +172,7 @@ declare module 'es2015-i18n-tag' {
          *     // with i18nGroup decorator: 
          *     this.i18n`Time: ${new Date()}:t(T)`;
          */
-        (literals: TemplateStringsArray, ...values: Array<any>) : string;  
+        (literals: TemplateStringsArray, ...values: Array<any>) : any;  
 
         /**
          * Translates i18n translation key.
@@ -196,7 +196,7 @@ declare module 'es2015-i18n-tag' {
          *     // with i18nGroup decorator: 
          *     this.i18n.translate('Time: ${0}', { value: new Date(), formatter: 't', format: 'D' });
          */
-        translate(key: string, ...values: Array<any>): string;
+        translate(key: string, ...values: Array<any>): any;
     }       
 
     interface i18nTag extends i18nTemplateTag {
