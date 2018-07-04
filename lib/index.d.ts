@@ -39,11 +39,11 @@ declare module 'es2015-i18n-tag' {
         /**
          * The minimum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number and percent formatting is 0; the default for currency formatting is the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information).
          */
-        minimumFractionDigits?: 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|20,
+        minimumFractionDigits?: 0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|20,
         /**
          * The maximum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number formatting is the larger of minimumFractionDigits and 3; the default for currency formatting is the larger of minimumFractionDigits and the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information); the default for percent formatting is the larger of minimumFractionDigits and 0.
          */
-        maximumFractionDigits?: 0|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|20,
+        maximumFractionDigits?: 0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|20,
         /**
          * The minimum number of significant digits to use. Possible values are from 1 to 21; the default is 1.
          */
