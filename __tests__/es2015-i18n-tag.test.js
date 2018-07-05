@@ -65,6 +65,114 @@ describe('es2015-i18n-tag', () => {
         }
     })
 
+    it('should fail if not a number', () => {
+        const name = 'Steffen'
+        const amount = '1250.33'
+
+        i18nConfig({
+            locales: 'en-US',
+            number: {
+                currency: 'USD'
+            }
+        })
+
+        try {
+            i18n`Hello ${name}, you have ${amount}:n in your bank account.`
+        } catch(err) {
+            expect(err).toMatchSnapshot()
+        }
+    })
+
+    it('should fail if not a number (percentage)', () => {
+        const name = 'Steffen'
+        const amount = '1250.33'
+
+        i18nConfig({
+            locales: 'en-US',
+            number: {
+                currency: 'USD'
+            }
+        })
+
+        try {
+            i18n`Hello ${name}, you have ${amount}:p in your bank account.`
+        } catch(err) {
+            expect(err).toMatchSnapshot()
+        }
+    })
+
+    it('should fail if not a number (currency)', () => {
+        const name = 'Steffen'
+        const amount = '1250.33'
+
+        i18nConfig({
+            locales: 'en-US',
+            number: {
+                currency: 'USD'
+            }
+        })
+
+        try {
+            i18n`Hello ${name}, you have ${amount}:c in your bank account.`
+        } catch(err) {
+            expect(err).toMatchSnapshot()
+        }
+    })
+
+    it('should fail if not a Date (Boolean)', () => {
+        const name = 'Steffen'
+        const amount = true
+
+        i18nConfig({
+            locales: 'en-US',
+            number: {
+                currency: 'USD'
+            }
+        })
+
+        try {
+            i18n`Hello ${name}, you have ${amount}:t in your bank account.`
+        } catch(err) {
+            expect(err).toMatchSnapshot()
+        }
+    })
+
+    it('should fail if not a Date (string)', () => {
+        const name = 'Steffen'
+        const amount = 2017
+
+        i18nConfig({
+            locales: 'en-US',
+            number: {
+                currency: 'USD'
+            }
+        })
+
+        try {
+            i18n`Hello ${name}, you have ${amount}:t in your bank account.`
+        } catch(err) {
+            expect(err).toMatchSnapshot()
+        }
+    })
+
+    it('should fail if not a string', () => {
+        const name = 'Steffen'
+        const amount = 1
+
+        i18nConfig({
+            locales: 'en-US',
+            number: {
+                currency: 'USD'
+            }
+        })
+
+        try {
+            i18n`Hello ${name}, you have ${amount}:s in your bank account.`
+        } catch(err) {
+            expect(err).toMatchSnapshot()
+        }
+    })
+
     it('should translate to german', () => {
         const name = 'Steffen'
         const amount = 1250.33

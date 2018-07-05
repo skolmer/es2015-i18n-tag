@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`es2015-i18n-tag should fail if not a Date (Boolean) 1`] = `[Error: value is not a Date. type: Boolean]`;
+
+exports[`es2015-i18n-tag should fail if not a Date (string) 1`] = `[Error: value is not a Date. type: Number]`;
+
+exports[`es2015-i18n-tag should fail if not a number (currency) 1`] = `[Error: value is not a number. type: string]`;
+
+exports[`es2015-i18n-tag should fail if not a number (percentage) 1`] = `[Error: value is not a number. type: string]`;
+
+exports[`es2015-i18n-tag should fail if not a number 1`] = `[Error: value is not a number. type: string]`;
+
+exports[`es2015-i18n-tag should fail if not a string 1`] = `[Error: value is not a string. type: number]`;
+
 exports[`es2015-i18n-tag should fail on unknown types 1`] = `[Error: Type 'q' is not supported. Supported types are: s,n,t,c,p]`;
 
 exports[`es2015-i18n-tag should fallback to default config 1`] = `"Hello Steffen, you have $1,250.33 in your bank account."`;
@@ -96,6 +108,8 @@ exports[`es2015-i18n-tag-translate should ignore invalid formatting options 1`] 
 exports[`es2015-i18n-tag-translate should ignore missing standard formatters 1`] = `"The date is 20.12.2012, 18:00:00 test123."`;
 
 exports[`es2015-i18n-tag-translate should ignore unknown custom number formatters 1`] = `"Hello Steffen, the number is 14%."`;
+
+exports[`es2015-i18n-tag-translate should not fail if window is undefined 1`] = `[Error: Type 'q' is not supported. Supported types are: s,n,t,c,p]`;
 
 exports[`es2015-i18n-tag-translate should not translate 1`] = `"Hello Steffen, you have $1,250.33 in your bank account."`;
 
