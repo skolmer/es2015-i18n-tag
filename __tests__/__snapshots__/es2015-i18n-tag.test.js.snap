@@ -109,8 +109,6 @@ exports[`es2015-i18n-tag-translate should ignore missing standard formatters 1`]
 
 exports[`es2015-i18n-tag-translate should ignore unknown custom number formatters 1`] = `"Hello Steffen, the number is 14%."`;
 
-exports[`es2015-i18n-tag-translate should not fail if window is undefined 1`] = `[Error: Type 'q' is not supported. Supported types are: s,n,t,c,p]`;
-
 exports[`es2015-i18n-tag-translate should not translate 1`] = `"Hello Steffen, you have $1,250.33 in your bank account."`;
 
 exports[`es2015-i18n-tag-translate should support ES2016 style group class decorator 1`] = `"Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto."`;
