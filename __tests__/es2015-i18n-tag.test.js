@@ -155,24 +155,6 @@ describe('es2015-i18n-tag', () => {
         }
     })
 
-    it('should fail if not a string', () => {
-        const name = 'Steffen'
-        const amount = 1
-
-        i18nConfig({
-            locales: 'en-US',
-            number: {
-                currency: 'USD'
-            }
-        })
-
-        try {
-            i18n`Hello ${name}, you have ${amount}:s in your bank account.`
-        } catch(err) {
-            expect(err).toMatchSnapshot()
-        }
-    })
-
     it('should translate to german', () => {
         const name = 'Steffen'
         const amount = 1250.33
