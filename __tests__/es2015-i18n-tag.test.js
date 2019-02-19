@@ -711,6 +711,42 @@ describe('es2015-i18n-tag-translate', () => {
         expect(actual).toMatchSnapshot()
     })
 
+    it('should not fail on null value', () => {
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        const actual = i18n.translate(null)
+        expect(actual).toMatchSnapshot()
+    })
+
+    it('should not fail on undefined value', () => {
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        const actual = i18n.translate(undefined)
+        expect(actual).toMatchSnapshot()
+    })
+
+    it('should convert number as a non string object to string', () => {
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        const actual = i18n.translate(10)
+        expect(actual).toMatchSnapshot()
+    })
+
+    it('should convert object to string', () => {
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        const actual = i18n.translate({})
+        expect(actual).toMatchSnapshot()
+    })
+
     it('should format fractionals', () => {
         const name = 'Steffen'
         const number = 0.1365

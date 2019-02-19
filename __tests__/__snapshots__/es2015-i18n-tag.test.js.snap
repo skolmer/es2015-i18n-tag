@@ -89,6 +89,10 @@ exports[`es2015-i18n-tag should translate if formatter is followed by parenthesi
 
 exports[`es2015-i18n-tag should translate to german 1`] = `"Hallo Steffen, Sie haben 1.250,33 € auf Ihrem Bankkonto."`;
 
+exports[`es2015-i18n-tag-translate should convert number as a non string object to string 1`] = `"10"`;
+
+exports[`es2015-i18n-tag-translate should convert object to string 1`] = `"[object Object]"`;
+
 exports[`es2015-i18n-tag-translate should fail on unknown types 1`] = `[Error: Type 'q' is not supported. Supported types are: s,n,t,c,p]`;
 
 exports[`es2015-i18n-tag-translate should fallback to default config 1`] = `"Hello Steffen, you have $1,250.33 in your bank account."`;
@@ -106,6 +110,10 @@ exports[`es2015-i18n-tag-translate should ignore invalid formatting options 1`] 
 exports[`es2015-i18n-tag-translate should ignore missing standard formatters 1`] = `"The date is 20.12.2012, 18:00:00 test123."`;
 
 exports[`es2015-i18n-tag-translate should ignore unknown custom number formatters 1`] = `"Hello Steffen, the number is 14%."`;
+
+exports[`es2015-i18n-tag-translate should not fail on null value 1`] = `""`;
+
+exports[`es2015-i18n-tag-translate should not fail on undefined value 1`] = `""`;
 
 exports[`es2015-i18n-tag-translate should not translate 1`] = `"Hello Steffen, you have $1,250.33 in your bank account."`;
 
