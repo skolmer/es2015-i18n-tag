@@ -1,0 +1,25 @@
+{
+  "projectName": "es2015-i18n-tag",
+  "projectOwner": "skolmer",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "arthot",
+      "name": "Artem",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1815294?v=4",
+      "profile": "https://github.com/arthot",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
