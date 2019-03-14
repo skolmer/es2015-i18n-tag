@@ -19,6 +19,17 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "simlrh",
+      "name": "Steve Le Roy Harris",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1677829?v=4",
+      "profile": "http://nourish.je",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
