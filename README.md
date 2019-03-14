@@ -1,4 +1,5 @@
 # i18n Tagged Template Literals 
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 [![Build Status](https://img.shields.io/travis/skolmer/es2015-i18n-tag/master.svg?style=flat)](https://travis-ci.org/skolmer/es2015-i18n-tag) [![Coverage Status](https://coveralls.io/repos/github/skolmer/es2015-i18n-tag/badge.svg?branch=master)](https://coveralls.io/github/skolmer/es2015-i18n-tag?branch=master) [![npm version](https://img.shields.io/npm/v/es2015-i18n-tag.svg?style=flat)](https://www.npmjs.com/package/es2015-i18n-tag) [![npm](https://img.shields.io/npm/dw/es2015-i18n-tag.svg)](https://www.npmjs.com/package/es2015-i18n-tag/) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![MIT License](https://img.shields.io/npm/l/ghooks.svg)](http://opensource.org/licenses/MIT)
 
@@ -450,3 +451,15 @@ Copyright (c) 2016 Steffen Kolmer
 
 This software is licensed under the MIT license.  See the `LICENSE` file
 accompanying this software for terms of use.
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/all-contributors/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars1.githubusercontent.com/u/1815294?v=4" width="100px;" alt="Artem"/><br /><sub><b>Artem</b></sub>](https://github.com/arthot)<br />[🚇](#infra-arthot "Infrastructure (Hosting, Build-Tools, etc)") [⚠️](https://github.com/skolmer/es2015-i18n-tag/commits?author=arthot "Tests") [💻](https://github.com/skolmer/es2015-i18n-tag/commits?author=arthot "Code") |
+| :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
