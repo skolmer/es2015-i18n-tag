@@ -22,6 +22,8 @@ exports[`es2015-i18n-tag should format fractionals 1`] = `"Hello Steffen, the nu
 
 exports[`es2015-i18n-tag should format percentage 1`] = `"Hello Steffen, the percentage is 10%."`;
 
+exports[`es2015-i18n-tag should format percentage with fractions 1`] = `"Hello Steffen, the percentage is 0.1%."`;
+
 exports[`es2015-i18n-tag should ignore missing standard formatters 1`] = `"The date is 20.12.2012, 18:00:00 test123."`;
 
 exports[`es2015-i18n-tag should ignore unknown custom number formatters 1`] = `"Hello Steffen, the number is 0.137."`;

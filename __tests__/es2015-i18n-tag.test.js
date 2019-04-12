@@ -221,6 +221,18 @@ describe('es2015-i18n-tag', () => {
         expect(actual).toMatchSnapshot()
     })
 
+    it('should format percentage with fractions', () => {
+        const name = 'Steffen'
+        const percentage = 0.001
+
+        i18nConfig({
+            locales: 'en-US'
+        })
+
+        const actual = i18n`Hello ${name}, the percentage is ${percentage}:p(1).`
+        expect(actual).toMatchSnapshot()
+    })
+
     it('should format currency', () => {
         const name = 'Steffen'
         const amount = 0.1

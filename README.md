@@ -179,6 +179,9 @@ The following standard format strings can be applied to a template expression of
 console.log(i18n`Hello ${name}, the percentage is ${0.01}:p.`)
 // Hello Steffen, the percentage is 1%.
 
+console.log(i18n`Hello ${name}, the percentage is ${0.005}:p(1).`)
+// Hello Steffen, the percentage is 0.5%.
+
 i18nConfig({
     locales: 'de-DE'
 })
