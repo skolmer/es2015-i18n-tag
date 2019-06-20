@@ -65,7 +65,7 @@
     "travis-deploy-once": "^4.3.3",
     "typedoc": "^0.9.0",
     "validate-commit-msg": "^2.14.0",
-    "webpack": "^3.10.0"
+    "webpack": "^4.35.0"
   },
   "scripts": {
     "prepublish": "npm run lint && npm run clean && npm run build",
