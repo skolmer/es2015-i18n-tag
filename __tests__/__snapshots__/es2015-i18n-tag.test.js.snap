@@ -1,5 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`es2015-i18n-tag should accept null value 1`] = `"null is null"`;
+
+exports[`es2015-i18n-tag should accept undefined value 1`] = `"undefined is undefined"`;
+
 exports[`es2015-i18n-tag should fail if not a Date (Boolean) 1`] = `[Error: value is not a Date. type: Boolean]`;
 
 exports[`es2015-i18n-tag should fail if not a Date (string) 1`] = `[Error: value is not a Date. type: Number]`;
