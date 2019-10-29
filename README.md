@@ -450,7 +450,7 @@ Thanks to [Jack Hsu](https://github.com/jaysoo) for his initial draft of an [i18
 
 ## License
 
-Copyright (c) 2016 Steffen Kolmer
+Copyright (c) 2016-2019 Steffen Kolmer
 
 This software is licensed under the MIT license.  See the `LICENSE` file
 accompanying this software for terms of use.
