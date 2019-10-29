@@ -41,6 +41,16 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "nor3",
+      "name": "nor3",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/946620?v=4",
+      "profile": "https://github.com/nor3",
+      "contributions": [
+        "test",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
