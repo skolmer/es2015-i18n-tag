@@ -631,6 +631,18 @@ describe('es2015-i18n-tag', () => {
         const actual = decorated2.getCommonText()
         expect(actual).toMatchSnapshot()
     })
+    it('should accept undefined value', () => {
+        const value = undefined
+
+        const actual = i18n('unknown', 'unknown')`undefined is ${value}`
+        expect(actual).toMatchSnapshot()
+    })
+    it('should accept null value', () => {
+        const value = null
+
+        const actual = i18n('unknown', 'unknown')`null is ${value}`
+        expect(actual).toMatchSnapshot()
+    })
 })
 
 
