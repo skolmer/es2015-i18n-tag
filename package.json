@@ -89,7 +89,7 @@
     "commit-msg": "validate-commit-msg",
     "bench": "node ./benchmark.js" 
   },
-  "main": "./dist/lib",
+  "main": "./dist/lib/index.js",
   "typings": "./dist/lib/index.d.ts",
   "jest": {
     "collectCoverage": true,
