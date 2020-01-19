@@ -460,16 +460,20 @@ accompanying this software for terms of use.
 Thanks goes to these wonderful people ([emoji key](https://github.com/all-contributors/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/arthot"><img src="https://avatars1.githubusercontent.com/u/1815294?v=4" width="100px;" alt="Artem"/><br /><sub><b>Artem</b></sub></a><br /><a href="#infra-arthot" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/skolmer/es2015-i18n-tag/commits?author=arthot" title="Tests">⚠️</a> <a href="https://github.com/skolmer/es2015-i18n-tag/commits?author=arthot" title="Code">💻</a></td>
-    <td align="center"><a href="http://nourish.je"><img src="https://avatars1.githubusercontent.com/u/1677829?v=4" width="100px;" alt="Steve Le Roy Harris"/><br /><sub><b>Steve Le Roy Harris</b></sub></a><br /><a href="#infra-simlrh" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/skolmer/es2015-i18n-tag/commits?author=simlrh" title="Tests">⚠️</a> <a href="https://github.com/skolmer/es2015-i18n-tag/commits?author=simlrh" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/SaiX123"><img src="https://avatars0.githubusercontent.com/u/29754416?v=4" width="100px;" alt="SaiX123"/><br /><sub><b>SaiX123</b></sub></a><br /><a href="#infra-SaiX123" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/skolmer/es2015-i18n-tag/commits?author=SaiX123" title="Tests">⚠️</a> <a href="https://github.com/skolmer/es2015-i18n-tag/commits?author=SaiX123" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/nor3"><img src="https://avatars3.githubusercontent.com/u/946620?v=4" width="100px;" alt="nor3"/><br /><sub><b>nor3</b></sub></a><br /><a href="https://github.com/skolmer/es2015-i18n-tag/commits?author=nor3" title="Tests">⚠️</a> <a href="https://github.com/skolmer/es2015-i18n-tag/commits?author=nor3" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/arthot"><img src="https://avatars1.githubusercontent.com/u/1815294?v=4" width="100px;" alt=""/><br /><sub><b>Artem</b></sub></a><br /><a href="#infra-arthot" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/skolmer/es2015-i18n-tag/commits?author=arthot" title="Tests">⚠️</a> <a href="https://github.com/skolmer/es2015-i18n-tag/commits?author=arthot" title="Code">💻</a></td>
+    <td align="center"><a href="http://nourish.je"><img src="https://avatars1.githubusercontent.com/u/1677829?v=4" width="100px;" alt=""/><br /><sub><b>Steve Le Roy Harris</b></sub></a><br /><a href="#infra-simlrh" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/skolmer/es2015-i18n-tag/commits?author=simlrh" title="Tests">⚠️</a> <a href="https://github.com/skolmer/es2015-i18n-tag/commits?author=simlrh" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/SaiX123"><img src="https://avatars0.githubusercontent.com/u/29754416?v=4" width="100px;" alt=""/><br /><sub><b>SaiX123</b></sub></a><br /><a href="#infra-SaiX123" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/skolmer/es2015-i18n-tag/commits?author=SaiX123" title="Tests">⚠️</a> <a href="https://github.com/skolmer/es2015-i18n-tag/commits?author=SaiX123" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/nor3"><img src="https://avatars3.githubusercontent.com/u/946620?v=4" width="100px;" alt=""/><br /><sub><b>nor3</b></sub></a><br /><a href="https://github.com/skolmer/es2015-i18n-tag/commits?author=nor3" title="Tests">⚠️</a> <a href="https://github.com/skolmer/es2015-i18n-tag/commits?author=nor3" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/hanc2006"><img src="https://avatars1.githubusercontent.com/u/4517251?v=4" width="100px;" alt=""/><br /><sub><b>Daniele</b></sub></a><br /><a href="https://github.com/skolmer/es2015-i18n-tag/commits?author=hanc2006" title="Code">💻</a></td>
   </tr>
 </table>
 
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

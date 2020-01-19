@@ -51,7 +51,17 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "hanc2006",
+      "name": "Daniele",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4517251?v=4",
+      "profile": "https://github.com/hanc2006",
+      "contributions": [
+        "code"
+      ]
     }
   ],
-  "contributorsPerLine": 7
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
